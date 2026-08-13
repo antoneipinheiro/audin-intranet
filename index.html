@@ -39,9 +39,12 @@ body{
 #sidebar{
   position:fixed;top:0;left:0;bottom:0;width:var(--sb);
   background:linear-gradient(185deg,var(--navy-950) 0%,var(--navy-900) 55%,var(--navy-800) 100%);
-  color:#eef1fb;display:flex;flex-direction:column;z-index:50;
+  color:#eef1fb;display:flex;flex-direction:column;z-index:150;
   border-right:1px solid rgba(255,255,255,.06);
+  transition:transform .25s ease;
 }
+#sb-backdrop{position:fixed;inset:0;background:rgba(7,15,40,.55);z-index:140;display:none;}
+#sb-backdrop.show{display:block;}
 .sb-brand{
   padding:24px 22px 18px;display:flex;flex-direction:column;align-items:center;
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -88,13 +91,18 @@ a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gol
 /* Top progress / breadcrumb bar */
 #topbar{
   position:sticky;top:0;z-index:40;background:rgba(244,245,249,.86);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-#topbar .crumb{font-size:12.5px;color:var(--ink-soft);font-weight:600;}
+.topbar-row1{display:flex;align-items:center;gap:14px;min-width:0;}
+#hamburger{
+  display:none;flex:none;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);
+  background:#fff;font-size:17px;cursor:pointer;color:var(--navy-900);align-items:center;justify-content:center;
+}
+#topbar .crumb{font-size:12.5px;color:var(--ink-soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #topbar .crumb b{color:var(--navy-900);}
 #topbar .search{
   display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;
-  padding:7px 14px;font-size:12.5px;color:#8892ab;min-width:240px;
+  padding:7px 14px;font-size:12.5px;color:#8892ab;min-width:240px;flex:none;
 }
 #topbar .search input{
   border:none;outline:none;background:transparent;font-size:12.5px;color:var(--ink);flex:1;font-family:inherit;
@@ -176,7 +184,8 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
 .phasebar div:nth-child(3){background:var(--navy-900);}
 .phasebar div:nth-child(4){background:linear-gradient(120deg,var(--gold-700),var(--gold-600));}
 
-table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;}
+table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;min-width:520px;}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;}
 table.dates th{background:var(--navy-900);color:#fff;text-align:left;padding:10px 14px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;}
 table.dates th:first-child{border-radius:10px 0 0 0;}
 table.dates th:last-child{border-radius:0 10px 0 0;}
@@ -318,12 +327,46 @@ img.shot:hover{transform:scale(1.015);}
 #lightbox figcaption{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:#dfe3f2;font-size:13px;}
 
 @media(max-width:980px){
-  :root{--sb:0px;}
-  #sidebar{display:none;}
-  section.page{padding:34px 20px;}
+  :root{--sb:300px;}
+  #main{margin-left:0;}
+  footer{margin-left:0;}
+  #sidebar{transform:translateX(-100%);box-shadow:0 0 40px rgba(0,0,0,.35);}
+  #sidebar.open{transform:translateX(0);}
+  #hamburger{display:flex;}
+  #topbar{flex-wrap:wrap;padding:12px 18px;row-gap:10px;}
+  #topbar .search{flex:1 1 100%;min-width:0;order:3;}
+  .topbar-row1{flex:1 1 auto;min-width:0;}
+  section.page{padding:30px 20px;}
   .grid.cols-4,.grid.cols-3,.grid.cols-2{grid-template-columns:1fr;}
   .support-grid{grid-template-columns:1fr;}
   .hero-inner{flex-direction:column;text-align:center;}
+  .hero{padding:32px 24px;}
+  .contact-cols{grid-template-columns:1fr;}
+  .phasebar{grid-template-columns:1fr;}
+  .contact-extra{justify-content:flex-start;}
+  .reqlist{grid-template-columns:1fr;}
+  .figindex{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:640px){
+  h1.hd{font-size:24px;}
+  .hero h1{font-size:24px;}
+  .hero-logo-plate{padding:14px 18px;}
+  .hero-logo{width:96px;}
+  h2.sub{font-size:17px;}
+  .eyebrow{font-size:10px;}
+  section.page{padding:24px 14px;}
+  #topbar{padding:10px 14px;}
+  #topbar .crumb{font-size:11.5px;}
+  .figindex{grid-template-columns:1fr;}
+  .tabbar{gap:6px;}
+  .tabbtn{padding:8px 12px;font-size:11.8px;}
+  .step{grid-template-columns:36px 1fr;}
+  img.shot{max-width:100% !important;}
+  .step img.shot{max-width:100% !important;}
+  .linkchip.news{max-width:100%;}
+  .support-grid,.grid{gap:14px;}
+  .contact-card,.card{padding:20px;}
 }
 </style>
 </head>
@@ -358,12 +401,16 @@ img.shot:hover{transform:scale(1.015);}
     <a class="btn-support" href="#suporte">🎧 Preciso de ajuda</a>
   </div>
 </aside>
+<div id="sb-backdrop"></div>
 
 <!-- ============ MAIN ============ -->
 <div id="main">
 
 <div id="topbar">
-  <div class="crumb">Portal Intranet · <b>Audiência Inteligente</b></div>
+  <div class="topbar-row1">
+    <button id="hamburger" aria-label="Abrir menu">☰</button>
+    <div class="crumb">Portal Intranet · <b>Audiência Inteligente</b></div>
+  </div>
   <div class="search">
     <span>🔎</span>
     <input id="site-search" type="text" placeholder="Buscar no portal audIN…" autocomplete="off">
@@ -449,12 +496,14 @@ img.shot:hover{transform:scale(1.015);}
 
   <h2 class="sub"><span class="bar"></span>Datas por tipo de unidade</h2>
   <p class="sub-desc">Unidades de 1º grau que utilizam o <b>PJe</b> — obrigatoriedade de agendamento pela nova plataforma:</p>
+  <div class="table-scroll">
   <table class="dates">
     <tr><th>Entrância</th><th>Agendamento obrigatório a partir de</th><th>Realização exclusiva pelo Teams a partir de</th></tr>
     <tr><td><b>Final</b></td><td>3 de agosto de 2026</td><td>1º de setembro de 2026</td></tr>
     <tr><td><b>Intermediária</b></td><td>15 de agosto de 2026</td><td>14 de setembro de 2026</td></tr>
     <tr><td><b>Inicial</b></td><td>30 de agosto de 2026</td><td>21 de setembro de 2026</td></tr>
   </table>
+  </div>
   <p class="sub-desc" style="margin-top:14px;">A <b>conversão automática das audiências já designadas</b> ocorre a partir de <b>31 de agosto de 2026</b>, em todas as unidades.</p>
 
   <p class="sub-desc" style="margin-top:26px;">Nas <b>Varas do Sistema dos Juizados Especiais (PROJUDI)</b>, a implantação ocorre por etapas:</p>
@@ -961,6 +1010,16 @@ img.shot:hover{transform:scale(1.015);}
 </div>
 
 <script>
+// Mobile sidebar drawer
+const sidebarEl = document.getElementById('sidebar');
+const backdropEl = document.getElementById('sb-backdrop');
+const hamburgerEl = document.getElementById('hamburger');
+function openDrawer(){ sidebarEl.classList.add('open'); backdropEl.classList.add('show'); }
+function closeDrawer(){ sidebarEl.classList.remove('open'); backdropEl.classList.remove('show'); }
+hamburgerEl.addEventListener('click', ()=> sidebarEl.classList.contains('open') ? closeDrawer() : openDrawer());
+backdropEl.addEventListener('click', closeDrawer);
+document.querySelectorAll('.nav-link, .btn-support').forEach(l=> l.addEventListener('click', closeDrawer));
+
 // Lightbox — enlarges any screenshot on click (use data-full for thumbnails, else the image's own src)
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lb-img');
@@ -974,7 +1033,7 @@ document.addEventListener('click', e=>{
 });
 document.getElementById('lb-close').addEventListener('click', ()=> lb.classList.remove('open'));
 lb.addEventListener('click', e=>{ if(e.target===lb) lb.classList.remove('open'); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ lb.classList.remove('open'); closeDrawer(); } });
 
 // Site search — finds first occurrence of the typed keyword and scrolls to it
 function activateTabFor(el){
