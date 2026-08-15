@@ -101,13 +101,41 @@ a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gol
 #topbar .crumb{font-size:12.5px;color:var(--ink-soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #topbar .crumb b{color:var(--navy-900);}
 #topbar .search{
+  position:relative;
   display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;
   padding:7px 14px;font-size:12.5px;color:#8892ab;min-width:240px;flex:none;
 }
+#topbar .search:focus-within{border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(201,162,39,.15);}
 #topbar .search input{
   border:none;outline:none;background:transparent;font-size:12.5px;color:var(--ink);flex:1;font-family:inherit;
 }
 #topbar .search input::placeholder{color:#a3abc2;}
+
+#search-results{
+  display:none;position:absolute;top:calc(100% + 10px);right:0;width:440px;max-width:calc(100vw - 40px);max-height:70vh;overflow-y:auto;
+  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 44px -14px rgba(10,26,61,.35);
+  padding:8px;z-index:60;
+}
+#search-results.open{display:block;}
+.sr-group{margin-bottom:4px;}
+.sr-group:last-child{margin-bottom:0;}
+.sr-group-label{
+  font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-700);
+  padding:9px 10px 4px;
+}
+.sr-item{
+  display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;border-radius:10px;
+  padding:8px 10px;font-family:inherit;
+}
+.sr-item:hover,.sr-item.active{background:#f5f6fb;}
+.sr-item .sr-title{font-size:12.8px;font-weight:700;color:var(--navy-900);margin-bottom:2px;}
+.sr-item .sr-snippet{font-size:11.8px;color:var(--ink-soft);line-height:1.4;}
+.sr-item mark{background:#fdf0c0;color:#5a4408;border-radius:3px;padding:0 2px;font-weight:700;}
+.sr-empty{padding:22px 14px;text-align:center;}
+.sr-empty .sr-empty-title{font-size:13px;font-weight:700;color:var(--navy-900);margin-bottom:6px;}
+.sr-empty .sr-empty-sub{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px;}
+.sr-empty a{font-size:12px;font-weight:800;color:var(--gold-700);text-decoration:underline;}
+.sr-footer{border-top:1px solid var(--line);margin-top:6px;padding:9px 10px 4px;font-size:10.5px;color:#9aa2b8;text-align:center;}
 .search-hit{
   animation:hitpulse 2.1s ease;border-radius:8px;
 }
@@ -411,9 +439,10 @@ img.shot:hover{transform:scale(1.015);}
     <button id="hamburger" aria-label="Abrir menu">☰</button>
     <div class="crumb">Portal Intranet · <b>Audiência Inteligente</b></div>
   </div>
-  <div class="search">
+  <div class="search" id="search-wrap">
     <span>🔎</span>
-    <input id="site-search" type="text" placeholder="Buscar no portal audIN…" autocomplete="off">
+    <input id="site-search" type="text" placeholder="Buscar dúvidas, termos ou seções…" autocomplete="off">
+    <div id="search-results"></div>
   </div>
 </div>
 
@@ -1160,6 +1189,56 @@ img.shot:hover{transform:scale(1.015);}
     </div>
   </details>
 
+  <details class="faq">
+    <summary>Como funciona a designação e o agendamento de audiências no CEJUSC Pré-processual? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">CEJUSC</span>
+      <p>No CEJUSC Pré-processual, o atendimento começa pelo Balcão Virtual, para o pré-atendimento da parte interessada. Confirmada a necessidade de conciliação, é cadastrada uma RPP (Reclamação Pré-processual) no PJe, com a audiência já designada diretamente para a unidade CEJUSC. Em seguida, a própria unidade CEJUSC realiza o agendamento no Audiência Virtual e acosta manualmente aos autos uma certidão com o link de acesso, que é enviado aos interessados. No dia marcado, o(a) atendente do CEJUSC acessa a pauta da unidade CEJUSC no Audiência Virtual, realiza a audiência e, ao final, publica o link da mídia gravada diretamente nos autos do processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona a designação e a realização de audiências no CEJUSC Processual? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">CEJUSC</span>
+      <p>Existem dois fluxos possíveis, dependendo de quem designa a audiência. <b>Quando a unidade de origem designa:</b> ela cria a audiência no PJe já direcionada à unidade CEJUSC (informando processo, tipo de audiência, data, horário e sala), faz o agendamento no Audiência Virtual, acosta a certidão com o link nos autos e movimenta o processo para o CEJUSC. <b>Quando o próprio CEJUSC designa:</b> a unidade de origem apenas movimenta o processo para o CEJUSC, que passa a ser responsável por designar a audiência no PJe, agendar no Audiência Virtual e certificar o link nos autos.</p>
+      <p>Em ambos os casos, o(a) atendente do CEJUSC acessa diretamente a pauta da própria unidade CEJUSC no Audiência Virtual para realizar e encerrar a audiência (primeiro no Teams, depois na pauta do Audiência Virtual) — não é necessário que a unidade de origem libere acesso individualizado a cada colaborador. Após o sincronismo automático das mídias, o(a) atendente consulta a gravação na Videoteca do audIN, publica o link nos autos e movimenta o processo de volta à unidade de origem.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Há capacitação específica para os usuários do CEJUSC, e os fluxos do PJe usados para encaminhar processos ao CEJUSC continuam os mesmos? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">CEJUSC</span>
+      <p>No aspecto técnico de utilização dos componentes do ecossistema (Teams, Audiência Virtual, audIN), a capacitação para os usuários do CEJUSC é a mesma já disponibilizada no Ambiente Virtual de Aprendizagem da UNICORP. Já para os aspectos de fluxos processuais e de responsabilidades — incluindo a nomenclatura dos fluxos do PJe usados para encaminhar processos ao CEJUSC, inclusive para o CEJUSC Processual-Fazendário — as unidades devem seguir as orientações específicas do NUPEMEC, da Coordenação dos Juizados Especiais e da vara de origem.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quais são as exceções ao uso obrigatório do Microsoft Teams para a realização de audiências? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
+      <p>Até o momento, são consideradas exceções ao uso obrigatório do Teams: a coleta de Depoimento Especial, as audiências com participação de unidades prisionais e as audiências cujo número de processo é originado do sistema judicial SEEU. Essa lista pode ser atualizada conforme o avanço da implantação do ecossistema.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona no Teams a transição entre o conciliador e o juiz leigo na audiência UNA dos Juizados Especiais? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
+      <p>Na transição, deve ser criado um novo agendamento em uma sala distinta para o mesmo processo, com o tipo de audiência correspondente à nova fase, e o link de acesso deve ser enviado pelo chat da audiência UNA em andamento, para que os participantes se desloquem até a nova sala — o link também pode ser consultado pelo portal audinplay.tjba.jus.br. O juiz leigo, ao ingressar na nova audiência, torna-se o(a) moderador(a), com permissões para organizar o ato, controlar a gravação e sincronizar automaticamente a mídia com o repositório central do audIN. Assim como qualquer outro(a) moderador(a), o juiz leigo e o conciliador precisam ter acesso à caixa de e-mail compartilhada da unidade em que atuam.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona a gravação de audiências totalmente presenciais pelo Teams? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
+      <p>As audiências totalmente presenciais seguem as mesmas tratativas de gravação já praticadas atualmente com o LifeSize. O uso da câmera 360º é obrigatório apenas nas unidades que já possuem esse equipamento instalado; nas demais, recomenda-se direcionar a webcam disponível para a pessoa que estiver com a palavra no momento (magistrado, testemunha etc.) ao longo da audiência.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O ecossistema audIN também será usado no Balcão Virtual? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Integrações</span>
+      <p>O Balcão Virtual também será migrado para o Microsoft Teams, porém por meio de uma plataforma específica para esse atendimento, distinta do Audiência Virtual usado nas audiências. Os detalhes serão apresentados em breve a todas as unidades que utilizam o serviço.</p>
+    </div>
+  </details>
+
   <h2 class="sub"><span class="bar"></span>Glossário de termos</h2>
   <p class="sub-desc">Principais siglas e expressões utilizadas no ecossistema audIN.</p>
   <div class="glossary">
@@ -1273,7 +1352,215 @@ document.getElementById('lb-close').addEventListener('click', ()=> lb.classList.
 lb.addEventListener('click', e=>{ if(e.target===lb) lb.classList.remove('open'); });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ lb.classList.remove('open'); closeDrawer(); } });
 
-// Site search — finds first occurrence of the typed keyword and scrolls to it
+// ================== Site search — knowledge-base style ==================
+// Builds an index of searchable content (FAQ, glossary, cards, steps, section intros)
+// and shows live, grouped-by-section results as the user types.
+
+function normalizeTxt(s){
+  return (s || '')
+    .toString()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // strip accents
+    .toLowerCase()
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+let SEARCH_INDEX = [];
+
+function sectionLabelFor(el){
+  const sec = el.closest('section.page');
+  if(!sec) return 'Portal';
+  const link = document.querySelector('.nav-link[href="#'+sec.id+'"]');
+  return link ? link.textContent.replace(/^\s*\d+\s*/,'').trim() : sec.id;
+}
+
+function buildSearchIndex(){
+  const index = [];
+
+  // FAQ entries
+  document.querySelectorAll('details.faq').forEach(det=>{
+    const summary = det.querySelector('summary');
+    const bodyEl = det.querySelector('.faq-body');
+    if(!summary || !bodyEl) return;
+    const title = summary.textContent.replace(/\s+$/,'').trim();
+    index.push({
+      type:'faq', section:'Dúvidas frequentes', title,
+      body: bodyEl.textContent.trim(),
+      norm: normalizeTxt(title+' '+bodyEl.textContent),
+      el: det,
+    });
+  });
+
+  // Glossary terms
+  document.querySelectorAll('.gterm').forEach(g=>{
+    const b = g.querySelector('b'), span = g.querySelector('span');
+    if(!b || !span) return;
+    index.push({
+      type:'glossary', section:'Glossário de termos', title: b.textContent.trim(),
+      body: span.textContent.trim(),
+      norm: normalizeTxt(b.textContent+' '+span.textContent),
+      el: g,
+    });
+  });
+
+  // Cards (h3 + p) — pilares, requisitos, dados do decreto, suporte etc.
+  document.querySelectorAll('.card').forEach(card=>{
+    const h3 = card.querySelector('h3'); const p = card.querySelector('p');
+    if(!h3 || !p) return;
+    index.push({
+      type:'card', section: sectionLabelFor(card), title: h3.textContent.trim(),
+      body: p.textContent.trim(),
+      norm: normalizeTxt(h3.textContent+' '+p.textContent),
+      el: card,
+    });
+  });
+
+  // Steps (h4 + p) — guias passo a passo
+  document.querySelectorAll('.step').forEach(step=>{
+    const h4 = step.querySelector('h4'); const p = step.querySelector('p');
+    if(!h4 || !p) return;
+    index.push({
+      type:'step', section: sectionLabelFor(step), title: h4.textContent.trim(),
+      body: p.textContent.trim(),
+      norm: normalizeTxt(h4.textContent+' '+p.textContent),
+      el: step,
+    });
+  });
+
+  // Section intros (title + lede) as a fallback so broad topics are still found
+  document.querySelectorAll('section.page').forEach(sec=>{
+    const h1 = sec.querySelector('h1.hd'); const lede = sec.querySelector('p.lede');
+    if(!h1) return;
+    const label = sectionLabelFor(h1);
+    index.push({
+      type:'section', section: label, title: h1.textContent.trim(),
+      body: lede ? lede.textContent.trim() : '',
+      norm: normalizeTxt(h1.textContent+' '+(lede? lede.textContent:'')),
+      el: sec,
+    });
+  });
+
+  // Sub-headings (h2.sub) with their following description paragraph — covers
+  // tab intros like "Degravação e extração de resumo e pontos principais"
+  document.querySelectorAll('h2.sub').forEach(h2=>{
+    const title = h2.textContent.trim();
+    if(!title) return;
+    let bodyText = '';
+    let sib = h2.nextElementSibling;
+    if(sib && (sib.matches('p.sub-desc') || sib.tagName==='P')) bodyText = sib.textContent.trim();
+    index.push({
+      type:'subhead', section: sectionLabelFor(h2), title,
+      body: bodyText,
+      norm: normalizeTxt(title+' '+bodyText),
+      el: h2,
+    });
+  });
+
+  SEARCH_INDEX = index;
+}
+
+function snippetFor(item, queryWords){
+  const raw = item.body || item.title;
+  const normBody = normalizeTxt(raw);
+  let pos = -1;
+  for(const w of queryWords){ const p = normBody.indexOf(w); if(p!==-1){ pos = p; break; } }
+  const radius = 60;
+  let start = pos===-1 ? 0 : Math.max(0, pos-radius);
+  let snippet = raw.slice(start, start+140);
+  if(start>0) snippet = '…'+snippet;
+  if(start+140 < raw.length) snippet = snippet+'…';
+  // highlight matched words (escape then wrap)
+  let escaped = snippet.replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  queryWords.forEach(w=>{
+    if(w.length<2) return;
+    const re = new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    escaped = escaped.replace(re, '<mark>$1</mark>');
+  });
+  return escaped;
+}
+
+function activateResult(item){
+  const el = item.el;
+  activateTabFor(el);
+  if(item.type==='faq'){ el.open = true; }
+  const det = el.closest('details');
+  if(det && !det.open) det.open = true;
+  closeSearchResults();
+  setTimeout(()=>{
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.remove('search-hit'); void el.offsetWidth;
+    el.classList.add('search-hit');
+    setTimeout(()=> el.classList.remove('search-hit'), 2100);
+  }, 120);
+}
+
+function closeSearchResults(){
+  document.getElementById('search-results').classList.remove('open');
+}
+
+function renderSearchResults(query){
+  const box = document.getElementById('search-results');
+  const normQ = normalizeTxt(query);
+  if(!normQ || normQ.length<2){ closeSearchResults(); return; }
+  const queryWords = normQ.split(' ').filter(Boolean);
+
+  const scored = [];
+  for(const item of SEARCH_INDEX){
+    const allWordsMatch = queryWords.every(w=> item.norm.includes(w));
+    if(!allWordsMatch) continue;
+    const titleHit = normalizeTxt(item.title).includes(normQ);
+    scored.push({ item, score: (titleHit?10:0) + queryWords.length });
+  }
+  scored.sort((a,b)=> b.score - a.score);
+
+  if(scored.length===0){
+    box.innerHTML = `<div class="sr-empty">
+      <div class="sr-empty-title">Nenhum resultado para "${query.replace(/</g,'')}"</div>
+      <div class="sr-empty-sub">Tente outra palavra-chave, ou fale com a Central de Serviços de TIC caso sua dúvida não esteja no portal.</div>
+      <a href="#suporte">Ir para Suporte técnico →</a>
+    </div>`;
+    box.querySelector('a').addEventListener('click', closeSearchResults);
+    box.classList.add('open');
+    return;
+  }
+
+  // group by section, preserving score order, cap groups/results for readability
+  const groups = [];
+  const groupIndex = {};
+  scored.slice(0, 40).forEach(({item})=>{
+    if(!(item.section in groupIndex)){
+      groupIndex[item.section] = { label: item.section, items: [] };
+      groups.push(groupIndex[item.section]);
+    }
+    if(groupIndex[item.section].items.length < 4){
+      groupIndex[item.section].items.push(item);
+    }
+  });
+
+  let html = '';
+  groups.slice(0,6).forEach(g=>{
+    html += `<div class="sr-group"><div class="sr-group-label">${g.label}</div>`;
+    g.items.forEach((item, i)=>{
+      html += `<button type="button" class="sr-item" data-gi="${groups.indexOf(g)}" data-ii="${i}">
+        <div class="sr-title">${item.title.replace(/</g,'')}</div>
+        <div class="sr-snippet">${snippetFor(item, queryWords)}</div>
+      </button>`;
+    });
+    html += `</div>`;
+  });
+  html += `<div class="sr-footer">${scored.length} resultado(s) encontrado(s) · pressione Esc para fechar</div>`;
+  box.innerHTML = html;
+  box.classList.add('open');
+
+  box.querySelectorAll('.sr-item').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const g = groups[+btn.dataset.gi];
+      const item = g.items[+btn.dataset.ii];
+      activateResult(item);
+    });
+  });
+}
+
 function activateTabFor(el){
   const panel = el.closest && el.closest('.tabpanel');
   if(panel && !panel.classList.contains('active')){
@@ -1282,39 +1569,30 @@ function activateTabFor(el){
     if(btn) btn.click();
   }
 }
-function runSiteSearch(){
-  const input = document.getElementById('site-search');
-  const query = (input.value || '').trim().toLowerCase();
-  if(!query) return;
-  const main = document.getElementById('main');
-  const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
-    acceptNode(node){
-      if(!node.nodeValue || !node.nodeValue.toLowerCase().includes(query)) return NodeFilter.FILTER_SKIP;
-      const p = node.parentElement;
-      if(!p || p.closest('script,style,#lightbox,.search')) return NodeFilter.FILTER_SKIP;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
-  const hit = walker.nextNode();
-  input.style.outline = '';
-  if(!hit){
-    input.style.outline = '2px solid #d8534f';
-    setTimeout(()=> input.style.outline = '', 900);
-    return;
+
+document.addEventListener('DOMContentLoaded', buildSearchIndex);
+if(document.readyState !== 'loading') buildSearchIndex();
+
+const siteSearchInput = document.getElementById('site-search');
+let searchDebounce;
+siteSearchInput.addEventListener('input', ()=>{
+  clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(()=> renderSearchResults(siteSearchInput.value), 160);
+});
+siteSearchInput.addEventListener('focus', ()=>{
+  if(siteSearchInput.value.trim().length>=2) renderSearchResults(siteSearchInput.value);
+});
+siteSearchInput.addEventListener('keydown', e=>{
+  if(e.key==='Enter'){
+    const first = document.querySelector('#search-results .sr-item');
+    if(first) first.click();
+  } else if(e.key==='Escape'){
+    closeSearchResults();
+    siteSearchInput.blur();
   }
-  const block = hit.parentElement.closest('p,li,h1,h2,h3,h4,summary,div.card,div.step,td,span') || hit.parentElement;
-  activateTabFor(block);
-  const det = block.closest('details');
-  if(det && !det.open) det.open = true;
-  setTimeout(()=>{
-    block.scrollIntoView({behavior:'smooth', block:'center'});
-    block.classList.remove('search-hit'); void block.offsetWidth;
-    block.classList.add('search-hit');
-    setTimeout(()=> block.classList.remove('search-hit'), 2100);
-  }, 120);
-}
-document.getElementById('site-search').addEventListener('keydown', e=>{
-  if(e.key === 'Enter') runSiteSearch();
+});
+document.addEventListener('click', e=>{
+  if(!e.target.closest('#search-wrap')) closeSearchResults();
 });
 
 // Tabs
