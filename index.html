@@ -212,6 +212,35 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
 .phasebar div:nth-child(3){background:var(--navy-900);}
 .phasebar div:nth-child(4){background:linear-gradient(120deg,var(--gold-700),var(--gold-600));}
 
+.flow-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px;}
+.flow-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);}
+.flow-head{border-radius:12px;padding:16px 16px 14px;margin-bottom:14px;position:relative;overflow:hidden;}
+.flow-head-manual{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));}
+.flow-head-auto{background:linear-gradient(135deg,var(--gold-700),var(--gold-600));}
+.flow-head h3{margin:6px 0 3px;font-size:16px;color:#fff;font-weight:800;}
+.flow-head p{margin:0;font-size:12px;color:rgba(255,255,255,.85);}
+.flow-badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;}
+.flow-badge-auto{background:rgba(10,26,61,.18);color:var(--navy-950);}
+
+.fstep{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#fafafd;border:1px solid var(--line);}
+.fconn{width:1px;height:12px;background:var(--line);margin-left:22px;}
+.fn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink-soft);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.flabel{font-size:12.6px;font-weight:600;color:var(--ink);}
+.fstep-manual{background:#eef3fb;border-color:#c9d8ef;}
+.fstep-auto{background:#fff8ea;border-color:#eddca0;}
+.fn-accent-manual{background:var(--navy-800);color:#fff;}
+.fn-accent-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#241a03;}
+.flabel-accent-manual{color:var(--navy-900);font-weight:800;}
+.flabel-accent-auto{color:#7a5a10;font-weight:800;}
+
+.flow-legend{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);}
+.flow-legend span{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-soft);}
+.dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block;}
+.dot-neutral{background:var(--line);border:1px solid #c7cce0;}
+.dot-manual{background:var(--navy-800);}
+.dot-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));}
+@media(max-width:900px){.flow-wrap{grid-template-columns:1fr;}}
+
 table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;min-width:520px;}
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;}
 table.dates th{background:var(--navy-900);color:#fff;text-align:left;padding:10px 14px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;}
@@ -521,6 +550,62 @@ img.shot:hover{transform:scale(1.015);}
     <div>2. Agendamento obrigatório na nova plataforma</div>
     <div>3. Conversão automática das audiências já designadas</div>
     <div>4. Realização obrigatória pelo Microsoft Teams</div>
+  </div>
+
+  <h2 class="sub"><span class="bar"></span>Fase II × Fase III — do agendamento manual à automação</h2>
+  <p class="sub-desc">A principal mudança entre as fases está em apenas duas etapas do fluxo: o agendamento e a certidão nos autos, que deixam de ser manuais e passam a ser automáticos com a integração entre o PJe e o Audiência Virtual.</p>
+  <div class="flow-wrap">
+    <div class="flow-col">
+      <div class="flow-head flow-head-manual">
+        <span class="flow-badge">✋ Manual</span>
+        <h3>Fase II</h3>
+        <p>Obrigatoriedade do agendamento manual</p>
+      </div>
+      <div class="fstep"><span class="fn">1</span><span class="flabel">Designação da audiência no sistema judicial</span></div>
+      <div class="fconn"></div>
+      <div class="fstep fstep-manual"><span class="fn fn-accent-manual">2</span><span class="flabel flabel-accent-manual">Agendamento manual no Audiência Virtual</span></div>
+      <div class="fconn"></div>
+      <div class="fstep fstep-manual"><span class="fn fn-accent-manual">3</span><span class="flabel flabel-accent-manual">Certidão acostada manualmente aos autos</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">4</span><span class="flabel">Realização da audiência</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">5</span><span class="flabel">Armazenamento e gestão das mídias</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">6</span><span class="flabel">Publicação dos links das mídias nos autos</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">7</span><span class="flabel">Transcrição e resumo por IA</span></div>
+    </div>
+
+    <div class="flow-col">
+      <div class="flow-head flow-head-auto">
+        <span class="flow-badge flow-badge-auto">⚡ Automático</span>
+        <h3>Fase III</h3>
+        <p>Replicação automática do PJe para o Audiência Virtual</p>
+      </div>
+      <div class="fstep"><span class="fn">1</span><span class="flabel">Designação da audiência no sistema judicial</span></div>
+      <div class="fconn"></div>
+      <div class="fstep fstep-auto"><span class="fn fn-accent-auto">2</span><span class="flabel flabel-accent-auto">Replicação automática no Audiência Virtual</span></div>
+      <div class="fconn"></div>
+      <div class="fstep fstep-auto"><span class="fn fn-accent-auto">3</span><span class="flabel flabel-accent-auto">Certidão acostada automaticamente aos autos</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">4</span><span class="flabel">Realização da audiência</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">5</span><span class="flabel">Armazenamento e gestão das mídias</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">6</span><span class="flabel">Publicação dos links das mídias nos autos</span></div>
+      <div class="fconn"></div>
+      <div class="fstep"><span class="fn">7</span><span class="flabel">Transcrição e resumo por IA</span></div>
+    </div>
+  </div>
+  <div class="flow-legend">
+    <span><i class="dot dot-neutral"></i>Etapas idênticas nas duas fases</span>
+    <span><i class="dot dot-manual"></i>Fase II — ação manual da unidade</span>
+    <span><i class="dot dot-auto"></i>Fase III — automatizado pela integração PJe ↔ audIN</span>
+  </div>
+
+  <div class="callout blue">
+    <div class="ic">ℹ️</div>
+    <p><b>PROJUDI.</b> Nas Varas do Sistema dos Juizados Especiais que utilizam o sistema judicial PROJUDI, a integração automática da pauta de audiências já está disponível. A implantação depende do cronograma por etapas definido pela Coordenação dos Juizados Especiais, unidade por unidade.</p>
   </div>
 
   <h2 class="sub"><span class="bar"></span>Datas por tipo de unidade</h2>
