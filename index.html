@@ -4,145 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal audIN — Audiência Inteligente | TJBA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy-950:#070f28;
-  --navy-900:#0a1a3d;
-  --navy-800:#0f244f;
-  --navy-700:#16305e;
-  --navy-600:#1e3d73;
-  --gold-700:#a5791f;
-  --gold-600:#c9a227;
-  --gold-500:#d9b64e;
-  --gold-300:#e8cf8c;
-  --bg:#f4f5f9;
+  /* Paleta institucional oficial (Manual de Uso e Padronizacao das Cores - SECOM) - uso exclusivo */
+  --azul-marinho:#002654;
+  --azul-institucional:#2C486B;
+  --dourado-claro:#DDB563;
+  --dourado-escuro:#B2884B;
+  --cinza-claro:#E6E6E6;
+  /* Mapeamento de compatibilidade (mesmos tokens usados no restante do CSS) */
+  --navy-950:#002654;
+  --navy-900:#002654;
+  --navy-800:#2C486B;
+  --navy-700:#2C486B;
+  --navy-600:#2C486B;
+  --gold-700:#B2884B;
+  --gold-600:#B2884B;
+  --gold-500:#DDB563;
+  --gold-300:#DDB563;
+  --bg:#E6E6E6;
   --card:#ffffff;
-  --ink:#101830;
-  --ink-soft:#4b5468;
-  --line:#e4e6ef;
+  --ink:#002654;
+  --ink-soft:#2C486B;
+  --line:#E6E6E6;
   --sb:296px;
   --radius:14px;
-  --shadow:0 10px 30px -12px rgba(10,26,61,.18);
-  font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
+  --shadow:0 10px 30px -12px rgba(0,38,84,.18);
+  font-family:'Public Sans',-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.skip-link{
+  position:absolute;top:-60px;left:8px;z-index:200;background:var(--azul-marinho);color:#fff;
+  padding:10px 18px;border-radius:8px;font-weight:700;font-size:0.9375rem;text-decoration:none;
+  transition:top .15s ease;
+}
+.skip-link:focus{top:8px;outline:3px solid var(--dourado-claro);outline-offset:2px;}
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible{
+  outline:3px solid var(--dourado-claro);outline-offset:2px;
+}
+.sb-brand .brand-name, .hero h1, footer b{
+  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
+  font-weight:600;
+}
 html{scroll-behavior:smooth;}
 body{
   margin:0;background:var(--bg);color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
 ::-webkit-scrollbar{width:10px;height:10px;}
-::-webkit-scrollbar-thumb{background:#c7cce0;border-radius:8px;}
+::-webkit-scrollbar-thumb{background:#E6E6E6;border-radius:8px;}
 ::-webkit-scrollbar-track{background:transparent;}
 
 /* ---------- SIDEBAR ---------- */
 #sidebar{
   position:fixed;top:0;left:0;bottom:0;width:var(--sb);
   background:linear-gradient(185deg,var(--navy-950) 0%,var(--navy-900) 55%,var(--navy-800) 100%);
-  color:#eef1fb;display:flex;flex-direction:column;z-index:150;
+  color:#ffffff;display:flex;flex-direction:column;z-index:150;
   border-right:1px solid rgba(255,255,255,.06);
   transition:transform .25s ease;
 }
-#sb-backdrop{position:fixed;inset:0;background:rgba(7,15,40,.55);z-index:140;display:none;}
+#sb-backdrop{position:fixed;inset:0;background:rgba(0,38,84,.55);z-index:140;display:none;}
 #sb-backdrop.show{display:block;}
 .sb-brand{
   padding:24px 22px 18px;display:flex;flex-direction:column;align-items:center;
   border-bottom:1px solid rgba(255,255,255,.08);
-  background:radial-gradient(120% 100% at 50% 0%, rgba(201,162,39,.14), transparent 60%);
+  background:radial-gradient(120% 100% at 50% 0%, rgba(178,136,75,.14), transparent 60%);
 }
 .sb-brand{padding:22px 18px 16px;display:flex;justify-content:center;}
 .logo-row{background:#fff;border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 20px -8px rgba(0,0,0,.45);}
-.logo-row .logo-div{width:1px;align-self:stretch;background:#e2e4ec;}
+.logo-row .logo-div{width:1px;align-self:stretch;background:#E6E6E6;}
 .logo-row img.audin-logo{width:112px;height:auto;display:block;}
 .logo-row img.tjba-logo{width:80px;height:auto;display:block;}
-.sb-brand .tag{margin-top:8px;font-size:10.5px;letter-spacing:.16em;color:var(--gold-300);text-transform:uppercase;font-weight:700;}
-.sb-brand .tjba{margin-top:14px;font-size:10.5px;color:#c3cae4;text-align:center;line-height:1.5;letter-spacing:.02em;}
-.sb-brand .tjba b{color:#fff;display:block;font-size:11.5px;letter-spacing:.05em;}
+.sb-brand .tag{margin-top:8px;font-size:0.6562rem;letter-spacing:.16em;color:var(--gold-300);text-transform:uppercase;font-weight:700;}
+.sb-brand .tjba{margin-top:14px;font-size:0.6562rem;color:#E6E6E6;text-align:center;line-height:1.5;letter-spacing:.02em;}
+.sb-brand .tjba b{color:#fff;display:block;font-size:0.7188rem;letter-spacing:.05em;}
 
 #sb-nav{flex:1;overflow-y:auto;padding:14px 12px 10px;}
 #sb-nav::-webkit-scrollbar{width:6px;}
 #sb-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:6px;}
-.nav-group-label{font-size:10px;letter-spacing:.14em;color:#7f8ab0;text-transform:uppercase;font-weight:700;margin:16px 10px 6px;}
+.nav-group-label{font-size:0.625rem;letter-spacing:.14em;color:#E6E6E6;text-transform:uppercase;font-weight:700;margin:16px 10px 6px;}
 .nav-group-label:first-child{margin-top:4px;}
 a.nav-link{
   display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;
-  color:#cfd6ec;text-decoration:none;font-size:13.4px;font-weight:600;letter-spacing:.01em;
+  color:#E6E6E6;text-decoration:none;font-size:0.8375rem;font-weight:600;letter-spacing:.01em;
   transition:background .15s,color .15s;margin-bottom:2px;
 }
 a.nav-link .n{
   flex:none;width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,.08);
-  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a9b4d6;
+  display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:800;color:#E6E6E6;
 }
 a.nav-link:hover{background:rgba(255,255,255,.07);color:#fff;}
-a.nav-link.active{background:linear-gradient(90deg,rgba(201,162,39,.24),rgba(201,162,39,.06));color:#fff;}
-a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#241a03;}
+a.nav-link.active{background:linear-gradient(90deg,rgba(178,136,75,.24),rgba(178,136,75,.06));color:#fff;}
+a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;}
 
 .sb-foot{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.08);}
 .sb-foot .btn-support{
   display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));
-  color:#241a03;text-decoration:none;font-weight:800;font-size:12.5px;padding:10px 12px;border-radius:10px;justify-content:center;
-  box-shadow:0 6px 16px -6px rgba(201,162,39,.6);
+  color:#002654;text-decoration:none;font-weight:800;font-size:0.7812rem;padding:10px 12px;border-radius:10px;justify-content:center;
+  box-shadow:0 6px 16px -6px rgba(178,136,75,.6);
 }
-.sb-foot .meta{margin-top:10px;font-size:10px;color:#7f8ab0;text-align:center;letter-spacing:.02em;}
+.sb-foot .meta{margin-top:10px;font-size:0.625rem;color:#E6E6E6;text-align:center;letter-spacing:.02em;}
 
 /* ---------- MAIN ---------- */
 #main{margin-left:var(--sb);min-height:100vh;}
 
 /* Top progress / breadcrumb bar */
 #topbar{
-  position:sticky;top:0;z-index:40;background:rgba(244,245,249,.86);backdrop-filter:blur(8px);
+  position:sticky;top:0;z-index:40;background:rgba(230,230,230,.86);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
 .topbar-row1{display:flex;align-items:center;gap:14px;min-width:0;}
 #hamburger{
   display:none;flex:none;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);
-  background:#fff;font-size:17px;cursor:pointer;color:var(--navy-900);align-items:center;justify-content:center;
+  background:#fff;font-size:1.0625rem;cursor:pointer;color:var(--navy-900);align-items:center;justify-content:center;
 }
-#topbar .crumb{font-size:12.5px;color:var(--ink-soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#topbar .crumb{font-size:0.7812rem;color:var(--ink-soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #topbar .crumb b{color:var(--navy-900);}
 #topbar .search{
   position:relative;
   display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;
-  padding:7px 14px;font-size:12.5px;color:#8892ab;min-width:240px;flex:none;
+  padding:7px 14px;font-size:0.7812rem;color:#2C486B;min-width:240px;flex:none;
 }
-#topbar .search:focus-within{border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(201,162,39,.15);}
+#topbar .search:focus-within{border-color:var(--gold-700);box-shadow:0 0 0 3px rgba(178,136,75,.15);}
 #topbar .search input{
-  border:none;outline:none;background:transparent;font-size:12.5px;color:var(--ink);flex:1;font-family:inherit;
+  border:none;outline:none;background:transparent;font-size:0.7812rem;color:var(--ink);flex:1;font-family:inherit;
 }
-#topbar .search input::placeholder{color:#a3abc2;}
+#topbar .search input::placeholder{color:#E6E6E6;}
 
 #search-results{
   display:none;position:absolute;top:calc(100% + 10px);right:0;width:440px;max-width:calc(100vw - 40px);max-height:70vh;overflow-y:auto;
-  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 44px -14px rgba(10,26,61,.35);
+  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 44px -14px rgba(0,38,84,.35);
   padding:8px;z-index:60;
 }
 #search-results.open{display:block;}
 .sr-group{margin-bottom:4px;}
 .sr-group:last-child{margin-bottom:0;}
 .sr-group-label{
-  font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-700);
+  font-size:0.625rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-900);
   padding:9px 10px 4px;
 }
 .sr-item{
   display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;border-radius:10px;
   padding:8px 10px;font-family:inherit;
 }
-.sr-item:hover,.sr-item.active{background:#f5f6fb;}
-.sr-item .sr-title{font-size:12.8px;font-weight:700;color:var(--navy-900);margin-bottom:2px;}
-.sr-item .sr-snippet{font-size:11.8px;color:var(--ink-soft);line-height:1.4;}
-.sr-item mark{background:#fdf0c0;color:#5a4408;border-radius:3px;padding:0 2px;font-weight:700;}
+.sr-item:hover,.sr-item.active{background:#E6E6E6;}
+.sr-item .sr-title{font-size:0.8rem;font-weight:700;color:var(--navy-900);margin-bottom:2px;}
+.sr-item .sr-snippet{font-size:0.7375rem;color:var(--ink-soft);line-height:1.4;}
+.sr-item mark{background:#DDB563;color:#002654;border-radius:3px;padding:0 2px;font-weight:700;}
 .sr-empty{padding:22px 14px;text-align:center;}
-.sr-empty .sr-empty-title{font-size:13px;font-weight:700;color:var(--navy-900);margin-bottom:6px;}
-.sr-empty .sr-empty-sub{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px;}
-.sr-empty a{font-size:12px;font-weight:800;color:var(--gold-700);text-decoration:underline;}
-.sr-footer{border-top:1px solid var(--line);margin-top:6px;padding:9px 10px 4px;font-size:10.5px;color:#9aa2b8;text-align:center;}
+.sr-empty .sr-empty-title{font-size:0.8125rem;font-weight:700;color:var(--navy-900);margin-bottom:6px;}
+.sr-empty .sr-empty-sub{font-size:0.75rem;color:var(--ink-soft);line-height:1.5;margin-bottom:12px;}
+.sr-empty a{font-size:0.75rem;font-weight:800;color:var(--navy-900);text-decoration:underline;}
+.sr-footer{border-top:1px solid var(--line);margin-top:6px;padding:9px 10px 4px;font-size:0.6562rem;color:#2C486B;text-align:center;}
 .search-hit{
   animation:hitpulse 2.1s ease;border-radius:8px;
 }
 @keyframes hitpulse{
-  0%{box-shadow:0 0 0 0 rgba(201,162,39,.55);background:rgba(201,162,39,.22);}
-  70%{box-shadow:0 0 0 10px rgba(201,162,39,0);background:rgba(201,162,39,.1);}
-  100%{box-shadow:0 0 0 0 rgba(201,162,39,0);background:transparent;}
+  0%{box-shadow:0 0 0 0 rgba(178,136,75,.55);background:rgba(178,136,75,.22);}
+  70%{box-shadow:0 0 0 10px rgba(178,136,75,0);background:rgba(178,136,75,.1);}
+  100%{box-shadow:0 0 0 0 rgba(178,136,75,0);background:transparent;}
 }
 
 section.page{padding:56px 44px 30px;max-width:1180px;}
@@ -150,15 +174,15 @@ section.page{padding:56px 44px 30px;max-width:1180px;}
 section.page.narrow{max-width:980px;}
 
 .eyebrow{
-  display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  font-weight:800;color:var(--gold-700);background:linear-gradient(90deg,rgba(201,162,39,.15),rgba(201,162,39,.02));
+  display:inline-flex;align-items:center;gap:8px;font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--navy-900);background:linear-gradient(90deg,rgba(178,136,75,.15),rgba(178,136,75,.02));
   padding:6px 12px;border-radius:999px;margin-bottom:14px;
 }
-h1.hd{font-size:32px;color:var(--navy-900);margin:0 0 10px;letter-spacing:-.01em;font-weight:800;}
-p.lede{font-size:15.5px;color:var(--ink-soft);max-width:760px;line-height:1.65;margin:0 0 34px;}
-h2.sub{font-size:19px;color:var(--navy-900);font-weight:800;margin:40px 0 6px;display:flex;align-items:center;gap:10px;}
+.hd{font-size:2rem;color:var(--navy-900);margin:0 0 10px;letter-spacing:-.01em;font-weight:800;}
+p.lede{font-size:0.9688rem;color:var(--ink-soft);max-width:760px;line-height:1.65;margin:0 0 34px;}
+h2.sub{font-size:1.1875rem;color:var(--navy-900);font-weight:800;margin:40px 0 6px;display:flex;align-items:center;gap:10px;}
 h2.sub .bar{width:5px;height:19px;border-radius:3px;background:linear-gradient(180deg,var(--gold-500),var(--gold-700));}
-p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760px;line-height:1.6;}
+p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:760px;line-height:1.6;}
 
 .grid{display:grid;gap:18px;}
 .grid.cols-4{grid-template-columns:repeat(4,1fr);}
@@ -169,11 +193,11 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
 }
-.card h3{margin:10px 0 6px;font-size:14.5px;color:var(--navy-900);font-weight:800;}
-.card p{margin:0;font-size:12.8px;color:var(--ink-soft);line-height:1.55;}
+.card h3{margin:10px 0 6px;font-size:0.9062rem;color:var(--navy-900);font-weight:800;}
+.card p{margin:0;font-size:0.8rem;color:var(--ink-soft);line-height:1.55;}
 .icn{
   width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--navy-800),var(--navy-700));color:var(--gold-300);font-size:17px;font-weight:800;
+  background:linear-gradient(135deg,var(--navy-800),var(--navy-700));color:var(--gold-300);font-size:1.0625rem;font-weight:800;
 }
 
 /* HERO */
@@ -184,15 +208,15 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
 }
 .hero::after{
   content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;
-  background:radial-gradient(circle,rgba(201,162,39,.35),transparent 70%);
+  background:radial-gradient(circle,rgba(178,136,75,.35),transparent 70%);
 }
 .hero-inner{display:flex;align-items:center;gap:38px;position:relative;z-index:2;}
 .hero-logo-plate{flex:none;background:#fff;border-radius:20px;padding:20px 26px;box-shadow:0 16px 34px -12px rgba(0,0,0,.5);}
 .hero-logo{width:130px;display:block;}
-.hero h1{font-size:30px;margin:0 0 10px;font-weight:800;letter-spacing:-.01em;}
-.hero p{font-size:14.5px;color:#cfd6ec;line-height:1.65;max-width:640px;margin:0 0 18px;}
+.hero h1{font-size:1.875rem;margin:0 0 10px;font-weight:800;letter-spacing:-.01em;}
+.hero p{font-size:0.9062rem;color:#E6E6E6;line-height:1.65;max-width:640px;margin:0 0 18px;}
 .hero .chips{display:flex;flex-wrap:wrap;gap:8px;}
-.chip{font-size:11.5px;font-weight:700;color:#101830;background:linear-gradient(135deg,var(--gold-500),var(--gold-300));padding:6px 12px;border-radius:999px;}
+.chip{font-size:0.7188rem;font-weight:700;color:var(--azul-marinho);background:var(--dourado-claro);padding:6px 12px;border-radius:999px;}
 
 /* TIMELINE */
 .timeline{border-left:2px solid var(--line);margin-left:10px;padding-left:26px;display:flex;flex-direction:column;gap:22px;}
@@ -201,12 +225,12 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
   content:"";position:absolute;left:-33px;top:2px;width:16px;height:16px;border-radius:50%;
   background:linear-gradient(135deg,var(--gold-500),var(--gold-700));border:3px solid #fff;box-shadow:0 0 0 2px var(--gold-600);
 }
-.t-item .date{font-size:11.5px;font-weight:800;color:var(--gold-700);text-transform:uppercase;letter-spacing:.06em;}
-.t-item h4{margin:3px 0 5px;font-size:14.5px;color:var(--navy-900);font-weight:800;}
-.t-item p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.55;}
+.t-item .date{font-size:0.7188rem;font-weight:800;color:var(--navy-900);text-transform:uppercase;letter-spacing:.06em;}
+.t-item h4{margin:3px 0 5px;font-size:0.9062rem;color:var(--navy-900);font-weight:800;}
+.t-item p{margin:0;font-size:0.8125rem;color:var(--ink-soft);line-height:1.55;}
 
 .phasebar{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:26px 0 8px;border-radius:10px;overflow:hidden;}
-.phasebar div{padding:12px 10px;font-size:11.5px;font-weight:800;color:#fff;text-align:center;letter-spacing:.01em;}
+.phasebar div{padding:12px 10px;font-size:0.7188rem;font-weight:800;color:#fff;text-align:center;letter-spacing:.01em;}
 .phasebar div:nth-child(1){background:var(--navy-700);}
 .phasebar div:nth-child(2){background:var(--navy-800);}
 .phasebar div:nth-child(3){background:var(--navy-900);}
@@ -217,48 +241,48 @@ p.sub-desc{color:var(--ink-soft);font-size:13.8px;margin:0 0 20px;max-width:760p
 .flow-head{border-radius:12px;padding:16px 16px 14px;margin-bottom:14px;position:relative;overflow:hidden;}
 .flow-head-manual{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));}
 .flow-head-auto{background:linear-gradient(135deg,var(--gold-700),var(--gold-600));}
-.flow-head h3{margin:6px 0 3px;font-size:16px;color:#fff;font-weight:800;}
-.flow-head p{margin:0;font-size:12px;color:rgba(255,255,255,.85);}
-.flow-badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;}
-.flow-badge-auto{background:rgba(10,26,61,.18);color:var(--navy-950);}
+.flow-head h3{margin:6px 0 3px;font-size:1rem;color:#fff;font-weight:800;}
+.flow-head p{margin:0;font-size:0.75rem;color:rgba(255,255,255,.85);}
+.flow-badge{display:inline-block;font-size:0.6562rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;}
+.flow-badge-auto{background:rgba(0,38,84,.18);color:var(--navy-950);}
 
-.fstep{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#fafafd;border:1px solid var(--line);}
+.fstep{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#ffffff;border:1px solid var(--line);}
 .fconn{width:1px;height:12px;background:var(--line);margin-left:22px;}
-.fn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink-soft);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-.flabel{font-size:12.6px;font-weight:600;color:var(--ink);}
-.fstep-manual{background:#eef3fb;border-color:#c9d8ef;}
-.fstep-auto{background:#fff8ea;border-color:#eddca0;}
+.fn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink-soft);font-size:0.6875rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.flabel{font-size:0.7875rem;font-weight:600;color:var(--ink);}
+.fstep-manual{background:#E6E6E6;border-color:#2C486B;}
+.fstep-auto{background:#E6E6E6;border-color:#B2884B;}
 .fn-accent-manual{background:var(--navy-800);color:#fff;}
-.fn-accent-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#241a03;}
+.fn-accent-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;}
 .flabel-accent-manual{color:var(--navy-900);font-weight:800;}
-.flabel-accent-auto{color:#7a5a10;font-weight:800;}
+.flabel-accent-auto{color:#002654;font-weight:800;}
 
 .flow-legend{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);}
-.flow-legend span{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-soft);}
+.flow-legend span{display:flex;align-items:center;gap:7px;font-size:0.75rem;color:var(--ink-soft);}
 .dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block;}
-.dot-neutral{background:var(--line);border:1px solid #c7cce0;}
+.dot-neutral{background:var(--line);border:1px solid #E6E6E6;}
 .dot-manual{background:var(--navy-800);}
 .dot-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));}
 @media(max-width:900px){.flow-wrap{grid-template-columns:1fr;}}
 
-table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;min-width:520px;}
+table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:0.8125rem;min-width:520px;}
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;}
-table.dates th{background:var(--navy-900);color:#fff;text-align:left;padding:10px 14px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;}
+table.dates th{background:var(--navy-900);color:#fff;text-align:left;padding:10px 14px;font-size:0.7188rem;letter-spacing:.04em;text-transform:uppercase;}
 table.dates th:first-child{border-radius:10px 0 0 0;}
 table.dates th:last-child{border-radius:0 10px 0 0;}
 table.dates td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--ink-soft);}
-table.dates tr:nth-child(even) td{background:#fafafd;}
+table.dates tr:nth-child(even) td{background:#ffffff;}
 table.dates td b{color:var(--navy-900);}
 
 .callout{
-  display:flex;gap:14px;background:linear-gradient(90deg,#fff8ea,#fffdf6);border:1px solid #f0dfa8;
+  display:flex;gap:14px;background:linear-gradient(90deg,#E6E6E6,#E6E6E6);border:1px solid #DDB563;
   border-left:4px solid var(--gold-600);border-radius:12px;padding:16px 18px;margin:22px 0;
 }
-.callout .ic{font-size:19px;}
-.callout p{margin:0;font-size:13px;color:#6b5a1f;line-height:1.6;}
-.callout p b{color:#4d3f10;}
+.callout .ic{font-size:1.1875rem;}
+.callout p{margin:0;font-size:0.8125rem;color:#002654;line-height:1.6;}
+.callout p b{color:#002654;}
 
-.callout.blue{background:linear-gradient(90deg,#eef3ff,#f8faff);border-color:#c8d6f5;border-left-color:var(--navy-700);}
+.callout.blue{background:linear-gradient(90deg,#E6E6E6,#E6E6E6);border-color:#2C486B;border-left-color:var(--navy-700);}
 .callout.blue p{color:var(--navy-800);}
 .callout.blue p b{color:var(--navy-900);}
 
@@ -268,23 +292,23 @@ table.dates td b{color:var(--navy-900);}
 .step:last-child{border-bottom:none;}
 .step .num{
   counter-increment:step;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--navy-800),var(--navy-700));
-  color:var(--gold-300);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;
+  color:var(--gold-300);font-weight:800;font-size:0.875rem;display:flex;align-items:center;justify-content:center;
 }
 .step .num::before{content:counter(step);}
-.step h4{margin:2px 0 6px;font-size:14.5px;color:var(--navy-900);font-weight:800;}
-.step p{margin:0 0 8px;font-size:13.2px;color:var(--ink-soft);line-height:1.62;}
+.step h4{margin:2px 0 6px;font-size:0.9062rem;color:var(--navy-900);font-weight:800;}
+.step p{margin:0 0 8px;font-size:0.825rem;color:var(--ink-soft);line-height:1.62;}
 .step ul{margin:6px 0 0;padding-left:18px;}
-.step li{font-size:13px;color:var(--ink-soft);margin-bottom:4px;line-height:1.55;}
+.step li{font-size:0.8125rem;color:var(--ink-soft);margin-bottom:4px;line-height:1.55;}
 .step img.shot{max-width:340px;border-radius:10px;border:1px solid var(--line);box-shadow:var(--shadow);margin-top:10px;display:block;}
-.step figcaption{font-size:11px;color:#8a93ac;margin-top:6px;font-style:italic;}
+.step figcaption{font-size:0.6875rem;color:#2C486B;margin-top:6px;font-style:italic;}
 
 /* TABS */
 .tabbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:14px;}
 .tabbtn{
-  border:1px solid var(--line);background:#fff;color:var(--ink-soft);font-weight:700;font-size:12.6px;
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);font-weight:700;font-size:0.7875rem;
   padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s;
 }
-.tabbtn:hover{border-color:var(--gold-500);color:var(--navy-900);}
+.tabbtn:hover{border-color:var(--gold-700);color:var(--navy-900);}
 .tabbtn.active{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));color:#fff;border-color:transparent;}
 .tabpanel{display:none;}
 .tabpanel.active{display:block;animation:fadein .25s ease;}
@@ -294,67 +318,67 @@ table.dates td b{color:var(--navy-900);}
 .reqlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
 .reqlist li{
   display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;
-  font-size:13px;color:var(--ink-soft);line-height:1.5;box-shadow:var(--shadow);
+  font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;box-shadow:var(--shadow);
 }
 .reqlist li .chk{
   flex:none;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));
-  color:#241a03;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px;
+  color:#002654;font-size:0.6875rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px;
 }
 .reqlist li b{color:var(--navy-900);}
 
 /* FAQ ACCORDION */
 .faq{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff;box-shadow:var(--shadow);}
 .faq summary{
-  list-style:none;cursor:pointer;padding:16px 18px;font-weight:800;font-size:13.6px;color:var(--navy-900);
+  list-style:none;cursor:pointer;padding:16px 18px;font-weight:800;font-size:0.85rem;color:var(--navy-900);
   display:flex;justify-content:space-between;align-items:center;gap:10px;
 }
 .faq summary::-webkit-details-marker{display:none;}
-.faq summary::after{content:"+";font-size:18px;color:var(--gold-700);font-weight:900;transition:.2s;flex:none;}
+.faq summary::after{content:"+";font-size:1.125rem;color:var(--navy-900);font-weight:900;transition:.2s;flex:none;}
 .faq[open] summary::after{content:"–";}
-.faq .faq-body{padding:0 18px 18px;font-size:13.2px;color:var(--ink-soft);line-height:1.65;}
+.faq .faq-body{padding:0 18px 18px;font-size:0.825rem;color:var(--ink-soft);line-height:1.65;}
 .faq .faq-body b{color:var(--navy-900);}
-.faq .tagbox{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-700);background:#fdf3d8;padding:3px 9px;border-radius:6px;margin-bottom:8px;}
+.faq .tagbox{display:inline-block;font-size:0.625rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--navy-900);background:#E6E6E6;padding:3px 9px;border-radius:6px;margin-bottom:8px;}
 
 /* FIG INDEX */
 .figindex{columns:2;column-gap:26px;}
-.figindex .fi{display:flex;gap:10px;font-size:12.4px;color:var(--ink-soft);padding:7px 0;border-bottom:1px dashed var(--line);break-inside:avoid;}
+.figindex .fi{display:flex;gap:10px;font-size:0.775rem;color:var(--ink-soft);padding:7px 0;border-bottom:1px dashed var(--line);break-inside:avoid;}
 .figindex .fi b{color:var(--navy-900);flex:none;}
 
 .glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
 .gterm{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);}
-.gterm b{display:block;font-size:13px;color:var(--gold-700);margin-bottom:4px;}
-.gterm span{font-size:12.6px;color:var(--ink-soft);line-height:1.55;}
+.gterm b{display:block;font-size:0.8125rem;color:var(--navy-900);margin-bottom:4px;}
+.gterm span{font-size:0.7875rem;color:var(--ink-soft);line-height:1.55;}
 @media(max-width:900px){.glossary{grid-template-columns:1fr;}}
 
 /* SUPPORT */
 .support-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;}
 .contact-card{background:linear-gradient(150deg,var(--navy-950),var(--navy-800));color:#fff;border-radius:18px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
-.contact-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.3),transparent 70%);}
-.contact-card h3{margin:0 0 6px;font-size:17px;position:relative;z-index:2;}
-.contact-card p{color:#c3cae4;font-size:13px;margin:0 0 20px;position:relative;z-index:2;}
+.contact-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(178,136,75,.3),transparent 70%);}
+.contact-card h3{margin:0 0 6px;font-size:1.0625rem;position:relative;z-index:2;}
+.contact-card p{color:#E6E6E6;font-size:0.8125rem;margin:0 0 20px;position:relative;z-index:2;}
 .contact-row{display:flex;align-items:center;gap:12px;position:relative;z-index:2;}
 .contact-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;position:relative;z-index:2;}
 .contact-cols .contact-row{flex-direction:column;align-items:flex-start;gap:8px;background:rgba(255,255,255,.07);border-radius:12px;padding:14px;}
-.contact-row .ic{width:34px;height:34px;border-radius:10px;background:rgba(201,162,39,.18);color:var(--gold-300);display:flex;align-items:center;justify-content:center;font-size:15px;flex:none;}
-.contact-row div b{display:block;font-size:13.5px;}
-.contact-row div span{font-size:12px;color:#c3cae4;}
+.contact-row .ic{width:34px;height:34px;border-radius:10px;background:var(--navy-900);color:var(--gold-300);display:flex;align-items:center;justify-content:center;font-size:0.9375rem;flex:none;}
+.contact-row div b{display:block;font-size:0.8438rem;}
+.contact-row div span{font-size:0.75rem;color:#E6E6E6;}
 .contact-extra{margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:2;flex-wrap:wrap;}
 .contact-hours{display:flex;align-items:center;gap:10px;}
-.contact-hours .ic{width:34px;height:34px;border-radius:10px;background:rgba(201,162,39,.18);color:var(--gold-300);display:flex;align-items:center;justify-content:center;font-size:15px;flex:none;}
-.contact-hours span:last-child{font-size:11.5px;color:#c3cae4;}
-.contact-hours b{display:block;font-size:12.5px;}
-.cta-btn{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#241a03;font-weight:800;font-size:12.5px;padding:10px 16px;border-radius:10px;text-decoration:none;white-space:nowrap;}
+.contact-hours .ic{width:34px;height:34px;border-radius:10px;background:var(--navy-900);color:var(--gold-300);display:flex;align-items:center;justify-content:center;font-size:0.9375rem;flex:none;}
+.contact-hours span:last-child{font-size:0.7188rem;color:#E6E6E6;}
+.contact-hours b{display:block;font-size:0.7812rem;}
+.cta-btn{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;font-weight:800;font-size:0.7812rem;padding:10px 16px;border-radius:10px;text-decoration:none;white-space:nowrap;}
 
 .linkbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
-.linkchip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--navy-900);text-decoration:none;box-shadow:var(--shadow);transition:.15s;}
-.linkchip:hover{border-color:var(--gold-500);color:var(--gold-700);}
+.linkchip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:0.8125rem;font-weight:700;color:var(--navy-900);text-decoration:none;box-shadow:var(--shadow);transition:.15s;}
+.linkchip:hover{border-color:var(--gold-700);color:var(--navy-900);}
 .linkchip.news{align-items:flex-start;max-width:320px;font-weight:600;line-height:1.4;}
 
-footer{padding:30px 44px 50px;color:#8892ab;font-size:11.5px;border-top:1px solid var(--line);line-height:1.7;text-align:left;}
+footer{padding:30px 44px 50px;color:#2C486B;font-size:0.7188rem;border-top:1px solid var(--line);line-height:1.7;text-align:left;}
 footer b{color:var(--navy-900);}
 
-.quotebox{background:#f7f8fc;border:1px solid var(--line);border-left:4px solid var(--navy-700);border-radius:10px;padding:15px 17px;margin:12px 0;}
-.quotebox p{margin:0 0 10px;font-size:12.6px;color:var(--ink-soft);font-style:italic;line-height:1.65;}
+.quotebox{background:#E6E6E6;border:1px solid var(--line);border-left:4px solid var(--navy-700);border-radius:10px;padding:15px 17px;margin:12px 0;}
+.quotebox p{margin:0 0 10px;font-size:0.7875rem;color:var(--ink-soft);font-style:italic;line-height:1.65;}
 .quotebox p:last-child{margin-bottom:0;}
 .quotebox b{font-style:normal;color:var(--navy-900);}
 
@@ -366,22 +390,22 @@ img.shot:hover{transform:scale(1.015);}
 .fi-card img{width:100%;display:block;cursor:zoom-in;border-bottom:1px solid var(--line);transition:transform .15s;}
 .fi-card img:hover{transform:scale(1.02);}
 .fi-card .fi-cap{padding:9px 11px;}
-.fi-card .fi-cap b{display:block;font-size:11px;color:var(--gold-700);font-weight:800;margin-bottom:2px;}
-.fi-card .fi-cap span{font-size:11.5px;color:var(--ink-soft);line-height:1.4;}
+.fi-card .fi-cap b{display:block;font-size:0.6875rem;color:var(--navy-900);font-weight:800;margin-bottom:2px;}
+.fi-card .fi-cap span{font-size:0.7188rem;color:var(--ink-soft);line-height:1.4;}
 @media(max-width:1050px){.figindex{grid-template-columns:repeat(2,1fr);}}
 
 #lightbox{
-  position:fixed;inset:0;background:rgba(7,15,40,.86);z-index:200;display:none;
+  position:fixed;inset:0;background:rgba(0,38,84,.86);z-index:200;display:none;
   align-items:center;justify-content:center;padding:40px;backdrop-filter:blur(3px);
 }
 #lightbox.open{display:flex;}
 #lightbox img{max-width:min(1100px,92vw);max-height:88vh;border-radius:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
 #lightbox .lb-close{
   position:absolute;top:24px;right:32px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);
-  color:#fff;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#fff;border:none;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
 }
 #lightbox .lb-close:hover{background:rgba(255,255,255,.22);}
-#lightbox figcaption{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:#dfe3f2;font-size:13px;}
+#lightbox figcaption{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:#E6E6E6;font-size:0.8125rem;}
 
 @media(max-width:980px){
   :root{--sb:300px;}
@@ -406,18 +430,18 @@ img.shot:hover{transform:scale(1.015);}
 }
 
 @media(max-width:640px){
-  h1.hd{font-size:24px;}
-  .hero h1{font-size:24px;}
+  .hd{font-size:1.5rem;}
+  .hero h1{font-size:1.5rem;}
   .hero-logo-plate{padding:14px 18px;}
   .hero-logo{width:96px;}
-  h2.sub{font-size:17px;}
-  .eyebrow{font-size:10px;}
+  h2.sub{font-size:1.0625rem;}
+  .eyebrow{font-size:0.625rem;}
   section.page{padding:24px 14px;}
   #topbar{padding:10px 14px;}
-  #topbar .crumb{font-size:11.5px;}
+  #topbar .crumb{font-size:0.7188rem;}
   .figindex{grid-template-columns:1fr;}
   .tabbar{gap:6px;}
-  .tabbtn{padding:8px 12px;font-size:11.8px;}
+  .tabbtn{padding:8px 12px;font-size:0.7375rem;}
   .step{grid-template-columns:36px 1fr;}
   img.shot{max-width:100% !important;}
   .step img.shot{max-width:100% !important;}
@@ -428,6 +452,8 @@ img.shot:hover{transform:scale(1.015);}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo principal</a>
 
 <!-- ============ SIDEBAR ============ -->
 <aside id="sidebar">
@@ -521,8 +547,8 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 02 REGULAMENTAÇÃO -->
 <section class="page" id="regulamentacao">
   <span class="eyebrow">Base normativa</span>
-  <h1 class="hd">Regulamentação — Decreto Judiciário nº 1059/2026</h1>
-  <p class="lede">Publicado em 21 de julho de 2026 e disponibilizado no Diário da Justiça Eletrônico de 22 de julho de 2026, o decreto regulamenta a utilização do Microsoft Teams como plataforma oficial para a realização de audiências e demais atos processuais por videoconferência nas unidades judiciárias de 1º grau do TJBA. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Clique aqui</a> para acessar a íntegra do Decreto Judiciário nº 1059/2026.</p>
+  <h2 class="hd">Regulamentação — Decreto Judiciário nº 1059/2026</h2>
+  <p class="lede">Publicado em 21 de julho de 2026 e disponibilizado no Diário da Justiça Eletrônico de 22 de julho de 2026, o decreto regulamenta a utilização do Microsoft Teams como plataforma oficial para a realização de audiências e demais atos processuais por videoconferência nas unidades judiciárias de 1º grau do TJBA. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para acessar a íntegra do Decreto Judiciário nº 1059/2026.</p>
 
   <h2 class="sub"><span class="bar"></span>O que o decreto estabelece</h2>
   <div class="grid cols-2">
@@ -612,6 +638,7 @@ img.shot:hover{transform:scale(1.015);}
   <p class="sub-desc">Unidades de 1º grau que utilizam o <b>PJe</b> — obrigatoriedade de agendamento pela nova plataforma:</p>
   <div class="table-scroll">
   <table class="dates">
+    <caption class="sr-only">Cronograma de obrigatoriedade de agendamento e realização de audiências pelo Audiência Virtual, por entrância, para unidades que utilizam o PJe</caption>
     <tr><th>Entrância</th><th>Agendamento obrigatório a partir de</th><th>Realização exclusiva pelo Teams a partir de</th></tr>
     <tr><td><b>Final</b></td><td>3 de agosto de 2026</td><td>1º de setembro de 2026</td></tr>
     <tr><td><b>Intermediária</b></td><td>15 de agosto de 2026</td><td>14 de setembro de 2026</td></tr>
@@ -648,7 +675,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 03 HABILITAÇÃO -->
 <section class="page" id="habilitacao">
   <span class="eyebrow">Usuários internos</span>
-  <h1 class="hd">Procedimentos de habilitação</h1>
+  <h2 class="hd">Procedimentos de habilitação</h2>
   <p class="lede">Antes de operar o aplicativo Audiência Virtual e o sistema audIN, magistrados(as) e servidores(as) precisam reunir os seguintes requisitos e concluir a preparação do ambiente de trabalho.</p>
 
   <h2 class="sub"><span class="bar"></span>Requisitos básicos</h2>
@@ -676,7 +703,7 @@ img.shot:hover{transform:scale(1.015);}
       <div class="num"></div>
       <div>
         <h4>Habilitar o Múltiplo Fator de Autenticação (MFA)</h4>
-        <p>Caso ainda não utilize o MFA em outros sistemas do TJBA, acesse o manual de habilitação no aparelho móvel disponível em <a href="https://www.tjba.jus.br/portal/seguranca-digital/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">tjba.jus.br/portal/seguranca-digital</a> e siga o passo a passo de configuração.</p>
+        <p>Caso ainda não utilize o MFA em outros sistemas do TJBA, acesse o manual de habilitação no aparelho móvel disponível em <a href="https://www.tjba.jus.br/portal/seguranca-digital/" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">tjba.jus.br/portal/seguranca-digital</a> e siga o passo a passo de configuração.</p>
       </div>
     </div>
     <div class="step">
@@ -699,7 +726,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 04 GUIA INTERNO -->
 <section class="page" id="guia-interno">
   <span class="eyebrow">Usuários internos</span>
-  <h1 class="hd">Guia rápido — Usuários internos</h1>
+  <h2 class="hd">Guia rápido — Usuários internos</h2>
   <p class="lede">Fluxo completo do ciclo de vida da audiência: agendamento, gravação, sincronismo, publicação de mídias, consulta de pauta e degravação com IA.</p>
 
   <div class="tabbar" id="tabs-interno">
@@ -816,7 +843,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 05 GUIA EXTERNO -->
 <section class="page" id="guia-externo">
   <span class="eyebrow">Usuários externos</span>
-  <h1 class="hd">Guia rápido — Acesso às audiências virtuais</h1>
+  <h2 class="hd">Guia rápido — Acesso às audiências virtuais</h2>
   <p class="lede">Para partes (autor e réu), advogados(as), representantes do Ministério Público e da Defensoria Pública, testemunhas e demais participantes autorizados.</p>
 
   <div class="tabbar" id="tabs-externo">
@@ -955,7 +982,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 06 FAQ -->
 <section class="page narrow" id="faq">
   <span class="eyebrow">Central de ajuda</span>
-  <h1 class="hd">Dúvidas frequentes <span style="color:var(--gold-700);font-weight:800;">(119)</span></h1>
+  <h2 class="hd">Dúvidas frequentes <span style="color:var(--navy-900);font-weight:800;">(119)</span></h2>
   <p class="lede">Respostas às perguntas mais comuns de usuários internos e externos sobre o ecossistema audIN.</p>
 
   <details class="faq">
@@ -983,7 +1010,7 @@ img.shot:hover{transform:scale(1.015);}
       <span class="tagbox">Interno · Fase III</span>
       <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade deverão ser agendadas manualmente no aplicativo Audiência Virtual.</p>
       <p>Após o agendamento, a unidade deverá intimar as partes e demais participantes sobre o novo link de acesso à audiência, utilizando o modelo de certidão indicado acima.</p>
-      <p>Esse procedimento deverá ser adotado conforme as datas estabelecidas no item 1, Seção IV do cronograma anexo ao Decreto — Fase de Obrigatoriedade de Realização das Audiências. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar a íntegra do decreto.</p>
+      <p>Esse procedimento deverá ser adotado conforme as datas estabelecidas no item 1, Seção IV do cronograma anexo ao Decreto — Fase de Obrigatoriedade de Realização das Audiências. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar a íntegra do decreto.</p>
     </div>
   </details>
 
@@ -1061,7 +1088,7 @@ img.shot:hover{transform:scale(1.015);}
     </div>
   </details>
 
-  <h2 class="sub"><span class="bar"></span>Momento audIN <span style="color:var(--ink-soft);font-weight:700;font-size:15px;">(107)</span></h2>
+  <h2 class="sub"><span class="bar"></span>Momento audIN <span style="color:var(--ink-soft);font-weight:700;font-size:0.9375rem;">(107)</span></h2>
   <p class="sub-desc">Respostas às dúvidas enviadas pelo formulário dos eventos de esclarecimentos de dúvidas realizados até a data atual.</p>
   <details class="faq">
     <summary>É necessário agendar a audiência tanto no PJe/PROJUDI quanto no aplicativo Audiência Virtual (Teams)? <span></span></summary>
@@ -1151,7 +1178,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Sou novo(a) no sistema e tenho dúvidas sobre todo o funcionamento do ecossistema audIN. Por onde começo? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos</a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
+      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos</a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
     </div>
   </details>
 
@@ -1165,7 +1192,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Onde encontro os prazos de obrigatoriedade de agendamento e de realização das audiências pela minha entrância? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar o texto integral e o cronograma anexo.</p>
+      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar o texto integral e o cronograma anexo.</p>
     </div>
   </details>
 
@@ -1326,7 +1353,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Qual é a data de obrigatoriedade do audIN para os Juizados Especiais — 1º ou 21 de setembro de 2026? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>.</p>
+      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>.</p>
     </div>
   </details>
 
@@ -1447,7 +1474,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Já existe um manual de acesso destinado às partes e testemunhas que não têm familiaridade com o Teams? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos</a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
+      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos</a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
     </div>
   </details>
 
@@ -1538,14 +1565,14 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>O que significa a "migração automática" de 31 de agosto mencionada no treinamento? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
+      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como acessar o curso de capacitação do audIN? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP</a>.</p>
+      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP</a>.</p>
     </div>
   </details>
 
@@ -1650,7 +1677,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Até quando poderemos continuar usando o LifeSize durante o período de transição? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--gold-700);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
+      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
     </div>
   </details>
 
@@ -1858,7 +1885,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 07 SUPORTE -->
 <section class="page" id="suporte">
   <span class="eyebrow">Atendimento</span>
-  <h1 class="hd">Suporte técnico</h1>
+  <h2 class="hd">Suporte técnico</h2>
   <p class="lede">Em caso de dúvidas, falhas de acesso ou necessidade de inclusão em grupos de permissão, utilize os canais oficiais da Central de Serviços de TIC do TJBA.</p>
 
   <div class="support-grid">
@@ -2024,7 +2051,7 @@ function buildSearchIndex(){
 
   // Section intros (title + lede) as a fallback so broad topics are still found
   document.querySelectorAll('section.page').forEach(sec=>{
-    const h1 = sec.querySelector('h1.hd'); const lede = sec.querySelector('p.lede');
+    const h1 = sec.querySelector('.hd'); const lede = sec.querySelector('p.lede');
     if(!h1) return;
     const label = sectionLabelFor(h1);
     index.push({
@@ -2216,5 +2243,70 @@ const io = new IntersectionObserver((entries)=>{
 }, {rootMargin:'-40% 0px -55% 0px', threshold:0});
 sections.forEach(s=>s && io.observe(s));
 </script>
+
+<!-- Ferramenta de acessibilidade Rybena -->
+<script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js"></script>
+
+<script>
+/*
+  O widget do Rybena costuma se ancorar no canto ESQUERDO da tela por padrão,
+  o que sobrepõe o menu lateral fixo do portal. Como o script é carregado de um
+  domínio externo (não é possível alterar seu código-fonte diretamente), este
+  observador detecta os elementos de posição fixa que o Rybena injeta no body
+  e os reposiciona para o lado direito, preservando o restante do layout.
+*/
+(function(){
+  var PROTECTED_IDS = ['sidebar','lightbox','sb-backdrop','main','topbar','search-results','search-wrap'];
+  var RIGHT_OFFSET = '20px';
+
+  function isProtected(el){
+    while(el && el !== document.body){
+      if(el.id && PROTECTED_IDS.indexOf(el.id) !== -1) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function moveIfLeftAnchored(el){
+    if(!(el instanceof Element)) return;
+    if(isProtected(el)) return;
+    var cs = window.getComputedStyle(el);
+    if(cs.position !== 'fixed') return;
+    var leftVal = parseFloat(cs.left);
+    var rightVal = cs.right;
+    // Só mexe em elementos ancorados perto da borda esquerda e que ainda não têm "right" definido
+    if(!isNaN(leftVal) && leftVal < 160 && (rightVal === 'auto' || rightVal === '')){
+      el.style.setProperty('left', 'auto', 'important');
+      el.style.setProperty('right', RIGHT_OFFSET, 'important');
+      el.setAttribute('data-a11y-repositioned', 'true');
+    }
+  }
+
+  function scan(node){
+    if(!(node instanceof Element)) return;
+    moveIfLeftAnchored(node);
+    if(node.querySelectorAll){
+      node.querySelectorAll('*').forEach(moveIfLeftAnchored);
+    }
+  }
+
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(scan);
+    });
+  });
+  observer.observe(document.body, {childList:true, subtree:true});
+
+  // Reforça a checagem periodicamente por alguns segundos, caso o widget
+  // ajuste sua própria posição de forma assíncrona após o carregamento.
+  var tries = 0;
+  var interval = setInterval(function(){
+    scan(document.body);
+    tries++;
+    if(tries > 20) clearInterval(interval);
+  }, 500);
+})();
+</script>
+
 </body>
 </html>
