@@ -451,7 +451,7 @@ img.shot:hover{transform:scale(1.015);}
     <a class="nav-link" href="#guia-externo"><span class="n">05</span> Guia rápido externo</a>
 
     <div class="nav-group-label">Ajuda</div>
-    <a class="nav-link" href="#faq"><span class="n">06</span> Dúvidas frequentes <span style="opacity:.6;font-weight:600;">(105)</span></a>
+    <a class="nav-link" href="#faq"><span class="n">06</span> Dúvidas frequentes <span style="opacity:.6;font-weight:600;">(108)</span></a>
     <a class="nav-link" href="#suporte"><span class="n">07</span> Suporte técnico</a>
   </nav>
   <div class="sb-foot">
@@ -955,7 +955,7 @@ img.shot:hover{transform:scale(1.015);}
 <!-- 06 FAQ -->
 <section class="page narrow" id="faq">
   <span class="eyebrow">Central de ajuda</span>
-  <h1 class="hd">Dúvidas frequentes <span style="color:var(--gold-700);font-weight:800;">(105)</span></h1>
+  <h1 class="hd">Dúvidas frequentes <span style="color:var(--gold-700);font-weight:800;">(108)</span></h1>
   <p class="lede">Respostas às perguntas mais comuns de usuários internos e externos sobre o ecossistema audIN.</p>
 
   <details class="faq">
@@ -1061,7 +1061,7 @@ img.shot:hover{transform:scale(1.015);}
     </div>
   </details>
 
-  <h2 class="sub"><span class="bar"></span>Momento audIN <span style="color:var(--ink-soft);font-weight:700;font-size:15px;">(93)</span></h2>
+  <h2 class="sub"><span class="bar"></span>Momento audIN <span style="color:var(--ink-soft);font-weight:700;font-size:15px;">(96)</span></h2>
   <p class="sub-desc">Respostas às dúvidas enviadas pelo formulário dos eventos de esclarecimentos de dúvidas realizados até a data atual.</p>
   <details class="faq">
     <summary>É necessário agendar a audiência tanto no PJe/PROJUDI quanto no aplicativo Audiência Virtual (Teams)? <span></span></summary>
@@ -1219,6 +1219,13 @@ img.shot:hover{transform:scale(1.015);}
     <summary>Quem pode acessar o sistema audIN — apenas os servidores do gabinete, ou toda a unidade? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
       <p>Todos os servidores da unidade podem acessar o sistema, não apenas os do gabinete — desde que atendam aos requisitos básicos de habilitação: conta institucional com acesso ao Microsoft Teams, Múltiplo Fator de Autenticação (MFA) habilitado, cadastro ativo no audIN e inclusão no grupo LDAP "Audiência Inteligente". Não há restrição de acesso por setor dentro da unidade.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Todos os servidores da unidade acessam automaticamente os processos dentro do audIN, ou é preciso solicitar autorização? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
+      <p>Uma vez habilitado(a) no sistema audIN (conta institucional, MFA e inclusão no grupo LDAP "Audiência Inteligente"), o(a) servidor(a) acessa automaticamente as informações e mídias dos processos da própria unidade, sem necessidade de autorização adicional por processo — exceto nos casos de sigilo, em que a visualização é restrita às pessoas lotadas na unidade responsável.</p>
     </div>
   </details>
 
@@ -1525,6 +1532,20 @@ img.shot:hover{transform:scale(1.015);}
     <summary>É possível incluir na Videoteca mídias de processos em segredo de justiça ou mídias externas, como CDs recebidos da polícia? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
       <p>Sim. Gravações que não foram sincronizadas automaticamente, ou que vieram de fontes externas (como mídias policiais em CD), podem ser incluídas manualmente na Videoteca pelo fluxo de importação manual do audIN — desde que estejam no formato MP4, com no máximo 1 GB de tamanho ou 240 minutos de duração. Quanto ao sigilo, a visualização de gravações de processos sigilosos, incluindo os de competência do Tribunal do Júri, é restrita aos usuários lotados na unidade responsável pelo processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como devo proceder no trato das gravações de audiências de processos sigilosos? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Integrações</span>
+      <p>As gravações de processos em segredo de justiça seguem a mesma regra de restrição de acesso já aplicada aos demais documentos do processo: a visualização fica restrita aos usuários lotados na unidade responsável. Caso o processo suba em grau de recurso, o sistema identifica a vinculação entre 1º e 2º grau e libera a visualização também aos usuários lotados na unidade de origem em ambas as instâncias. Não é necessário nenhum procedimento manual adicional de marcação de sigilo — a restrição é aplicada automaticamente pelo sistema, com base na classificação do processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Por que os processos de PROJUDI da minha unidade ainda não aparecem no audIN? <span></span></summary>
+    <div class="faq-body"><span class="tagbox">Integrações</span>
+      <p>A evolução da implantação nas Varas do Sistema dos Juizados Especiais está sob responsabilidade exclusiva da Coordenação dos Juizados Especiais (COJE). No momento planejado para cada unidade, ela será parametrizada no sistema PROJUDI e, a partir dessa data, todas as audiências designadas passam a ser replicadas automaticamente no Audiência Virtual — incluindo alterações e exclusões de designação na pauta da unidade. Se a sua unidade ainda não foi parametrizada, é esperado que nenhum processo apareça automaticamente no audIN até essa data.</p>
     </div>
   </details>
 
