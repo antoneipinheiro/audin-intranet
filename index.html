@@ -43,8 +43,18 @@
   transition:top .15s ease;
 }
 .skip-link:focus{top:8px;outline:3px solid var(--dourado-claro);outline-offset:2px;}
-a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible{
-  outline:3px solid var(--dourado-claro);outline-offset:2px;
+/*
+  Indicador de foco visível. Usamos ":focus" puro (e não apenas ":focus-visible")
+  porque validadores automáticos de acessibilidade costumam focar os elementos
+  via JavaScript (element.focus()) para testar o critério 2.4.7 — e o
+  ":focus-visible" só é ativado pelos navegadores após uma interação real de
+  teclado, não em foco programático. O "!important" garante que a regra vença
+  mesmo diante de "outline:none" definido em seletores mais específicos
+  (ex.: o campo de busca).
+*/
+a:focus, button:focus, summary:focus, input:focus, [tabindex]:focus{
+  outline:3px solid var(--dourado-claro) !important;
+  outline-offset:2px !important;
 }
 .sb-brand .brand-name, .hero h1, footer strong{
   font-family:'Montserrat',-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
@@ -98,7 +108,7 @@ a.nav-link .n{
   display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:800;color:#E6E6E6;
 }
 a.nav-link:hover{background:rgba(255,255,255,.07);color:#fff;}
-a.nav-link.active{background:linear-gradient(90deg,rgba(178,136,75,.24),rgba(178,136,75,.06));color:#fff;}
+a.nav-link.active{background:linear-gradient(90deg,rgb(35,58,84),rgb(20,44,72));color:#fff;}
 a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;}
 
 .sb-foot{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.08);}
