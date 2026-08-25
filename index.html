@@ -72,7 +72,7 @@ body{
 /* ---------- SIDEBAR ---------- */
 #sidebar{
   position:fixed;top:0;left:0;bottom:0;width:var(--sb);
-  background:linear-gradient(185deg,var(--navy-950) 0%,var(--navy-900) 55%,var(--navy-800) 100%);
+  background:linear-gradient(185deg,#002654 0%,#002654 55%,#2C486B 100%);
   color:#ffffff;display:flex;flex-direction:column;z-index:150;
   border-right:1px solid rgba(255,255,255,.06);
   transition:transform .25s ease;
@@ -109,11 +109,11 @@ a.nav-link .n{
 }
 a.nav-link:hover{background:rgba(255,255,255,.07);color:#fff;}
 a.nav-link.active{background:linear-gradient(90deg,rgb(35,58,84),rgb(20,44,72));color:#fff;}
-a.nav-link.active .n{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;}
+a.nav-link.active .n{background:linear-gradient(135deg,#DDB563,#B2884B);color:#002654;}
 
 .sb-foot{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.08);}
 .sb-foot .btn-support{
-  display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));
+  display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,#DDB563,#B2884B);
   color:#002654;text-decoration:none;font-weight:800;font-size:0.7812rem;padding:10px 12px;border-radius:10px;justify-content:center;
   box-shadow:0 6px 16px -6px rgba(178,136,75,.6);
 }
@@ -191,7 +191,7 @@ section.page.narrow{max-width:980px;}
 .hd{font-size:2rem;color:var(--navy-900);margin:0 0 10px;letter-spacing:-.01em;font-weight:800;}
 p.lede{font-size:0.9688rem;color:var(--ink-soft);max-width:760px;line-height:1.65;margin:0 0 34px;}
 h2.sub{font-size:1.1875rem;color:var(--navy-900);font-weight:800;margin:40px 0 6px;display:flex;align-items:center;gap:10px;}
-h2.sub .bar{width:5px;height:19px;border-radius:3px;background:linear-gradient(180deg,var(--gold-500),var(--gold-700));}
+h2.sub .bar{width:5px;height:19px;border-radius:3px;background:linear-gradient(180deg,#DDB563,#B2884B);}
 p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:760px;line-height:1.6;}
 
 .grid{display:grid;gap:18px;}
@@ -207,13 +207,13 @@ p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:7
 .card p{margin:0;font-size:0.8rem;color:var(--ink-soft);line-height:1.55;}
 .icn{
   width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--navy-800),var(--navy-700));color:var(--gold-300);font-size:1.0625rem;font-weight:800;
+  background:linear-gradient(135deg,#2C486B,#2C486B);color:var(--gold-300);font-size:1.0625rem;font-weight:800;
 }
 
 /* HERO */
 .hero{
   border-radius:20px;overflow:hidden;position:relative;
-  background:linear-gradient(120deg,var(--navy-950) 0%,var(--navy-800) 55%,var(--navy-700) 100%);
+  background:linear-gradient(120deg,#002654 0%,#2C486B 55%,#2C486B 100%);
   padding:46px 44px;color:#fff;margin-bottom:10px;
 }
 .hero::after{
@@ -233,7 +233,7 @@ p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:7
 .t-item{position:relative;}
 .t-item::before{
   content:"";position:absolute;left:-33px;top:2px;width:16px;height:16px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold-500),var(--gold-700));border:3px solid #fff;box-shadow:0 0 0 2px var(--gold-600);
+  background:linear-gradient(135deg,#DDB563,#B2884B);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold-600);
 }
 .t-item .date{font-size:0.7188rem;font-weight:800;color:var(--navy-900);text-transform:uppercase;letter-spacing:.06em;}
 .t-item h3{margin:3px 0 5px;font-size:0.9062rem;color:var(--navy-900);font-weight:800;}
@@ -244,13 +244,13 @@ p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:7
 .phasebar div:nth-child(1){background:var(--navy-700);}
 .phasebar div:nth-child(2){background:var(--navy-800);}
 .phasebar div:nth-child(3){background:var(--navy-900);}
-.phasebar div:nth-child(4){background:linear-gradient(120deg,var(--gold-700),var(--gold-600));color:var(--navy-900);}
+.phasebar div:nth-child(4){background:linear-gradient(120deg,#B2884B,#B2884B);color:var(--navy-900);}
 
 .flow-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px;}
 .flow-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);}
 .flow-head{border-radius:12px;padding:16px 16px 14px;margin-bottom:14px;position:relative;overflow:hidden;}
-.flow-head-manual{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));}
-.flow-head-auto{background:linear-gradient(135deg,var(--gold-700),var(--gold-600));}
+.flow-head-manual{background:linear-gradient(135deg,#002654,#2C486B);}
+.flow-head-auto{background:linear-gradient(135deg,#B2884B,#B2884B);}
 .flow-head h3{margin:6px 0 3px;font-size:1rem;color:#fff;font-weight:800;}
 .flow-head p{margin:0;font-size:0.75rem;color:rgba(255,255,255,.85);}
 .flow-head-auto h3,.flow-head-auto p{color:var(--navy-900);}
@@ -264,7 +264,7 @@ p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:7
 .fstep-manual{background:#E6E6E6;border-color:#2C486B;}
 .fstep-auto{background:#E6E6E6;border-color:#B2884B;}
 .fn-accent-manual{background:var(--navy-800);color:#fff;}
-.fn-accent-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;}
+.fn-accent-auto{background:linear-gradient(135deg,#DDB563,#B2884B);color:#002654;}
 .flabel-accent-manual{color:var(--navy-900);font-weight:800;}
 .flabel-accent-auto{color:#002654;font-weight:800;}
 
@@ -273,7 +273,7 @@ p.sub-desc{color:var(--ink-soft);font-size:0.8625rem;margin:0 0 20px;max-width:7
 .dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block;}
 .dot-neutral{background:var(--line);border:1px solid #E6E6E6;}
 .dot-manual{background:var(--navy-800);}
-.dot-auto{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));}
+.dot-auto{background:linear-gradient(135deg,#DDB563,#B2884B);}
 @media(max-width:900px){.flow-wrap{grid-template-columns:1fr;}}
 
 table.dates{width:100%;border-collapse:collapse;margin-top:8px;font-size:0.8125rem;min-width:520px;}
@@ -302,7 +302,7 @@ table.dates td b{color:var(--navy-900);}
 .step{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);}
 .step:last-child{border-bottom:none;}
 .step .num{
-  counter-increment:step;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--navy-800),var(--navy-700));
+  counter-increment:step;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#2C486B,#2C486B);
   color:var(--gold-300);font-weight:800;font-size:0.875rem;display:flex;align-items:center;justify-content:center;
 }
 .step .num::before{content:counter(step);}
@@ -320,7 +320,7 @@ table.dates td b{color:var(--navy-900);}
   padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s;
 }
 .tabbtn:hover{border-color:var(--gold-700);color:var(--navy-900);}
-.tabbtn.active{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));color:#fff;border-color:transparent;}
+.tabbtn.active{background:linear-gradient(135deg,#002654,#2C486B);color:#fff;border-color:transparent;}
 .tabpanel{display:none;}
 .tabpanel.active{display:block;animation:fadein .25s ease;}
 @keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
@@ -332,7 +332,7 @@ table.dates td b{color:var(--navy-900);}
   font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;box-shadow:var(--shadow);
 }
 .reqlist li .chk{
-  flex:none;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));
+  flex:none;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,#DDB563,#B2884B);
   color:#002654;font-size:0.6875rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px;
 }
 .reqlist li b{color:var(--navy-900);}
@@ -363,7 +363,7 @@ table.dates td b{color:var(--navy-900);}
 
 /* SUPPORT */
 .support-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;}
-.contact-card{background:linear-gradient(150deg,var(--navy-950),var(--navy-800));color:#fff;border-radius:18px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.contact-card{background:linear-gradient(150deg,#002654,#2C486B);color:#fff;border-radius:18px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
 .contact-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(178,136,75,.3),transparent 70%);}
 .contact-card h3{margin:0 0 6px;font-size:1.0625rem;position:relative;z-index:2;}
 .contact-card p{color:#E6E6E6;font-size:0.8125rem;margin:0 0 20px;position:relative;z-index:2;}
@@ -378,7 +378,7 @@ table.dates td b{color:var(--navy-900);}
 .contact-hours .ic{width:34px;height:34px;border-radius:10px;background:var(--navy-900);color:var(--gold-300);display:flex;align-items:center;justify-content:center;font-size:0.9375rem;flex:none;}
 .contact-hours span:last-child{font-size:0.7188rem;color:#E6E6E6;}
 .contact-hours strong{display:block;font-size:0.7812rem;margin-bottom:2px;}
-.cta-btn{background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#002654;font-weight:800;font-size:0.7812rem;padding:10px 16px;border-radius:10px;text-decoration:none;white-space:nowrap;}
+.cta-btn{background:linear-gradient(135deg,#DDB563,#B2884B);color:#002654;font-weight:800;font-size:0.7812rem;padding:10px 16px;border-radius:10px;text-decoration:none;white-space:nowrap;}
 
 .linkbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
 .linkchip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:0.8125rem;font-weight:700;color:var(--navy-900);text-decoration:none;box-shadow:var(--shadow);transition:.15s;}
@@ -395,7 +395,8 @@ footer{padding:30px 44px 50px;color:#2C486B;font-size:0.7188rem;border-top:1px s
   border:none;padding:0;
 }
 .build-info:hover, .build-info:focus{background:var(--dourado-escuro);}
-.build-info .build-tooltip{
+.build-info::before{
+  content:attr(data-tooltip);
   position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);
   background:var(--azul-marinho);color:#fff;font-size:0.6875rem;font-weight:600;
   padding:7px 12px;border-radius:8px;white-space:nowrap;
@@ -404,13 +405,14 @@ footer{padding:30px 44px 50px;color:#2C486B;font-size:0.7188rem;border-top:1px s
   transition:opacity .15s ease, transform .15s ease;
   z-index:50;
 }
-.build-info .build-tooltip::after{
-  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+.build-info::after{
+  content:"";position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(4px);
   border:5px solid transparent;border-top-color:var(--azul-marinho);
+  opacity:0;visibility:hidden;transition:opacity .15s ease;
+  z-index:50;
 }
-.build-info:hover .build-tooltip, .build-info:focus .build-tooltip{
-  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
-}
+.build-info:hover::before, .build-info:focus::before{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.build-info:hover::after, .build-info:focus::after{opacity:1;visibility:visible;}
 footer b{color:var(--navy-900);}
 
 .quotebox{background:#E6E6E6;border:1px solid var(--line);border-left:4px solid var(--navy-700);border-radius:10px;padding:15px 17px;margin:12px 0;}
@@ -541,7 +543,7 @@ img.shot:hover{transform:scale(1.015);}
   </div>
   <div class="search" id="search-wrap">
     <span>🔎</span>
-    <input id="site-search" type="text" placeholder="Buscar dúvidas, termos ou seções…" autocomplete="off">
+    <input id="site-search" type="text" placeholder="Buscar dúvidas, termos ou seções…" autocomplete="off" aria-label="Buscar dúvidas, termos ou seções no portal audIN">
     <div id="search-results"></div>
   </div>
 </div>
@@ -585,7 +587,7 @@ img.shot:hover{transform:scale(1.015);}
 
   <div class="callout blue">
     <div class="ic">ℹ️</div>
-    <p><strong>Substituição do LifeSize.</strong> O novo ecossistema substitui o sistema LifeSize como meio oficial de realização de audiências por videoconferência nas unidades judiciárias de 1º grau do TJBA, conforme o Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para acessar a íntegra do decreto.</p>
+    <p><strong>Substituição do LifeSize.</strong> O novo ecossistema substitui o sistema LifeSize como meio oficial de realização de audiências por videoconferência nas unidades judiciárias de 1º grau do TJBA, conforme o Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para acessar a íntegra do decreto.</p>
   </div>
 </section>
 
@@ -593,7 +595,7 @@ img.shot:hover{transform:scale(1.015);}
 <section class="page" id="regulamentacao">
   <span class="eyebrow">Base normativa</span>
   <h2 class="hd">Regulamentação — Decreto Judiciário nº 1059/2026</h2>
-  <p class="lede">Publicado em 21 de julho de 2026 e disponibilizado no Diário da Justiça Eletrônico de 22 de julho de 2026, o decreto regulamenta a utilização do Microsoft Teams como plataforma oficial para a realização de audiências e demais atos processuais por videoconferência nas unidades judiciárias de 1º grau do TJBA. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para acessar a íntegra do Decreto Judiciário nº 1059/2026.</p>
+  <p class="lede">Publicado em 21 de julho de 2026 e disponibilizado no Diário da Justiça Eletrônico de 22 de julho de 2026, o decreto regulamenta a utilização do Microsoft Teams como plataforma oficial para a realização de audiências e demais atos processuais por videoconferência nas unidades judiciárias de 1º grau do TJBA. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para acessar a íntegra do Decreto Judiciário nº 1059/2026.</p>
 
   <h2 class="sub"><span class="bar"></span>O que o decreto estabelece</h2>
   <div class="grid cols-2">
@@ -713,7 +715,7 @@ img.shot:hover{transform:scale(1.015);}
 
   <div class="callout">
     <div class="ic">📄</div>
-    <p><strong>Texto integral do decreto</strong> disponível no portal institucional do TJBA, seção Decretos Judiciários (Diário da Justiça Eletrônico nº correspondente a 22/07/2026). <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para acessar o inteiro teor e eventuais atos complementares.</p>
+    <p><strong>Texto integral do decreto</strong> disponível no portal institucional do TJBA, seção Decretos Judiciários (Diário da Justiça Eletrônico nº correspondente a 22/07/2026). <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para acessar o inteiro teor e eventuais atos complementares.</p>
   </div>
 </section>
 
@@ -748,7 +750,7 @@ img.shot:hover{transform:scale(1.015);}
       <div class="num"></div>
       <div>
         <h3>Habilitar o Múltiplo Fator de Autenticação (MFA)</h3>
-        <p>Caso ainda não utilize o MFA em outros sistemas do TJBA, acesse o manual de habilitação no aparelho móvel disponível em <a href="https://www.tjba.jus.br/portal/seguranca-digital/" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">tjba.jus.br/portal/seguranca-digital</a> e siga o passo a passo de configuração.</p>
+        <p>Caso ainda não utilize o MFA em outros sistemas do TJBA, acesse o manual de habilitação no aparelho móvel disponível em <a href="https://www.tjba.jus.br/portal/seguranca-digital/" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">tjba.jus.br/portal/seguranca-digital<span class="sr-only"> (abre em nova aba)</span></a> e siga o passo a passo de configuração.</p>
       </div>
     </div>
     <div class="step">
@@ -1055,7 +1057,7 @@ img.shot:hover{transform:scale(1.015);}
       <span class="tagbox">Interno · Fase III</span>
       <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade deverão ser agendadas manualmente no aplicativo Audiência Virtual.</p>
       <p>Após o agendamento, a unidade deverá intimar as partes e demais participantes sobre o novo link de acesso à audiência, utilizando o modelo de certidão indicado acima.</p>
-      <p>Esse procedimento deverá ser adotado conforme as datas estabelecidas no item 1, Seção IV do cronograma anexo ao Decreto — Fase de Obrigatoriedade de Realização das Audiências. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar a íntegra do decreto.</p>
+      <p>Esse procedimento deverá ser adotado conforme as datas estabelecidas no item 1, Seção IV do cronograma anexo ao Decreto — Fase de Obrigatoriedade de Realização das Audiências. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para consultar a íntegra do decreto.</p>
     </div>
   </details>
 
@@ -1223,7 +1225,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Sou novo(a) no sistema e tenho dúvidas sobre todo o funcionamento do ecossistema audIN. Por onde começo? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos</a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
+      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos<span class="sr-only"> (abre em nova aba)</span></a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
     </div>
   </details>
 
@@ -1237,7 +1239,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Onde encontro os prazos de obrigatoriedade de agendamento e de realização das audiências pela minha entrância? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui</a> para consultar o texto integral e o cronograma anexo.</p>
+      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para consultar o texto integral e o cronograma anexo.</p>
     </div>
   </details>
 
@@ -1398,7 +1400,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Qual é a data de obrigatoriedade do audIN para os Juizados Especiais — 1º ou 21 de setembro de 2026? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>.</p>
+      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>.</p>
     </div>
   </details>
 
@@ -1519,7 +1521,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Já existe um manual de acesso destinado às partes e testemunhas que não têm familiaridade com o Teams? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos</a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
+      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos<span class="sr-only"> (abre em nova aba)</span></a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
     </div>
   </details>
 
@@ -1610,14 +1612,14 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>O que significa a "migração automática" de 31 de agosto mencionada no treinamento? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
+      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como acessar o curso de capacitação do audIN? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP</a>.</p>
+      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP<span class="sr-only"> (abre em nova aba)</span></a>.</p>
     </div>
   </details>
 
@@ -1722,7 +1724,7 @@ img.shot:hover{transform:scale(1.015);}
   <details class="faq">
     <summary>Até quando poderemos continuar usando o LifeSize durante o período de transição? <span></span></summary>
     <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026</a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
+      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:var(--navy-900);font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
     </div>
   </details>
 
@@ -1944,7 +1946,7 @@ img.shot:hover{transform:scale(1.015);}
       </div>
       <div class="contact-extra">
         <div class="contact-hours"><span class="ic">🕒</span><div><strong>Horário de atendimento</strong><span>Segunda a sexta, das 8h às 18h (exceto feriados)</span></div></div>
-        <a class="cta-btn" href="https://servicedesk.tjba.jus.br" target="_blank" rel="noopener noreferrer">Abrir chamado no Service Desk →</a>
+        <a class="cta-btn" href="https://servicedesk.tjba.jus.br" target="_blank" rel="noopener noreferrer">Abrir chamado no Service Desk →<span class="sr-only"> (abre em nova aba)</span></a>
       </div>
     </div>
     <div class="card">
@@ -1961,21 +1963,21 @@ img.shot:hover{transform:scale(1.015);}
 
   <h2 class="sub"><span class="bar"></span>Links úteis</h2>
   <div class="linkbar">
-    <a class="linkchip" href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer">📄 Decreto Judiciário nº 1059</a>
-    <a class="linkchip" href="https://audinplay.tjba.jus.br" target="_blank" rel="noopener noreferrer">🌐 audinplay.tjba.jus.br</a>
-    <a class="linkchip" href="https://audin.tjba.jus.br" target="_blank" rel="noopener noreferrer">🧠 audin.tjba.jus.br</a>
-    <a class="linkchip" href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer">📘 Guia Rápido para usuários externos</a>
-    <a class="linkchip" href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer">📗 Guia Rápido para usuários internos</a>
-    <a class="linkchip" href="https://servicedesk.tjba.jus.br" target="_blank" rel="noopener noreferrer">🎧 Service Desk</a>
-    <a class="linkchip" href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer">🎓 Ambiente Virtual de Aprendizagem — UNICORP</a>
+    <a class="linkchip" href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer">📄 Decreto Judiciário nº 1059<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://audinplay.tjba.jus.br" target="_blank" rel="noopener noreferrer">🌐 audinplay.tjba.jus.br<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://audin.tjba.jus.br" target="_blank" rel="noopener noreferrer">🧠 audin.tjba.jus.br<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer">📘 Guia Rápido para usuários externos<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer">📗 Guia Rápido para usuários internos<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://servicedesk.tjba.jus.br" target="_blank" rel="noopener noreferrer">🎧 Service Desk<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip" href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer">🎓 Ambiente Virtual de Aprendizagem — UNICORP<span class="sr-only"> (abre em nova aba)</span></a>
   </div>
 
   <h2 class="sub"><span class="bar"></span>Notícias</h2>
   <div class="linkbar">
-    <a class="linkchip news" href="https://www.tjba.jus.br/portal/novo-ecossistema-de-audiencias-virtuais-do-tjba-amplia-seguranca-integracao-e-eficiencia-na-prestacao-jurisdicional/" target="_blank" rel="noopener noreferrer">📰 Novo ecossistema de audiências virtuais do TJBA amplia segurança, integração e eficiência na prestação jurisdicional</a>
-    <a class="linkchip news" href="https://www.tjba.jus.br/portal/magistrados-e-servidores-se-preparam-para-utilizar-o-novo-ecossistema-de-audiencias-virtuais-do-tjba/" target="_blank" rel="noopener noreferrer">📰 Magistrados e servidores se preparam para utilizar o novo ecossistema de audiências virtuais do TJBA</a>
-    <a class="linkchip news" href="https://www.tjba.jus.br/portal/tjba-disponibiliza-guia-rapido-para-acesso-as-audiencias-virtuais-pelo-ecossistema-audin/" target="_blank" rel="noopener noreferrer">📰 TJBA disponibiliza Guia Rápido para acesso às audiências virtuais pelo Ecossistema AudIN</a>
-    <a class="linkchip news" href="https://www.tjba.jus.br/portal/momento-audin-esclarece-duvidas-sobre-implantacao-do-ecossistema-audiencia-inteligente/" target="_blank" rel="noopener noreferrer">📰 Momento AudIN esclarece dúvidas sobre implantação do Ecossistema Audiência Inteligente</a>
+    <a class="linkchip news" href="https://www.tjba.jus.br/portal/novo-ecossistema-de-audiencias-virtuais-do-tjba-amplia-seguranca-integracao-e-eficiencia-na-prestacao-jurisdicional/" target="_blank" rel="noopener noreferrer">📰 Novo ecossistema de audiências virtuais do TJBA amplia segurança, integração e eficiência na prestação jurisdicional<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip news" href="https://www.tjba.jus.br/portal/magistrados-e-servidores-se-preparam-para-utilizar-o-novo-ecossistema-de-audiencias-virtuais-do-tjba/" target="_blank" rel="noopener noreferrer">📰 Magistrados e servidores se preparam para utilizar o novo ecossistema de audiências virtuais do TJBA<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip news" href="https://www.tjba.jus.br/portal/tjba-disponibiliza-guia-rapido-para-acesso-as-audiencias-virtuais-pelo-ecossistema-audin/" target="_blank" rel="noopener noreferrer">📰 TJBA disponibiliza Guia Rápido para acesso às audiências virtuais pelo Ecossistema AudIN<span class="sr-only"> (abre em nova aba)</span></a>
+    <a class="linkchip news" href="https://www.tjba.jus.br/portal/momento-audin-esclarece-duvidas-sobre-implantacao-do-ecossistema-audiencia-inteligente/" target="_blank" rel="noopener noreferrer">📰 Momento AudIN esclarece dúvidas sobre implantação do Ecossistema Audiência Inteligente<span class="sr-only"> (abre em nova aba)</span></a>
   </div>
 </section>
 
@@ -1983,9 +1985,7 @@ img.shot:hover{transform:scale(1.015);}
   <strong>Tribunal de Justiça do Estado da Bahia</strong><br>
   Secretaria de Tecnologia da Informação e Modernização (SETIM)<br>
   Diretoria de Infraestrutura de TIC (DIN)
-  <span class="build-info" tabindex="0" aria-label="Versão desta página gerada em 25/08/2026 às 10:57 (horário de Brasília)">
-    <span class="build-tooltip" aria-hidden="true">Versão gerada em 25/08/2026 às 10:57</span>
-  </span>
+  <span class="build-info" tabindex="0" role="note" aria-label="Versão desta página gerada em 25/08/2026 às 11:15, horário de Brasília" data-tooltip="Versão gerada em 25/08/2026 às 11:15"></span>
 </footer>
 
 </div>
