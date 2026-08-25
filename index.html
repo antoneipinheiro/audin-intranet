@@ -385,7 +385,32 @@ table.dates td b{color:var(--navy-900);}
 .linkchip:hover{border-color:var(--gold-700);color:var(--navy-900);}
 .linkchip.news{align-items:flex-start;max-width:320px;font-weight:600;line-height:1.4;}
 
-footer{padding:30px 44px 50px;color:#2C486B;font-size:0.7188rem;border-top:1px solid var(--line);line-height:1.7;text-align:left;}
+footer{padding:30px 44px 50px;color:#2C486B;font-size:0.7188rem;border-top:1px solid var(--line);line-height:1.7;text-align:left;position:relative;}
+.build-info{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--dourado-claro);
+  margin-left:8px;vertical-align:middle;
+  cursor:default;position:relative;
+  border:none;padding:0;
+}
+.build-info:hover, .build-info:focus{background:var(--dourado-escuro);}
+.build-info .build-tooltip{
+  position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);
+  background:var(--azul-marinho);color:#fff;font-size:0.6875rem;font-weight:600;
+  padding:7px 12px;border-radius:8px;white-space:nowrap;
+  box-shadow:0 8px 20px -6px rgba(0,38,84,.4);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+  z-index:50;
+}
+.build-info .build-tooltip::after{
+  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--azul-marinho);
+}
+.build-info:hover .build-tooltip, .build-info:focus .build-tooltip{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
 footer b{color:var(--navy-900);}
 
 .quotebox{background:#E6E6E6;border:1px solid var(--line);border-left:4px solid var(--navy-700);border-radius:10px;padding:15px 17px;margin:12px 0;}
@@ -1958,6 +1983,9 @@ img.shot:hover{transform:scale(1.015);}
   <strong>Tribunal de Justiça do Estado da Bahia</strong><br>
   Secretaria de Tecnologia da Informação e Modernização (SETIM)<br>
   Diretoria de Infraestrutura de TIC (DIN)
+  <span class="build-info" tabindex="0" aria-label="Versão desta página gerada em 25/08/2026 às 10:57 (horário de Brasília)">
+    <span class="build-tooltip" aria-hidden="true">Versão gerada em 25/08/2026 às 10:57</span>
+  </span>
 </footer>
 
 </div>
