@@ -351,6 +351,24 @@ table.dates td b{color:var(--navy-900);}
 .faq .faq-body b{color:var(--navy-900);}
 .faq .tagbox{display:inline-block;font-size:0.625rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--navy-900);background:#E6E6E6;padding:3px 9px;border-radius:6px;margin-bottom:8px;}
 
+.faq-quicknav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.faq-quicknav a{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:700;color:var(--navy-900);background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 12px;text-decoration:none;box-shadow:var(--shadow);}
+.faq-quicknav a:hover{background:#F5F5F5;}
+.faq-quicknav a b{background:#DDB563;color:#002654;border-radius:10px;padding:1px 7px;font-weight:800;font-size:0.6875rem;}
+.faq-group{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px;background:#F7F8FA;box-shadow:var(--shadow);}
+.faq-group>summary{
+  list-style:none;cursor:pointer;padding:16px 18px;font-weight:800;font-size:0.9375rem;color:var(--navy-900);
+  display:flex;align-items:center;gap:12px;
+}
+.faq-group-title{flex:1;min-width:0;}
+.faq-group>summary::-webkit-details-marker{display:none;}
+.faq-group>summary::after{content:"+";font-size:1.25rem;color:var(--navy-900);font-weight:900;transition:.2s;flex:none;}
+.faq-group[open]>summary::after{content:"–";}
+.faq-count{background:#DDB563;color:#002654;border-radius:12px;padding:1px 9px;font-weight:800;font-size:0.75rem;flex:none;}
+.faq-group-body{padding:6px 18px 18px;}
+.faq-group-body .faq{box-shadow:none;}
+
+
 /* FIG INDEX */
 .figindex{columns:2;column-gap:26px;}
 .figindex .fi{display:flex;gap:10px;font-size:0.775rem;color:var(--ink-soft);padding:7px 0;border-bottom:1px dashed var(--line);break-inside:avoid;}
@@ -1040,11 +1058,116 @@ img.shot:hover{transform:scale(1.015);}
   <h2 class="hd">Dúvidas frequentes <span style="color:#002654;font-weight:800;">(119)</span></h2>
   <p class="lede">Respostas às perguntas mais comuns de usuários internos e externos sobre o ecossistema audIN.</p>
 
+  <nav class="faq-quicknav" aria-label="Índice de tópicos">
+    <a href="#faq-sobre">Sobre o projeto <b>1</b></a>
+    <a href="#faq-acesso">Acesso e habilitação <b>12</b></a>
+    <a href="#faq-agendamento">Agendamento, fases e fluxo de trabalho <b>24</b></a>
+    <a href="#faq-funcionalidades">Funcionalidades do sistema <b>47</b></a>
+    <a href="#faq-cejusc">CEJUSC <b>10</b></a>
+    <a href="#faq-integracoes">Integrações entre sistemas (PJe, PROJUDI, audIN) <b>22</b></a>
+    <a href="#faq-externos">Usuários externos <b>2</b></a>
+    <a href="#faq-suporte">Suporte técnico <b>1</b></a>
+  </nav>
+
+  <details class="faq-group" id="faq-sobre">
+    <summary><span class="faq-group-title">Sobre o projeto</span><span class="faq-count">1</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>O audIN está implantado apenas no TJBA? <span></span></summary>
+    <div class="faq-body">      <p>Sim. O audIN é um ecossistema inovador e exclusivo, de propriedade intelectual e institucional, desenvolvido e operado pelo Tribunal de Justiça do Estado da Bahia, integrado aos sistemas judiciais e à infraestrutura de TIC do próprio TJBA.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-acesso">
+    <summary><span class="faq-group-title">Acesso e habilitação</span><span class="faq-count">12</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>Cada processo tem uma sala própria, ou todas as audiências entram na mesma sala virtual? <span></span></summary>
+    <div class="faq-body">      <p>Cada audiência agendada no aplicativo Audiência Virtual gera automaticamente um link e um QR Code exclusivos para aquele processo e horário. Além disso, em unidades com muitas audiências no mesmo dia, é possível usar salas internas — chamadas de "marcadores" pelo aplicativo Audiência Virtual — para distribuir a pauta entre os atendentes. Em qualquer caso, cada agendamento corresponde a um evento único, o que garante que apenas os participantes daquele processo específico tenham acesso ao respectivo link.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Não estou conseguindo acessar o Microsoft Teams ou o audIN. O que fazer? <span></span></summary>
+    <div class="faq-body">      <p>Confira primeiro os requisitos básicos de habilitação: conta institucional com acesso ao Teams, Múltiplo Fator de Autenticação (MFA) habilitado, cadastro ativo no audIN e inclusão no grupo LDAP "Audiência Inteligente". Se o acesso continuar bloqueado — especialmente com a mensagem "Acesso Não Autorizado" —, abra um chamado na Central de Serviços de TIC (0800 071 8522 ou servicedesk.tjba.jus.br) solicitando a verificação do seu perfil de acesso.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Sou novo(a) no sistema e tenho dúvidas sobre todo o funcionamento do ecossistema audIN. Por onde começo? <span></span></summary>
+    <div class="faq-body">      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos<span class="sr-only"> (abre em nova aba)</span></a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Minha comarca não aparece no Audiência Virtual, mesmo após chamados no Service Desk marcados como solucionados. O que fazer? <span></span></summary>
+    <div class="faq-body">      <p>Esse tipo de situação deve ser tratado de forma individualizada: abra um novo chamado técnico no Service Desk solicitando atuação com acesso remoto à sua estação de trabalho, para que a equipe técnica possa coletar evidências do problema e aplicar as correções necessárias.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>É obrigatório que todas as partes tenham o Microsoft Teams instalado para participar da audiência? <span></span></summary>
+    <div class="faq-body">      <p>Não. Pelo computador, o acesso à audiência é feito diretamente pelo navegador, sem necessidade de instalar o aplicativo Teams — basta clicar no link recebido e permitir o uso da câmera e do microfone. Pelo celular ou tablet, caso o aplicativo Microsoft Teams ainda não esteja instalado, o próprio sistema oferece automaticamente a opção de baixá-lo antes do ingresso na sala. Em ambos os casos, o link gerado é suficiente para o acesso.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Já existe um manual de acesso destinado às partes e testemunhas que não têm familiaridade com o Teams? <span></span></summary>
+    <div class="faq-body">      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos<span class="sr-only"> (abre em nova aba)</span></a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Qual é o órgão responsável por conceder acesso ao audIN? <span></span></summary>
+    <div class="faq-body">      <p>O acesso é providenciado pela Central de Serviços de TIC do TJBA (Service Desk), mediante abertura de chamado técnico.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O Ministério Público, a Defensoria Pública e advogados(as) têm acesso ao audIN? Como acessam as gravações? <span></span></summary>
+    <div class="faq-body">      <p>O sistema audIN em si é de uso interno, restrito a magistrados(as) e servidores(as) habilitados. O MP, a Defensoria Pública, advogados(as) e demais participantes acessam as audiências como usuários externos, com link publicado nos autos do processo, da mesma forma como já acessam os demais documentos processuais.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como a parte, de fora da unidade, pode acessar o AudinPlay e consultar a gravação do próprio depoimento posteriormente? <span></span></summary>
+    <div class="faq-body">      <p>O MP, a Defensoria Pública, advogados(as) e demais participantes — incluindo as próprias partes — acessam as mídias gravadas nas audiências como usuários externos, por meio do link publicado nos autos do processo, da mesma forma como já acessam os demais documentos processuais. Se a gravação já tiver sido publicada nos autos, o link do vídeo direciona automaticamente para o AudinPlay, também mediante a resolução do captcha, permitindo à parte assistir ao próprio depoimento.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como acessar o curso de capacitação do audIN? <span></span></summary>
+    <div class="faq-body">      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>É possível autorizar estudantes ou outro público externo a assistir a uma audiência? <span></span></summary>
+    <div class="faq-body">      <p>A autorização para o acesso de estudantes precisa ser acordada previamente com o(a) magistrado(a) responsável pelo ato. Uma vez autorizado, o acesso segue o mesmo caminho já definido para os demais usuários externos: acessar o AudinPlay, consultar pelo número do processo, localizar a audiência em andamento e clicar em "Entrar na audiência".</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O link de consulta pública do AudinPlay às vezes retorna uma tela em branco. Por quê? <span></span></summary>
+    <div class="faq-body">      <p>Identificamos que esse sintoma costuma ocorrer quando algum caractere do link é suprimido durante a cópia ou o repasse do endereço. Para evitar esse problema, já foi aplicada uma melhoria no sistema: o link passa a ser validado tanto com quanto sem máscara nos dados do número do processo e na URL de acesso.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-agendamento">
+    <summary><span class="faq-group-title">Agendamento, fases e fluxo de trabalho</span><span class="faq-count">24</span></summary>
+    <div class="faq-group-body">
+
   <details class="faq">
     <summary>Como a minha unidade deve se adequar na Fase II — Obrigatoriedade de Agendamento? <span></span></summary>
-    <div class="faq-body">
-      <span class="tagbox">Interno · Fase II</span>
-      <p>1️⃣ A audiência deverá ser designada normalmente na pauta do sistema PJe, conforme o procedimento atualmente adotado pela unidade.</p>
+    <div class="faq-body">      <p>1️⃣ A audiência deverá ser designada normalmente na pauta do sistema PJe, conforme o procedimento atualmente adotado pela unidade.</p>
       <p>2️⃣ Em seguida, a unidade deverá realizar o agendamento manual da audiência no aplicativo Audiência Virtual, no Microsoft Teams, informando os dados do processo, tipo de audiência, data e horário correspondentes.</p>
       <p>3️⃣ Após o agendamento no aplicativo Audiência Virtual, deverá ser acostada aos autos uma certidão, comunicando às partes a alteração da forma de acesso à audiência e disponibilizando o novo endereço eletrônico para ingresso na sala virtual.</p>
       <p style="margin-top:14px;">Para a certidão a ser acostada aos autos, conforme definido pela Secretaria Virtual do 1º Grau, sugere-se a utilização do seguinte texto:</p>
@@ -1061,9 +1184,7 @@ img.shot:hover{transform:scale(1.015);}
 
   <details class="faq">
     <summary>O que fazer com as audiências já designadas no PJe? <span></span></summary>
-    <div class="faq-body">
-      <span class="tagbox">Interno · Fase III</span>
-      <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade deverão ser agendadas manualmente no aplicativo Audiência Virtual.</p>
+    <div class="faq-body">      <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade deverão ser agendadas manualmente no aplicativo Audiência Virtual.</p>
       <p>Após o agendamento, a unidade deverá intimar as partes e demais participantes sobre o novo link de acesso à audiência, utilizando o modelo de certidão indicado acima.</p>
       <p>Esse procedimento deverá ser adotado conforme as datas estabelecidas no item 1, Seção IV do cronograma anexo ao Decreto — Fase de Obrigatoriedade de Realização das Audiências. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para consultar a íntegra do decreto.</p>
     </div>
@@ -1071,45 +1192,38 @@ img.shot:hover{transform:scale(1.015);}
 
   <details class="faq">
     <summary>Como funciona a intimação das partes sobre as audiências agendadas no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Não existe, até o momento, uma funcionalidade própria do audIN para envio de intimações. A comunicação às partes é feita por meio de um ato de intimação no sistema judicial de origem (PJe ou PROJUDI), utilizando a certidão com o link de acesso — conforme o modelo já sugerido pela Secretaria Virtual do 1º Grau.</p>
+    <div class="faq-body">      <p>Não existe, até o momento, uma funcionalidade própria do audIN para envio de intimações. A comunicação às partes é feita por meio de um ato de intimação no sistema judicial de origem (PJe ou PROJUDI), utilizando a certidão com o link de acesso — conforme o modelo já sugerido pela Secretaria Virtual do 1º Grau.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Será necessário lavrar manualmente o termo/ata de audiência, ou o sistema faz isso automaticamente? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>O sistema automatiza a gravação e o sincronismo da mídia com a Videoteca, mas a lavratura do termo/ata de audiência continua sendo um ato processual manual, a cargo da unidade — o link da gravação deve ser inserido nesse termo, conforme já orientado.</p>
+    <div class="faq-body">      <p>O sistema automatiza a gravação e o sincronismo da mídia com a Videoteca, mas a lavratura do termo/ata de audiência continua sendo um ato processual manual, a cargo da unidade — o link da gravação deve ser inserido nesse termo, conforme já orientado.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Existe uma padronização dos documentos de intimação, citação e atos ordinatórios relacionados às audiências? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Até o momento, há um modelo de certidão padronizado, sugerido pela Secretaria Virtual do 1º Grau, para comunicar às partes o link de acesso à audiência (disponível na pergunta sobre a Fase II do Decreto, acima). Não há confirmação de padronização adicional para outros atos, como modelos específicos de citação ou de atos ordinatórios.</p>
+    <div class="faq-body">      <p>Até o momento, há um modelo de certidão padronizado, sugerido pela Secretaria Virtual do 1º Grau, para comunicar às partes o link de acesso à audiência (disponível na pergunta sobre a Fase II do Decreto, acima). Não há confirmação de padronização adicional para outros atos, como modelos específicos de citação ou de atos ordinatórios.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>A mídia não foi sincronizada na Videoteca do audIN. O que fazer? <span></span></summary>
-    <div class="faq-body">
-      <span class="tagbox">Interno</span>
-      <p><strong>Causa provável:</strong> a audiência não foi encerrada corretamente no MS Teams e/ou no aplicativo Audiência Virtual.</p>
+    <div class="faq-body">      <p><strong>Causa provável:</strong> a audiência não foi encerrada corretamente no MS Teams e/ou no aplicativo Audiência Virtual.</p>
       <p><strong>Procedimento recomendado:</strong> (1) no MS Teams, clique na seta ao lado do botão Sair e selecione "Encerrar a reunião"; (2) no Audiência Virtual, localize o agendamento na pauta e clique em "Encerrar"; (3) aguarde o sincronismo automático da mídia na Videoteca.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Após a audiência, posso apagar as gravações do OneDrive? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Interno</span>
-      <p>Sim, <strong>somente após confirmar</strong> que a mídia já está disponível na Videoteca do audIN.</p>
+    <div class="faq-body">      <p>Sim, <strong>somente após confirmar</strong> que a mídia já está disponível na Videoteca do audIN.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como funciona a autenticação Multifator (MFA) no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Interno</span>
-      <p><strong>Instalação:</strong> ao logar pela primeira vez, instale o Microsoft Authenticator no celular, adicione uma conta do tipo "Trabalho ou escola" e escaneie o QR Code exibido na tela do computador. O sistema pedirá que você insira o número exibido para confirmar a entrada.</p>
+    <div class="faq-body">      <p><strong>Instalação:</strong> ao logar pela primeira vez, instale o Microsoft Authenticator no celular, adicione uma conta do tipo "Trabalho ou escola" e escaneie o QR Code exibido na tela do computador. O sistema pedirá que você insira o número exibido para confirmar a entrada.</p>
       <p><strong>Login:</strong> acesse audin.tjba.jus.br, informe e-mail institucional e senha, e aprove a entrada pelo número exibido no Authenticator.</p>
       <p><strong>Logout:</strong> utilize a opção de saída dentro do próprio sistema audIN.</p>
     </div>
@@ -1117,637 +1231,303 @@ img.shot:hover{transform:scale(1.015);}
 
   <details class="faq">
     <summary>Já utilizo MFA no e-mail corporativo (Outlook). Preciso configurar novamente para o audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Interno</span>
-      <p><strong>Não.</strong> Se o MFA já está configurado para o e-mail institucional, não é necessário repetir o processo no primeiro acesso ao audIN — a autenticação é totalmente integrada ao ambiente corporativo.</p>
+    <div class="faq-body">      <p><strong>Não.</strong> Se o MFA já está configurado para o e-mail institucional, não é necessário repetir o processo no primeiro acesso ao audIN — a autenticação é totalmente integrada ao ambiente corporativo.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Tentei logar e foi exibida a mensagem "Acesso Não Autorizado". O que fazer? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Interno</span>
-      <p>Essa mensagem ocorre quando o usuário se autentica com sucesso (e-mail, senha e MFA), mas não possui permissão específica para utilizar o audIN. É necessário pertencer ao grupo LDAP <strong>"Audiência Inteligente"</strong>. Solicite sua inclusão à Central de Serviços de TIC.</p>
+    <div class="faq-body">      <p>Essa mensagem ocorre quando o usuário se autentica com sucesso (e-mail, senha e MFA), mas não possui permissão específica para utilizar o audIN. É necessário pertencer ao grupo LDAP <strong>"Audiência Inteligente"</strong>. Solicite sua inclusão à Central de Serviços de TIC.</p>
     </div>
   </details>
 
-  <details class="faq">
-    <summary>Não consigo acessar a sala de audiência pelo link recebido. O que fazer? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Externo</span>
-      <p>Confira se o número do processo está no formato correto e se a audiência ainda não foi encerrada. Se a mensagem "Essa audiência foi encerrada" for exibida, entre em contato diretamente com a unidade judicial responsável pelo processo.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Posso compartilhar o link ou QR Code da audiência com outras pessoas? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Externo</span>
-      <p>Não. O link e o QR Code de acesso são pessoais e não devem ser compartilhados com pessoas não autorizadas a participar do ato processual.</p>
-    </div>
-  </details>
-
-  <h2 class="sub"><span class="bar"></span>Momento audIN <span style="color:#2C486B;font-weight:700;font-size:0.9375rem;">(107)</span></h2>
-  <p class="sub-desc">Respostas às dúvidas enviadas pelo formulário dos eventos de esclarecimentos de dúvidas realizados até a data atual.</p>
   <details class="faq">
     <summary>É necessário agendar a audiência tanto no PJe/PROJUDI quanto no aplicativo Audiência Virtual (Teams)? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Sim. Hoje o fluxo continua em duas etapas: a designação da audiência no sistema judicial (PJe ou PROJUDI), como já é feito atualmente, e o agendamento correspondente no aplicativo Audiência Virtual, no Microsoft Teams — informando processo, tipo de audiência, data e horário. É esse agendamento no Audiência Virtual que gera o link e o QR Code de acesso, que devem ser certificados nos autos e informados às partes. A automação completa dessa etapa (replicação automática entre PJe/PROJUDI e o audIN) está prevista no ecossistema, mas o cronograma de ativação por unidade ainda precisa ser confirmado com a equipe técnica.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Cada processo tem uma sala própria, ou todas as audiências entram na mesma sala virtual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Cada audiência agendada no aplicativo Audiência Virtual gera automaticamente um link e um QR Code exclusivos para aquele processo e horário. Além disso, em unidades com muitas audiências no mesmo dia, é possível usar salas internas — chamadas de "marcadores" pelo aplicativo Audiência Virtual — para distribuir a pauta entre os atendentes. Em qualquer caso, cada agendamento corresponde a um evento único, o que garante que apenas os participantes daquele processo específico tenham acesso ao respectivo link.</p>
+    <div class="faq-body">      <p>Sim. Hoje o fluxo continua em duas etapas: a designação da audiência no sistema judicial (PJe ou PROJUDI), como já é feito atualmente, e o agendamento correspondente no aplicativo Audiência Virtual, no Microsoft Teams — informando processo, tipo de audiência, data e horário. É esse agendamento no Audiência Virtual que gera o link e o QR Code de acesso, que devem ser certificados nos autos e informados às partes. A automação completa dessa etapa (replicação automática entre PJe/PROJUDI e o audIN) está prevista no ecossistema, mas o cronograma de ativação por unidade ainda precisa ser confirmado com a equipe técnica.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Posso agendar a audiência direto pelo calendário do Microsoft Teams, em vez do aplicativo Audiência Virtual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Não. O agendamento deve ser feito exclusivamente pelo aplicativo Audiência Virtual, fixado no MS Teams. Agendar pelo calendário nativo do Teams gera um link diferente, que não fica sincronizado com o audIN nem com o AudinPlay — por isso as partes podem acabar recebendo um link diferente daquele que já constava no sistema. Utilize sempre o formulário do Audiência Virtual para garantir que o link, a gravação e o sincronismo funcionem corretamente.</p>
+    <div class="faq-body">      <p>Não. O agendamento deve ser feito exclusivamente pelo aplicativo Audiência Virtual, fixado no MS Teams. Agendar pelo calendário nativo do Teams gera um link diferente, que não fica sincronizado com o audIN nem com o AudinPlay — por isso as partes podem acabar recebendo um link diferente daquele que já constava no sistema. Utilize sempre o formulário do Audiência Virtual para garantir que o link, a gravação e o sincronismo funcionem corretamente.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>O agendamento só pode ser feito pelo e-mail individual do servidor, ou também pelo e-mail/login da unidade? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>O agendamento e o atendimento das audiências podem ser realizados por qualquer servidor habilitado na unidade — desde que vinculado à caixa de e-mail compartilhada da serventia — utilizando seu próprio login institucional individual. As mídias gravadas durante a audiência ficam armazenadas temporariamente no OneDrive do usuário responsável e são replicadas automaticamente para o repositório central do audIN, garantindo a guarda segura dos arquivos. O uso de um login institucional da unidade com senha compartilhada entre vários usuários não é permitido.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É possível ajustar a duração da audiência ao agendar, ou ela fica sempre em 30 minutos? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim. No formulário de agendamento do Audiência Virtual há dois campos de horário — início e término — que definem a duração exata da audiência, sem se limitar a um intervalo fixo. Os campos aceitam ajustes a cada um minuto: basta digitar o horário desejado em vez de escolher um valor pré-determinado.</p>
+    <div class="faq-body">      <p>O agendamento e o atendimento das audiências podem ser realizados por qualquer servidor habilitado na unidade — desde que vinculado à caixa de e-mail compartilhada da serventia — utilizando seu próprio login institucional individual. As mídias gravadas durante a audiência ficam armazenadas temporariamente no OneDrive do usuário responsável e são replicadas automaticamente para o repositório central do audIN, garantindo a guarda segura dos arquivos. O uso de um login institucional da unidade com senha compartilhada entre vários usuários não é permitido.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como funciona a degravação das audiências no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>A degravação pode ser feita de três formas: importando o vídeo diretamente da Videoteca do audIN; importando pelo link público no Video Play; ou enviando um arquivo local, quando a gravação não estiver disponível nos dois primeiros locais. Após a importação, o sistema gera automaticamente quatro saídas: a mídia sincronizada com o texto, a degravação literal (transcrição completa, falante por falante), os pontos principais e um resumo do conteúdo discutido — todos consultáveis e exportáveis.</p>
+    <div class="faq-body">      <p>A degravação pode ser feita de três formas: importando o vídeo diretamente da Videoteca do audIN; importando pelo link público no Video Play; ou enviando um arquivo local, quando a gravação não estiver disponível nos dois primeiros locais. Após a importação, o sistema gera automaticamente quatro saídas: a mídia sincronizada com o texto, a degravação literal (transcrição completa, falante por falante), os pontos principais e um resumo do conteúdo discutido — todos consultáveis e exportáveis.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>A degravação é feita em tempo real durante a audiência, ou apenas depois que ela termina? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>A degravação não ocorre em tempo real: ela é processada após o encerramento e o sincronismo da gravação. O usuário precisa acessar o módulo de degravação do audIN, localizar a mídia e solicitar o início do processamento, quando desejado — ele não é disparado automaticamente apenas por a mídia ter sido armazenada na Videoteca.</p>
+    <div class="faq-body">      <p>A degravação não ocorre em tempo real: ela é processada após o encerramento e o sincronismo da gravação. O usuário precisa acessar o módulo de degravação do audIN, localizar a mídia e solicitar o início do processamento, quando desejado — ele não é disparado automaticamente apenas por a mídia ter sido armazenada na Videoteca.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É obrigatório fazer a degravação de todas as audiências? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Não. A degravação é um recurso disponível para quando for necessário o registro textual da audiência (transcrição literal, pontos principais ou resumo), mas não há, até o momento, uma determinação de que toda audiência precise ser degravada — cabe à unidade avaliar a necessidade em cada caso, salvo determinação específica em sentido contrário.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O que é a Videoteca e como consulto ou publico uma gravação? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>A Videoteca é o repositório do audIN onde ficam armazenadas automaticamente as gravações feitas no MS Teams, após o encerramento correto da audiência. Nela é possível consultar a mídia, incluir ou editar a "Descrição Resumida" para facilitar a identificação e, no caso de usuários administradores, ativar ou inativar a exibição da gravação nas pesquisas da Videoteca.</p>
-      <p>Para publicar uma gravação, consulte a mídia desejada, clique em "Visualizar" e, em seguida, em "Copiar link do vídeo". Esse link deve ser publicado exclusivamente nos autos do processo, dentro do sistema judicial.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quem pode marcar uma mídia como inativada na Videoteca? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Apenas usuários administradores do audIN podem ativar ou inativar a exibição de uma gravação nas pesquisas da Videoteca.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quais cuidados devo ter para garantir que a gravação sincronize corretamente com a Videoteca? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Sempre encerrar a audiência em duas etapas: primeiro clicar em "Encerrar a reunião" no MS Teams (não apenas "Sair"), e depois em "Encerrar" no aplicativo Audiência Virtual. Esse é o principal motivo de falhas de sincronismo relatadas até aqui — se a audiência não for encerrada dessa forma, a mídia pode não ser enviada corretamente à Videoteca.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Não estou conseguindo acessar o Microsoft Teams ou o audIN. O que fazer? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Confira primeiro os requisitos básicos de habilitação: conta institucional com acesso ao Teams, Múltiplo Fator de Autenticação (MFA) habilitado, cadastro ativo no audIN e inclusão no grupo LDAP "Audiência Inteligente". Se o acesso continuar bloqueado — especialmente com a mensagem "Acesso Não Autorizado" —, abra um chamado na Central de Serviços de TIC (0800 071 8522 ou servicedesk.tjba.jus.br) solicitando a verificação do seu perfil de acesso.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Sou novo(a) no sistema e tenho dúvidas sobre todo o funcionamento do ecossistema audIN. Por onde começo? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Para começar, consulte o <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/05/Guia-Rapido-Unificado-AV-e-AUDIN-Rev-5-Versao-4.9.pdf" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Guia Rápido para usuários internos<span class="sr-only"> (abre em nova aba)</span></a>, que reúne os requisitos de habilitação e o passo a passo completo: agendamento, gravação, publicação de mídias, consulta de pauta e degravação. O glossário de termos, ao final desta seção, explica as principais siglas do projeto. Recomendamos também o curso disponível no Ambiente Virtual de Aprendizagem da UNICORP.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quais são os requisitos para habilitar minha unidade no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Caso a sua unidade ainda não apareça na tela inicial do aplicativo Audiência Virtual no Teams, abra um chamado técnico junto ao Service Desk, informando o nome da unidade e o e-mail da caixa compartilhada da serventia, para que a habilitação seja providenciada.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Onde encontro os prazos de obrigatoriedade de agendamento e de realização das audiências pela minha entrância? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para consultar o texto integral e o cronograma anexo.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como ficam as audiências já designadas e as gravações já existentes no LifeSize? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Audiências já designadas por carta precatória continuam normalmente: a unidade deve mantê-las na pauta do sistema judicial, agendar manualmente no Audiência Virtual e publicar nos autos a intimação com o novo link de acesso.</p>
-      <p>As gravações já existentes no LifeSize estão disponíveis no sistema Video Play (<strong>videoplay.tjba.jus.br</strong>); as instruções de habilitação para esse sistema estão descritas no portal, em <strong>tjba.jus.br/portal/video-conferencia</strong>. Caso seja necessário degravar essas mídias, acesse o audIN, módulo "Criar Nova Degravação", e escolha a opção de importação de vídeo via Video Play.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como proceder no período de transição entre a obrigatoriedade de agendamento e a de realização das audiências? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade devem ser agendadas manualmente no aplicativo Audiência Virtual. Após o agendamento, a unidade deve intimar as partes e demais participantes sobre o novo link de acesso, utilizando o modelo de certidão padrão. Esse procedimento segue as datas do item 1, Seção IV do cronograma anexo ao Decreto Judiciário nº 1059/2026 — Fase de Obrigatoriedade de Realização das Audiências.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Qual o tempo médio de sincronização dos vídeos e como verificar se a gravação ficou correta? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Após o encerramento da audiência — pela opção "Encerrar a reunião" no Teams e pelo botão "Encerrar" na pauta do Audiência Virtual — o tempo médio de sincronismo das mídias é de <strong>5 a 10 minutos</strong>.</p>
-      <p>O(a) atendente da audiência é responsável por confirmar a gravação e a correta sincronização das mídias, nos termos do art. 12 do Decreto Judiciário nº 1059/2026. O mesmo artigo, em seu § 1º, determina que o atendente verifique previamente o funcionamento do computador, da câmera, dos microfones e dos demais equipamentos usados na videoconferência. Após o encerramento da gravação, também é possível conferir o resultado diretamente no OneDrive da conta institucional, antes mesmo da disponibilização no audIN.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quando a integração entre PJe/PROJUDI e o audIN será automática, e como ficam as intimações? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>A integração da pauta de audiências do PROJUDI com o Audiência Virtual já está disponível; a implantação em cada unidade está sob gerência da Coordenação dos Juizados Especiais. A integração com o PJe está prevista para a primeira quinzena de setembro de 2026 — a partir da ativação na unidade, as audiências designadas no PJe (incluindo alterações e cancelamentos) passam a ser replicadas automaticamente no Audiência Virtual, eliminando o agendamento manual.</p>
-      <p>Mesmo após a integração automática, nos termos do art. 9º do Decreto Judiciário nº 1059/2026, cada audiência designada ou redesignada gera a juntada automática de uma certidão padronizada aos autos, informando às partes o endereço eletrônico de acesso — não sendo necessária a certificação manual.</p>
-      <p>Dúvidas sobre os modelos de citação do PROJUDI e sobre a intimação de partes autoras sem advogado em processos do SAJ devem ser esclarecidas diretamente com a Coordenação dos Juizados Especiais.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como altero ou cancelo um agendamento de audiência já criado? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Qualquer campo do agendamento — processo, tipo de audiência, data, horário de início/fim e sala — pode ser alterado por um usuário habilitado na unidade: acesse a pauta de audiências no Audiência Virtual, localize o processo, clique no ícone de três pontos ao lado do número do processo, selecione "Editar", ajuste os dados necessários e clique em "Salvar".</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>As audiências já designadas antes da existência do audIN serão lançadas automaticamente no sistema? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Sim. Quando a integração automática entre o PJe/PROJUDI e o audIN estiver ativa para a sua unidade, todas as audiências designadas no sistema judicial — inclusive as já existentes antes da adesão ao audIN — passam a ser replicadas automaticamente no Audiência Virtual. Até que essa integração esteja ativa na sua unidade, essas audiências devem continuar sendo agendadas manualmente no Audiência Virtual, conforme explicado no item sobre o período de transição.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quem pode acessar o sistema audIN — apenas os servidores do gabinete, ou toda a unidade? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Todos os servidores da unidade podem acessar o sistema, não apenas os do gabinete — desde que atendam aos requisitos básicos de habilitação: conta institucional com acesso ao Microsoft Teams, Múltiplo Fator de Autenticação (MFA) habilitado, cadastro ativo no audIN e inclusão no grupo LDAP "Audiência Inteligente". Não há restrição de acesso por setor dentro da unidade.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Todos os servidores da unidade acessam automaticamente os processos dentro do audIN, ou é preciso solicitar autorização? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Uma vez habilitado(a) no sistema audIN (conta institucional, MFA e inclusão no grupo LDAP "Audiência Inteligente"), o(a) servidor(a) acessa automaticamente as informações e mídias dos processos da própria unidade, sem necessidade de autorização adicional por processo — exceto nos casos de sigilo, em que a visualização é restrita às pessoas lotadas na unidade responsável.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quais ações o(a) moderador(a) pode realizar durante a audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O(a) organizador(a)/moderador(a) da audiência é responsável por admitir participantes na sala, controlar câmeras e microfones, e iniciar ou interromper a gravação quantas vezes forem necessárias durante a sessão. Os requerimentos feitos pelas partes ou por advogados(as) pelo chat do Teams podem ser copiados diretamente para a ata, da mesma forma como já era feito com outras ferramentas de videoconferência.</p>
+    <div class="faq-body">      <p>Não. A degravação é um recurso disponível para quando for necessário o registro textual da audiência (transcrição literal, pontos principais ou resumo), mas não há, até o momento, uma determinação de que toda audiência precise ser degravada — cabe à unidade avaliar a necessidade em cada caso, salvo determinação específica em sentido contrário.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Em que momento a sala virtual se abre para mim no dia da audiência, e como faço a degravação depois? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>No dia e horário agendados, acesse a pauta da sua unidade no aplicativo Audiência Virtual, localize o processo e clique em "Iniciar" — é esse comando que abre a sala para o organizador. Depois de a audiência ser encerrada e a gravação sincronizada na Videoteca, a degravação pode ser feita de três formas: importando o vídeo diretamente da Videoteca, importando pelo link público no Video Play, ou enviando um arquivo local.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É necessário colar o link da gravação no termo de audiência, como era feito no LifeSize? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Sim. Depois de a audiência ser gravada e sincronizada, consulte a mídia na Videoteca, clique em "Visualizar" e depois em "Copiar link do vídeo". Esse link deve constar no termo/ata da audiência e ser juntado aos autos do processo, da mesma forma como já era feito com o LifeSize.</p>
+    <div class="faq-body">      <p>No dia e horário agendados, acesse a pauta da sua unidade no aplicativo Audiência Virtual, localize o processo e clique em "Iniciar" — é esse comando que abre a sala para o organizador. Depois de a audiência ser encerrada e a gravação sincronizada na Videoteca, a degravação pode ser feita de três formas: importando o vídeo diretamente da Videoteca, importando pelo link público no Video Play, ou enviando um arquivo local.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É necessário gravar a audiência inteira em um único arquivo? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Não é obrigatório manter um único arquivo contínuo: o sistema permite iniciar e interromper a gravação quantas vezes forem necessárias ao longo da sessão. Inclusive, recomenda-se gravar cada depoimento separadamente, o que facilita a organização e a posterior degravação — o importante é que nenhum trecho relevante do ato processual fique sem registro.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>A configuração dos parâmetros das audiências no Teams será toda manual, ou a pauta do PROJUDI será espelhada automaticamente? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>A integração do PROJUDI com o aplicativo Audiência Virtual limita-se à replicação das audiências já agendadas no sistema judicial, considerando dados como unidade, número do processo, tipo de audiência, data, horário de início e término, e marcador de sala. A disponibilidade de dias e horários para novos agendamentos continua sendo gerenciada diretamente pelo sistema judicial, conforme os parâmetros já configurados pela unidade.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Minha comarca não aparece no Audiência Virtual, mesmo após chamados no Service Desk marcados como solucionados. O que fazer? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Esse tipo de situação deve ser tratado de forma individualizada: abra um novo chamado técnico no Service Desk solicitando atuação com acesso remoto à sua estação de trabalho, para que a equipe técnica possa coletar evidências do problema e aplicar as correções necessárias.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Há integração entre o audIN e o sistema SEEU? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p><strong>Retificação:</strong> diferentemente do informado anteriormente, já existe integração entre o audIN e o SEEU. Atualmente é possível consultar os processos na base disponibilizada pelo CNJ, e as unidades que atuam com processos do SEEU já podem agendar audiências normalmente pelo aplicativo Audiência Virtual, no Microsoft Teams.</p>
-      <p>Ainda assim, permanecem algumas limitações em evolução: o ecossistema ainda não tem acesso à pauta de audiências do próprio SEEU, por isso as designações não são obtidas automaticamente como já ocorre com o PJe e o PROJUDI — o agendamento no Audiência Virtual continua sendo feito manualmente pela unidade. Também está pendente o recebimento, pelo audIN, das informações necessárias para identificar corretamente as regras de sigilo e validar as permissões de acesso às mídias vinculadas a processos do SEEU, de forma automatizada.</p>
-      <p>Há ainda uma questão de infraestrutura: nem todas as unidades prisionais que participam de audiências de processos do SEEU dispõem hoje de equipamentos compatíveis com o Microsoft Teams — ponto que já está sendo avaliado para uma eventual ampliação de uso nesse contexto.</p>
-      <p>Essas evoluções serão avaliadas tecnicamente pela Diretoria de Sistemas, responsável pelo audIN e seus componentes integrados, em articulação com as áreas responsáveis pelo SEEU/CNJ, quando necessário.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É possível visualizar a pauta de audiências organizada por mês? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Não. O aplicativo Audiência Virtual permite consultar a pauta de apenas um dia específico por vez. Para consultas de pauta mensal, é necessário utilizar o sistema judicial (PJe ou PROJUDI).</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Audiências já migradas para o audIN, mas com realização prevista antes da obrigatoriedade: o link já é gerado? Ainda podem ser realizadas no LifeSize? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Sim, o sistema já gera o link de acesso normalmente, mesmo antes da data de obrigatoriedade da unidade. Porém, assim que a unidade estiver apta a realizar audiências pelo ecossistema Audiência Inteligente, todas as audiências agendadas devem ser migradas manualmente para o Audiência Virtual, com a intimação das partes interessadas para acesso pelo novo link — não sendo recomendado continuar utilizando o LifeSize a partir desse ponto.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O que ocorre quando o tempo agendado da audiência se esgota — o sistema encerra automaticamente ou mantém a sala aberta? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O horário informado no agendamento é apenas uma referência para o encontro das partes no compromisso da audiência. Uma vez iniciada a sessão a partir da pauta do Audiência Virtual, o Teams permanece aberto até que o(a) moderador(a) clique em "Encerrar a reunião" — a audiência não é interrompida automaticamente ao final do horário previsto.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Com a integração automática entre PJe e audIN, a fila "Designar audiência" — hoje exclusiva da secretaria — passará também para a assessoria? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Questões dessa natureza envolvem a definição de fluxos internos e devem ser tratadas com a área finalística do Tribunal. No aspecto técnico, o sistema Audiência Virtual apenas replica os agendamentos já existentes no PJe, independentemente de qual área da unidade foi responsável pela designação da audiência.</p>
+    <div class="faq-body">      <p>Não é obrigatório manter um único arquivo contínuo: o sistema permite iniciar e interromper a gravação quantas vezes forem necessárias ao longo da sessão. Inclusive, recomenda-se gravar cada depoimento separadamente, o que facilita a organização e a posterior degravação — o importante é que nenhum trecho relevante do ato processual fique sem registro.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como obtenho a gravação da minha audiência depois que ela é feita automaticamente pelo Teams? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>A gravação é sincronizada automaticamente com a Videoteca do audIN após o encerramento correto da audiência ("Encerrar a reunião" no Teams e "Encerrar" no Audiência Virtual). Para obtê-la, acesse a Videoteca, consulte a mídia pelo número do processo, clique em "Visualizar" e depois em "Copiar link do vídeo". Caso precise do arquivo antes mesmo da disponibilização no audIN, ele também pode ser conferido diretamente no OneDrive da conta institucional usada na gravação.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É obrigatório que todas as partes tenham o Microsoft Teams instalado para participar da audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Não. Pelo computador, o acesso à audiência é feito diretamente pelo navegador, sem necessidade de instalar o aplicativo Teams — basta clicar no link recebido e permitir o uso da câmera e do microfone. Pelo celular ou tablet, caso o aplicativo Microsoft Teams ainda não esteja instalado, o próprio sistema oferece automaticamente a opção de baixá-lo antes do ingresso na sala. Em ambos os casos, o link gerado é suficiente para o acesso.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Qual é a data de obrigatoriedade do audIN para os Juizados Especiais — 1º ou 21 de setembro de 2026? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como funciona a designação e o agendamento de audiências no CEJUSC Pré-processual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>No CEJUSC Pré-processual, o atendimento começa pelo Balcão Virtual, para o pré-atendimento da parte interessada. Confirmada a necessidade de conciliação, é cadastrada uma RPP (Reclamação Pré-processual) no PJe, com a audiência já designada diretamente para a unidade CEJUSC. Em seguida, a própria unidade CEJUSC realiza o agendamento no Audiência Virtual e acosta manualmente aos autos uma certidão com o link de acesso, que é enviado aos interessados. No dia marcado, o(a) atendente do CEJUSC acessa a pauta da unidade CEJUSC no Audiência Virtual, realiza a audiência e, ao final, publica o link da mídia gravada diretamente nos autos do processo.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como funciona a designação e a realização de audiências no CEJUSC Processual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>Existem dois fluxos possíveis, dependendo de quem designa a audiência. <strong>Quando a unidade de origem designa:</strong> ela cria a audiência no PJe já direcionada à unidade CEJUSC (informando processo, tipo de audiência, data, horário e sala), faz o agendamento no Audiência Virtual, acosta a certidão com o link nos autos e movimenta o processo para o CEJUSC. <strong>Quando o próprio CEJUSC designa:</strong> a unidade de origem apenas movimenta o processo para o CEJUSC, que passa a ser responsável por designar a audiência no PJe, agendar no Audiência Virtual e certificar o link nos autos.</p>
-      <p>Em ambos os casos, o(a) atendente do CEJUSC acessa diretamente a pauta da própria unidade CEJUSC no Audiência Virtual para realizar e encerrar a audiência (primeiro no Teams, depois na pauta do Audiência Virtual) — não é necessário que a unidade de origem libere acesso individualizado a cada colaborador. Após o sincronismo automático das mídias, o(a) atendente consulta a gravação na Videoteca do audIN, publica o link nos autos e movimenta o processo de volta à unidade de origem.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quando a Vara designa a audiência do CEJUSC pelo fluxo do PJe (durante a fase manual), quem faz a inclusão do processo no Audiência Virtual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>Quando a Vara de origem designa a audiência no PJe já direcionada à unidade CEJUSC, é a própria Vara quem realiza o agendamento correspondente no Audiência Virtual, antes de movimentar o processo para o CEJUSC. Esse é o mesmo fluxo já confirmado para as audiências de conciliação designadas pela unidade de origem. Para que isso seja possível, os usuários responsáveis pela designação da audiência na Vara de origem devem estar habilitados nas unidades CEJUSC onde as audiências serão realizadas.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Minha unidade não tem acesso à pauta do CEJUSC para agendar audiências de conciliação. Como proceder? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>É necessário que os usuários responsáveis pela designação, na unidade de origem, estejam habilitados também na unidade CEJUSC correspondente — sem essa habilitação, não é possível visualizar a pauta nem agendar diretamente nela. Caso sua unidade ainda não tenha essa habilitação, abra um chamado técnico no Service Desk solicitando o acesso, informando a serventia e a unidade CEJUSC de destino.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Ao encaminhar o processo pelo fluxo "(CJP) Encaminhar para o CEJUSC Processual", como fica a designação da audiência no CEJUSC Processual-Fazendário? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>O fluxo de encaminhamento no PJe continua sendo utilizado normalmente. A partir daí, a designação da audiência segue o mesmo modelo já adotado para o CEJUSC Processual: pode ser feita pela própria Vara de origem, já direcionada à unidade CEJUSC Processual-Fazendário, ou pelo próprio CEJUSC, conforme a rotina definida entre as unidades. Em qualquer um dos casos, o agendamento no Audiência Virtual deve ser feito diretamente na unidade CEJUSC Processual-Fazendário, para que a audiência apareça corretamente na pauta dela.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Ao redesignar uma audiência para outra data, o link já gerado continua servindo? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim. O link publicado nos autos (https://audinplay.tjba.jus.br/consulta-publica/NUMERO_DO_PROCESSO) está vinculado ao número do processo, não a um agendamento específico — por isso não é necessário gerar um novo link a cada redesignação. Ao acessar o link, o usuário externo vê uma lista com todos os agendamentos daquele processo e seus respectivos status (agendado, cancelado ou encerrado); basta localizar o evento com status "agendado" e clicar em "Abrir sala de audiências" na coluna Ações. A própria unidade responsável (inclusive o CEJUSC, quando for o caso) pode realizar a nova designação diretamente, sem depender de outra unidade.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Qual link deve constar na certidão — o link geral de consulta pública ou o específico com QR Code? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Deve ser utilizado o link geral de consulta pública (https://audinplay.tjba.jus.br/consulta-publica/NUMERO_DO_PROCESSO), como já orientado no modelo de certidão sugerido pela Secretaria Virtual do 1º Grau. Esse link mostra todos os agendamentos daquele processo e seus status, permanecendo válido mesmo em caso de redesignação — diferente do link específico com QR Code, que aponta diretamente para uma sala e pode ficar desatualizado se a audiência for remarcada.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É possível ouvir o depoimento das partes em separado, e a parte que sair da audiência por problema técnico consegue retornar pelo mesmo link? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, aos dois casos. Para ouvir as partes separadamente, o(a) moderador(a) pode manter uma delas na sala de espera (lobby) enquanto a outra presta depoimento, admitindo-a somente no momento adequado — ou utilizar o recurso de sala simultânea (breakout room) para conversas reservadas. Quanto à reconexão, o link da audiência permanece válido enquanto a sessão estiver em andamento: se a parte perder a conexão por problema técnico, basta acessar novamente o mesmo link para retornar à sala.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Há capacitação específica para os usuários do CEJUSC, e os fluxos do PJe usados para encaminhar processos ao CEJUSC continuam os mesmos? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>No aspecto técnico de utilização dos componentes do ecossistema (Teams, Audiência Virtual, audIN), a capacitação para os usuários do CEJUSC é a mesma já disponibilizada no Ambiente Virtual de Aprendizagem da UNICORP. Já para os aspectos de fluxos processuais e de responsabilidades — incluindo a nomenclatura dos fluxos do PJe usados para encaminhar processos ao CEJUSC, inclusive para o CEJUSC Processual-Fazendário — as unidades devem seguir as orientações específicas do NUPEMEC, da Coordenação dos Juizados Especiais e da vara de origem.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quais são as exceções ao uso obrigatório do Microsoft Teams para a realização de audiências? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Até o momento, são consideradas exceções ao uso obrigatório do Teams: a coleta de Depoimento Especial e as audiências com participação de unidades prisionais que ainda não possuem equipamentos compatíveis com o MS Teams. Essa lista pode ser atualizada conforme o avanço da implantação do ecossistema.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como funciona no Teams a transição entre o conciliador e o juiz leigo na audiência UNA dos Juizados Especiais? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Diferentemente do que se imaginava inicialmente, a transição não exige a criação de um novo agendamento em sala distinta: ela ocorre dentro da própria sessão já em andamento no Teams. O(a) atendente deve, na lista de participantes ("Pessoas"), localizar o(a) juiz(íza) leigo(a) e selecionar "Solicitar como apresentador", trazendo-o(a) para a sessão atual. Em seguida, em "Controles" → "Exibir mais opções" → "Quem pode admitir do lobby", deve selecionar "Organizadores, co-organizadores e apresentadores" e clicar em "Aplicar".</p>
-      <p>Com essa configuração, o(a) juiz(íza) leigo(a) passa a ter permissões de organizador(a): admitir participantes do lobby, controlar câmeras e microfones, remover participantes e controlar o início e o término da gravação — a mídia continua sendo sincronizada automaticamente com o repositório central do audIN. Ao final, ele(a) sai pelo botão "Sair" no Teams e é responsável por acessar a pauta do Audiência Virtual, na aba "Em atendimento", localizar o processo e clicar em "Encerrar".</p>
+    <div class="faq-body">      <p>A gravação é sincronizada automaticamente com a Videoteca do audIN após o encerramento correto da audiência ("Encerrar a reunião" no Teams e "Encerrar" no Audiência Virtual). Para obtê-la, acesse a Videoteca, consulte a mídia pelo número do processo, clique em "Visualizar" e depois em "Copiar link do vídeo". Caso precise do arquivo antes mesmo da disponibilização no audIN, ele também pode ser conferido diretamente no OneDrive da conta institucional usada na gravação.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como funciona a gravação de audiências totalmente presenciais pelo Teams? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>As audiências totalmente presenciais seguem as mesmas tratativas de gravação já praticadas atualmente com o LifeSize. O uso da câmera 360º é obrigatório apenas nas unidades que já possuem esse equipamento instalado; nas demais, recomenda-se direcionar a webcam disponível para a pessoa que estiver com a palavra no momento (magistrado, testemunha etc.) ao longo da audiência.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O ecossistema audIN também será usado no Balcão Virtual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>O Balcão Virtual também será migrado para o Microsoft Teams, porém por meio de uma plataforma específica para esse atendimento, distinta do Audiência Virtual usado nas audiências. Os detalhes serão apresentados em breve a todas as unidades que utilizam o serviço.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Ao agendar uma audiência, o campo "Organizadores" pode ficar em branco? Quem deve ser informado ali? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, o campo "Organizadores" é opcional — os únicos campos obrigatórios no formulário de agendamento são Número do Processo, Tipo de Audiência, Data e Horário (inicial e final). Quando a audiência for conduzida por um(a) conciliador(a) ou outro(a) responsável diferente de quem faz o agendamento, este login se torna a pessoa que efetivamente vai moderar a sala e admitir os participantes, já que essa é a pessoa que recebe os controles de organizador(a) da reunião no Teams.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quando um processo com audiência de conciliação é migrado do PJe para o Teams, ele vai para a pauta do CEJUSC ou da Vara de origem? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>Vai para a pauta da própria unidade CEJUSC, e não para a pauta da Vara de origem — desde que a audiência tenha sido designada no PJe já direcionada à unidade CEJUSC correspondente, conforme o fluxo de designação já confirmado. Assim, os(as) conciliadores(as) do CEJUSC acessam diretamente a pauta da sua própria unidade no Audiência Virtual para realizar essas audiências, sem depender de acesso à pauta da Vara.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quem abre a sala da audiência precisa ser necessariamente a pessoa que vai realizá-la? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O usuário habilitado na unidade que clicar no botão "Iniciar" do agendamento da audiência na pauta do Audiência Virtual será o responsável por conduzir os trabalhos até que ela se finalize. Inclusive, as mídias gravadas nessa audiência serão armazenadas temporariamente no OneDrive desse usuário, para depois serem replicadas no repositório central do audIN. Se for necessário abrir a sala apenas para avisar sobre atrasos pelo chat, o ideal é que a pessoa responsável por conduzir definitivamente a audiência assuma esse papel assim que possível.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Já existe um manual de acesso destinado às partes e testemunhas que não têm familiaridade com o Teams? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Sim. O <a href="https://www.tjba.jus.br/portal/wp-content/uploads/2026/08/GUIA-RAPIDO-USUARIO-EXTERNO-AUDIN_atualizado.pdf" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Guia Rápido de Acesso às Audiências Virtuais para Usuários Externos<span class="sr-only"> (abre em nova aba)</span></a> já traz um passo a passo completo de acesso pelo AudinPlay, com captura de tela de cada etapa, para computador e celular (Android e iOS). O guia está disponível em PDF e pode ser anexado às intimações enviadas às partes.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Os links e as gravações das audiências ficam salvos no próprio audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>O link de acesso gerado no agendamento é de uso pontual, para a entrada na sala da audiência. Já a gravação, após o encerramento correto da sessão, é sincronizada automaticamente e armazenada na Videoteca do audIN, de onde pode ser consultada, republicada e degravada a qualquer momento.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como ficam as audiências com réu preso, já que os presídios só têm acesso ao LifeSize? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Audiências com participação de unidades prisionais estão entre as exceções já confirmadas ao uso obrigatório do Microsoft Teams — nesses casos, a realização continua normalmente pelo LifeSize.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Qual é o órgão responsável por conceder acesso ao audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O acesso é providenciado pela Central de Serviços de TIC do TJBA (Service Desk), mediante abertura de chamado técnico.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O Ministério Público, a Defensoria Pública e advogados(as) têm acesso ao audIN? Como acessam as gravações? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O sistema audIN em si é de uso interno, restrito a magistrados(as) e servidores(as) habilitados. O MP, a Defensoria Pública, advogados(as) e demais participantes acessam as audiências como usuários externos, com link publicado nos autos do processo, da mesma forma como já acessam os demais documentos processuais.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como a parte, de fora da unidade, pode acessar o AudinPlay e consultar a gravação do próprio depoimento posteriormente? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O MP, a Defensoria Pública, advogados(as) e demais participantes — incluindo as próprias partes — acessam as mídias gravadas nas audiências como usuários externos, por meio do link publicado nos autos do processo, da mesma forma como já acessam os demais documentos processuais. Se a gravação já tiver sido publicada nos autos, o link do vídeo direciona automaticamente para o AudinPlay, também mediante a resolução do captcha, permitindo à parte assistir ao próprio depoimento.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O audIN está implantado apenas no TJBA? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Sobre o projeto</span>
-      <p>Sim. O audIN é um ecossistema inovador e exclusivo, de propriedade intelectual e institucional, desenvolvido e operado pelo Tribunal de Justiça do Estado da Bahia, integrado aos sistemas judiciais e à infraestrutura de TIC do próprio TJBA.</p>
+    <div class="faq-body">      <p>As audiências totalmente presenciais seguem as mesmas tratativas de gravação já praticadas atualmente com o LifeSize. O uso da câmera 360º é obrigatório apenas nas unidades que já possuem esse equipamento instalado; nas demais, recomenda-se direcionar a webcam disponível para a pessoa que estiver com a palavra no momento (magistrado, testemunha etc.) ao longo da audiência.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Há um limite de duração para a gravação contínua de uma audiência (ex.: sessões longas do Tribunal do Júri)? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Por questões de compatibilidade técnica do Microsoft Teams, as mídias gravadas durante as audiências não devem ultrapassar o limite máximo de 4 horas ou 1,5 GB por arquivo. Se a audiência ultrapassar esse limite, a gravação em andamento é interrompida automaticamente e o Teams inicia uma nova gravação na sequência. Recomenda-se realizar as gravações com um limite prático de 2 (duas) horas ou 1 GB de tamanho, priorizando, sempre que possível, gravações mais curtas com o registro individual de cada depoente.</p>
+    <div class="faq-body">      <p>Por questões de compatibilidade técnica do Microsoft Teams, as mídias gravadas durante as audiências não devem ultrapassar o limite máximo de 4 horas ou 1,5 GB por arquivo. Se a audiência ultrapassar esse limite, a gravação em andamento é interrompida automaticamente e o Teams inicia uma nova gravação na sequência. Recomenda-se realizar as gravações com um limite prático de 2 (duas) horas ou 1 GB de tamanho, priorizando, sempre que possível, gravações mais curtas com o registro individual de cada depoente.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível excluir uma gravação antes de ela ser sincronizada com o audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Por questões de segurança, recomenda-se não excluir as mídias gravadas no OneDrive antes de confirmar que o sincronismo automático com o repositório central do audIN foi concluído. Caso seja necessário eliminar alguma mídia já sincronizada na Videoteca do audIN, deve ser aberto um chamado técnico junto ao Service Desk, para que a mídia seja devidamente inativada, removendo sua visibilidade nas consultas da Videoteca.</p>
+    <div class="faq-body">      <p>Por questões de segurança, recomenda-se não excluir as mídias gravadas no OneDrive antes de confirmar que o sincronismo automático com o repositório central do audIN foi concluído. Caso seja necessário eliminar alguma mídia já sincronizada na Videoteca do audIN, deve ser aberto um chamado técnico junto ao Service Desk, para que a mídia seja devidamente inativada, removendo sua visibilidade nas consultas da Videoteca.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>A pessoa que realiza a audiência é responsável por inserir o link na pauta de audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Após o encerramento das gravações da audiência, atualmente o ato de gerar os links e publicá-los nos autos é de responsabilidade do usuário que movimenta o processo. Definições mais específicas de responsabilidades e fluxos operacionais internos devem ser esclarecidas com a vara de origem e seus órgãos regulamentadores.</p>
+    <div class="faq-body">      <p>Após o encerramento das gravações da audiência, atualmente o ato de gerar os links e publicá-los nos autos é de responsabilidade do usuário que movimenta o processo. Definições mais específicas de responsabilidades e fluxos operacionais internos devem ser esclarecidas com a vara de origem e seus órgãos regulamentadores.</p>
     </div>
   </details>
 
   <details class="faq">
-    <summary>Há uma central de dúvidas ou e-mail de suporte para o audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Suporte</span>
-      <p>Sim. O canal oficial é a Central de Serviços de TIC do TJBA (Service Desk), pelo 0800 071 8522, pelo telefone (71) 3324-7400, ou pelo portal servicedesk.tjba.jus.br. Não é necessário um e-mail específico: qualquer dúvida técnica ou de acesso deve ser registrada como chamado nesse canal.</p>
+    <summary>Audiências totalmente presenciais precisam ser documentadas e gravadas no audIN? <span></span></summary>
+    <div class="faq-body">      <p>Em geral, todas as audiências precisam ser documentadas, e entende-se que todas as unidades gravam as audiências. Caso o(a) magistrado(a) opte por adotar o procedimento de digitar todos os atos — inclusive eventuais depoimentos, interrogatórios e manifestações das partes —, a gravação deixa de ser necessária; nesse caso, porém, a unidade não terá à disposição os demais recursos oferecidos pelo ecossistema Audiência Inteligente (como a degravação e os resumos por IA). Sugere-se conversar com o(a) magistrado(a) responsável pela unidade para definir o fluxo a ser adotado.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-funcionalidades">
+    <summary><span class="faq-group-title">Funcionalidades do sistema</span><span class="faq-count">47</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>É possível ajustar a duração da audiência ao agendar, ou ela fica sempre em 30 minutos? <span></span></summary>
+    <div class="faq-body">      <p>Sim. No formulário de agendamento do Audiência Virtual há dois campos de horário — início e término — que definem a duração exata da audiência, sem se limitar a um intervalo fixo. Os campos aceitam ajustes a cada um minuto: basta digitar o horário desejado em vez de escolher um valor pré-determinado.</p>
     </div>
   </details>
 
   <details class="faq">
-    <summary>O(a) conciliador(a) do CEJUSC precisa ter acesso à caixa compartilhada de cada vara que designa audiências para o CEJUSC? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>Não. Quando a audiência é designada no PJe já direcionada à unidade CEJUSC, ela passa a constar na pauta da própria unidade CEJUSC no Audiência Virtual — os(as) conciliadores(as) acessam essa pauta diretamente, sem precisar ter acesso à caixa de e-mail compartilhada de cada vara de origem.</p>
+    <summary>Quais são os requisitos para habilitar minha unidade no audIN? <span></span></summary>
+    <div class="faq-body">      <p>Caso a sua unidade ainda não apareça na tela inicial do aplicativo Audiência Virtual no Teams, abra um chamado técnico junto ao Service Desk, informando o nome da unidade e o e-mail da caixa compartilhada da serventia, para que a habilitação seja providenciada.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Onde encontro os prazos de obrigatoriedade de agendamento e de realização das audiências pela minha entrância? <span></span></summary>
+    <div class="faq-body">      <p>O cronograma completo, organizado por entrância (inicial, intermediária e final) e por tipo de unidade (PJe ou Sistema dos Juizados Especiais/PROJUDI), está no anexo único do Decreto Judiciário nº 1059/2026. <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Clique aqui<span class="sr-only"> (abre em nova aba)</span></a> para consultar o texto integral e o cronograma anexo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como proceder no período de transição entre a obrigatoriedade de agendamento e a de realização das audiências? <span></span></summary>
+    <div class="faq-body">      <p>As audiências já designadas no PJe que serão realizadas a partir da data de obrigatoriedade prevista para a respectiva unidade devem ser agendadas manualmente no aplicativo Audiência Virtual. Após o agendamento, a unidade deve intimar as partes e demais participantes sobre o novo link de acesso, utilizando o modelo de certidão padrão. Esse procedimento segue as datas do item 1, Seção IV do cronograma anexo ao Decreto Judiciário nº 1059/2026 — Fase de Obrigatoriedade de Realização das Audiências.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como altero ou cancelo um agendamento de audiência já criado? <span></span></summary>
+    <div class="faq-body">      <p>Qualquer campo do agendamento — processo, tipo de audiência, data, horário de início/fim e sala — pode ser alterado por um usuário habilitado na unidade: acesse a pauta de audiências no Audiência Virtual, localize o processo, clique no ícone de três pontos ao lado do número do processo, selecione "Editar", ajuste os dados necessários e clique em "Salvar".</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quem pode acessar o sistema audIN — apenas os servidores do gabinete, ou toda a unidade? <span></span></summary>
+    <div class="faq-body">      <p>Todos os servidores da unidade podem acessar o sistema, não apenas os do gabinete — desde que atendam aos requisitos básicos de habilitação: conta institucional com acesso ao Microsoft Teams, Múltiplo Fator de Autenticação (MFA) habilitado, cadastro ativo no audIN e inclusão no grupo LDAP "Audiência Inteligente". Não há restrição de acesso por setor dentro da unidade.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Todos os servidores da unidade acessam automaticamente os processos dentro do audIN, ou é preciso solicitar autorização? <span></span></summary>
+    <div class="faq-body">      <p>Uma vez habilitado(a) no sistema audIN (conta institucional, MFA e inclusão no grupo LDAP "Audiência Inteligente"), o(a) servidor(a) acessa automaticamente as informações e mídias dos processos da própria unidade, sem necessidade de autorização adicional por processo — exceto nos casos de sigilo, em que a visualização é restrita às pessoas lotadas na unidade responsável.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quais ações o(a) moderador(a) pode realizar durante a audiência? <span></span></summary>
+    <div class="faq-body">      <p>O(a) organizador(a)/moderador(a) da audiência é responsável por admitir participantes na sala, controlar câmeras e microfones, e iniciar ou interromper a gravação quantas vezes forem necessárias durante a sessão. Os requerimentos feitos pelas partes ou por advogados(as) pelo chat do Teams podem ser copiados diretamente para a ata, da mesma forma como já era feito com outras ferramentas de videoconferência.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>É possível visualizar a pauta de audiências organizada por mês? <span></span></summary>
+    <div class="faq-body">      <p>Não. O aplicativo Audiência Virtual permite consultar a pauta de apenas um dia específico por vez. Para consultas de pauta mensal, é necessário utilizar o sistema judicial (PJe ou PROJUDI).</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O que ocorre quando o tempo agendado da audiência se esgota — o sistema encerra automaticamente ou mantém a sala aberta? <span></span></summary>
+    <div class="faq-body">      <p>O horário informado no agendamento é apenas uma referência para o encontro das partes no compromisso da audiência. Uma vez iniciada a sessão a partir da pauta do Audiência Virtual, o Teams permanece aberto até que o(a) moderador(a) clique em "Encerrar a reunião" — a audiência não é interrompida automaticamente ao final do horário previsto.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Qual é a data de obrigatoriedade do audIN para os Juizados Especiais — 1º ou 21 de setembro de 2026? <span></span></summary>
+    <div class="faq-body">      <p>Existem dois cronogramas distintos no Decreto Judiciário nº 1059/2026. Nas unidades que utilizam o PJe, a obrigatoriedade de realização das audiências exclusivamente pelo Teams varia por entrância: 1º de setembro (final), 14 de setembro (intermediária) e 21 de setembro (inicial). Já nas Varas do Sistema dos Juizados Especiais (PROJUDI), a obrigatoriedade plena de realização é única para todas as unidades — 21 de setembro de 2026 — após um período de migração gradual que começa em 3 de agosto na capital e se estende até 18 de setembro no interior. A data de 1º de setembro mencionada por alguns colegas corresponde à entrância final das unidades do PJe, não aos Juizados Especiais. O cronograma completo está detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Ao redesignar uma audiência para outra data, o link já gerado continua servindo? <span></span></summary>
+    <div class="faq-body">      <p>Sim. O link publicado nos autos (https://audinplay.tjba.jus.br/consulta-publica/NUMERO_DO_PROCESSO) está vinculado ao número do processo, não a um agendamento específico — por isso não é necessário gerar um novo link a cada redesignação. Ao acessar o link, o usuário externo vê uma lista com todos os agendamentos daquele processo e seus respectivos status (agendado, cancelado ou encerrado); basta localizar o evento com status "agendado" e clicar em "Abrir sala de audiências" na coluna Ações. A própria unidade responsável (inclusive o CEJUSC, quando for o caso) pode realizar a nova designação diretamente, sem depender de outra unidade.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Qual link deve constar na certidão — o link geral de consulta pública ou o específico com QR Code? <span></span></summary>
+    <div class="faq-body">      <p>Deve ser utilizado o link geral de consulta pública (https://audinplay.tjba.jus.br/consulta-publica/NUMERO_DO_PROCESSO), como já orientado no modelo de certidão sugerido pela Secretaria Virtual do 1º Grau. Esse link mostra todos os agendamentos daquele processo e seus status, permanecendo válido mesmo em caso de redesignação — diferente do link específico com QR Code, que aponta diretamente para uma sala e pode ficar desatualizado se a audiência for remarcada.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>É possível ouvir o depoimento das partes em separado, e a parte que sair da audiência por problema técnico consegue retornar pelo mesmo link? <span></span></summary>
+    <div class="faq-body">      <p>Sim, aos dois casos. Para ouvir as partes separadamente, o(a) moderador(a) pode manter uma delas na sala de espera (lobby) enquanto a outra presta depoimento, admitindo-a somente no momento adequado — ou utilizar o recurso de sala simultânea (breakout room) para conversas reservadas. Quanto à reconexão, o link da audiência permanece válido enquanto a sessão estiver em andamento: se a parte perder a conexão por problema técnico, basta acessar novamente o mesmo link para retornar à sala.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quais são as exceções ao uso obrigatório do Microsoft Teams para a realização de audiências? <span></span></summary>
+    <div class="faq-body">      <p>Até o momento, são consideradas exceções ao uso obrigatório do Teams: a coleta de Depoimento Especial e as audiências com participação de unidades prisionais que ainda não possuem equipamentos compatíveis com o MS Teams. Essa lista pode ser atualizada conforme o avanço da implantação do ecossistema.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona no Teams a transição entre o conciliador e o juiz leigo na audiência UNA dos Juizados Especiais? <span></span></summary>
+    <div class="faq-body">      <p>Diferentemente do que se imaginava inicialmente, a transição não exige a criação de um novo agendamento em sala distinta: ela ocorre dentro da própria sessão já em andamento no Teams. O(a) atendente deve, na lista de participantes ("Pessoas"), localizar o(a) juiz(íza) leigo(a) e selecionar "Solicitar como apresentador", trazendo-o(a) para a sessão atual. Em seguida, em "Controles" → "Exibir mais opções" → "Quem pode admitir do lobby", deve selecionar "Organizadores, co-organizadores e apresentadores" e clicar em "Aplicar".</p>
+      <p>Com essa configuração, o(a) juiz(íza) leigo(a) passa a ter permissões de organizador(a): admitir participantes do lobby, controlar câmeras e microfones, remover participantes e controlar o início e o término da gravação — a mídia continua sendo sincronizada automaticamente com o repositório central do audIN. Ao final, ele(a) sai pelo botão "Sair" no Teams e é responsável por acessar a pauta do Audiência Virtual, na aba "Em atendimento", localizar o processo e clicar em "Encerrar".</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Ao agendar uma audiência, o campo "Organizadores" pode ficar em branco? Quem deve ser informado ali? <span></span></summary>
+    <div class="faq-body">      <p>Sim, o campo "Organizadores" é opcional — os únicos campos obrigatórios no formulário de agendamento são Número do Processo, Tipo de Audiência, Data e Horário (inicial e final). Quando a audiência for conduzida por um(a) conciliador(a) ou outro(a) responsável diferente de quem faz o agendamento, este login se torna a pessoa que efetivamente vai moderar a sala e admitir os participantes, já que essa é a pessoa que recebe os controles de organizador(a) da reunião no Teams.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quem abre a sala da audiência precisa ser necessariamente a pessoa que vai realizá-la? <span></span></summary>
+    <div class="faq-body">      <p>O usuário habilitado na unidade que clicar no botão "Iniciar" do agendamento da audiência na pauta do Audiência Virtual será o responsável por conduzir os trabalhos até que ela se finalize. Inclusive, as mídias gravadas nessa audiência serão armazenadas temporariamente no OneDrive desse usuário, para depois serem replicadas no repositório central do audIN. Se for necessário abrir a sala apenas para avisar sobre atrasos pelo chat, o ideal é que a pessoa responsável por conduzir definitivamente a audiência assuma esse papel assim que possível.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como ficam as audiências com réu preso, já que os presídios só têm acesso ao LifeSize? <span></span></summary>
+    <div class="faq-body">      <p>Audiências com participação de unidades prisionais estão entre as exceções já confirmadas ao uso obrigatório do Microsoft Teams — nesses casos, a realização continua normalmente pelo LifeSize.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como compartilhar a tela durante a audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Durante a audiência, utilize o ícone "Compartilhar" na barra de ferramentas do Microsoft Teams para exibir documentos ou conteúdos aos demais participantes. Essa função está disponível tanto para quem organiza quanto para participantes autorizados pelo(a) moderador(a).</p>
+    <div class="faq-body">      <p>Durante a audiência, utilize o ícone "Compartilhar" na barra de ferramentas do Microsoft Teams para exibir documentos ou conteúdos aos demais participantes. Essa função está disponível tanto para quem organiza quanto para participantes autorizados pelo(a) moderador(a).</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>O que significa a "migração automática" de 31 de agosto mencionada no treinamento? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como acessar o curso de capacitação do audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>O curso está disponível no <a href="https://ead.tjba.jus.br/unicorpead/enrol/index.php?id=679" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Ambiente Virtual de Aprendizagem da UNICORP<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+    <div class="faq-body">      <p>Refere-se à conversão automática das audiências já designadas no sistema judicial, prevista no cronograma do <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a>, que ocorre a partir de 31 de agosto de 2026, em todas as unidades. Essa conversão não substitui a necessidade de acompanhar as datas específicas de obrigatoriedade de agendamento e de realização exclusiva pelo Teams, também detalhadas no decreto.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Cada audiência gera um link diferente — o organizador precisa acessar manualmente cada novo link a cada sessão? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, diferentemente do LifeSize (que usa um link fixo), cada audiência agendada no Audiência Virtual gera seu próprio link exclusivo. Na prática, isso não exige digitar ou copiar links manualmente: basta acessar a pauta de audiências da unidade no Audiência Virtual e clicar em "Iniciar" no processo correspondente — o sistema direciona automaticamente para a sala certa.</p>
+    <div class="faq-body">      <p>Sim, diferentemente do LifeSize (que usa um link fixo), cada audiência agendada no Audiência Virtual gera seu próprio link exclusivo. Na prática, isso não exige digitar ou copiar links manualmente: basta acessar a pauta de audiências da unidade no Audiência Virtual e clicar em "Iniciar" no processo correspondente — o sistema direciona automaticamente para a sala certa.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como organizar múltiplas salas de uma mesma unidade (ex.: Cartório, CEJUSC, Balcão Virtual) no Audiência Virtual? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O Balcão Virtual é um assunto à parte e será tratado em outra ocasião — aqui nos referimos apenas a audiências. Dentro de cada unidade cadastrada no Audiência Virtual, é possível vincular um agendamento a uma sala específica, recurso chamado de "marcador" pelo sistema. Essa função costuma ser usada quando muitas audiências são designadas no mesmo dia e a pauta precisa ser distribuída entre vários conciliadores. No caso de unidades do tipo CEJUSC, os marcadores também podem separar as pautas por tipo de atividade — por exemplo, Pré-Processual ou Processual.</p>
+    <div class="faq-body">      <p>O Balcão Virtual é um assunto à parte e será tratado em outra ocasião — aqui nos referimos apenas a audiências. Dentro de cada unidade cadastrada no Audiência Virtual, é possível vincular um agendamento a uma sala específica, recurso chamado de "marcador" pelo sistema. Essa função costuma ser usada quando muitas audiências são designadas no mesmo dia e a pauta precisa ser distribuída entre vários conciliadores. No caso de unidades do tipo CEJUSC, os marcadores também podem separar as pautas por tipo de atividade — por exemplo, Pré-Processual ou Processual.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível incluir na Videoteca mídias de processos em segredo de justiça ou mídias externas, como CDs recebidos da polícia? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim. Gravações que não foram sincronizadas automaticamente, ou que vieram de fontes externas (como mídias policiais em CD), podem ser incluídas manualmente na Videoteca pelo fluxo de importação manual do audIN — desde que estejam no formato MP4, com no máximo 1 GB de tamanho ou 240 minutos de duração. Quanto ao sigilo, a visualização de gravações de processos sigilosos, incluindo os de competência do Tribunal do Júri, é restrita aos usuários lotados na unidade responsável pelo processo.</p>
+    <div class="faq-body">      <p>Sim. Gravações que não foram sincronizadas automaticamente, ou que vieram de fontes externas (como mídias policiais em CD), podem ser incluídas manualmente na Videoteca pelo fluxo de importação manual do audIN — desde que estejam no formato MP4, com no máximo 1 GB de tamanho ou 240 minutos de duração. Quanto ao sigilo, a visualização de gravações de processos sigilosos, incluindo os de competência do Tribunal do Júri, é restrita aos usuários lotados na unidade responsável pelo processo.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>O sigilo de uma gravação é aplicado manualmente? É possível incluir mídias de inquérito policial (IP) na Videoteca? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O sigilo não é uma marcação manual: a restrição de acesso às gravações de processos em segredo de justiça é aplicada automaticamente pelo sistema, com base na classificação do próprio processo no sistema judicial — não sendo necessário nenhum procedimento adicional para "colocar em sigilo" um vídeo específico. Quanto às mídias de inquérito policial, elas podem ser incluídas na Videoteca pelo mesmo fluxo de importação manual já disponível para mídias externas, desde que estejam no formato MP4, com no máximo 1 GB de tamanho ou 240 minutos de duração.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como devo proceder no trato das gravações de audiências de processos sigilosos? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>As gravações de processos em segredo de justiça seguem a mesma regra de restrição de acesso já aplicada aos demais documentos do processo: a visualização fica restrita aos usuários lotados na unidade responsável. Caso o processo suba em grau de recurso, o sistema identifica a vinculação entre 1º e 2º grau e libera a visualização também aos usuários lotados na unidade de origem em ambas as instâncias. Não é necessário nenhum procedimento manual adicional de marcação de sigilo — a restrição é aplicada automaticamente pelo sistema, com base na classificação do processo.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Por que os processos de PROJUDI da minha unidade ainda não aparecem no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>A evolução da implantação nas Varas do Sistema dos Juizados Especiais está sob responsabilidade exclusiva da Coordenação dos Juizados Especiais (COJE). No momento planejado para cada unidade, ela será parametrizada no sistema PROJUDI e, a partir dessa data, todas as audiências designadas passam a ser replicadas automaticamente no Audiência Virtual — incluindo alterações e exclusões de designação na pauta da unidade. Se a sua unidade ainda não foi parametrizada, é esperado que nenhum processo apareça automaticamente no audIN até essa data.</p>
+    <div class="faq-body">      <p>O sigilo não é uma marcação manual: a restrição de acesso às gravações de processos em segredo de justiça é aplicada automaticamente pelo sistema, com base na classificação do próprio processo no sistema judicial — não sendo necessário nenhum procedimento adicional para "colocar em sigilo" um vídeo específico. Quanto às mídias de inquérito policial, elas podem ser incluídas na Videoteca pelo mesmo fluxo de importação manual já disponível para mídias externas, desde que estejam no formato MP4, com no máximo 1 GB de tamanho ou 240 minutos de duração.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível personalizar o nome das salas de audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Recomenda-se que os nomes das salas sigam um padrão de até 20 caracteres. Quando a integração automática com o PJe estiver ativa, os nomes das salas já cadastradas no PJe serão replicados automaticamente para o Audiência Virtual no momento da designação da audiência.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Afinal, quando ocorrerá a integração entre o PJe e o audIN — a data mencionada em treinamentos diverge da informação já divulgada? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Por motivos técnicos e de priorização de outras demandas, a implantação da integração entre o PJe e o ecossistema Audiência Inteligente foi adiada para a primeira quinzena de setembro de 2026 — a menção a "maio" em treinamentos anteriores refere-se a uma previsão que não se confirmou.</p>
+    <div class="faq-body">      <p>Recomenda-se que os nomes das salas sigam um padrão de até 20 caracteres. Quando a integração automática com o PJe estiver ativa, os nomes das salas já cadastradas no PJe serão replicados automaticamente para o Audiência Virtual no momento da designação da audiência.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível gerar uma pauta de audiências em PDF, para publicação nos locais obrigatórios? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, mas essa geração deve ser feita pelo sistema judicial de origem do processo (PJe ou PROJUDI), seguindo os procedimentos já adotados atualmente. Não há previsão, até o momento, de disponibilizar esse recurso diretamente no Audiência Virtual ou no audIN.</p>
+    <div class="faq-body">      <p>Sim, mas essa geração deve ser feita pelo sistema judicial de origem do processo (PJe ou PROJUDI), seguindo os procedimentos já adotados atualmente. Não há previsão, até o momento, de disponibilizar esse recurso diretamente no Audiência Virtual ou no audIN.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Um processo recém-cadastrado demora para aparecer no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Atualmente, o Audiência Virtual valida o processo diretamente no banco de dados do sistema judicial de origem, o que reduz bastante o tempo de espera. O cenário relatado por alguns usuários — processo não localizado no mesmo dia do cadastro — foi corrigido nas atualizações mais recentes do ecossistema.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Audiências já gravadas e anexadas como mídia no PJe serão migradas automaticamente para o audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Não há previsão de implementação de um recurso de importação automática das mídias armazenadas no PJe Mídias para o audIN. Recomenda-se manter um ponto de corte definido: mídias já armazenadas no PJe Mídias continuam sendo consultadas normalmente por lá.</p>
+    <div class="faq-body">      <p>Atualmente, o Audiência Virtual valida o processo diretamente no banco de dados do sistema judicial de origem, o que reduz bastante o tempo de espera. O cenário relatado por alguns usuários — processo não localizado no mesmo dia do cadastro — foi corrigido nas atualizações mais recentes do ecossistema.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Há possibilidade de fazer cortes nas gravações, extraindo apenas o trecho necessário? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Atualmente não há previsão de uma funcionalidade de edição ou corte dos vídeos armazenados na Videoteca do audIN.</p>
+    <div class="faq-body">      <p>Atualmente não há previsão de uma funcionalidade de edição ou corte dos vídeos armazenados na Videoteca do audIN.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível desativar a gravação automática de uma audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O recurso de gravação automática foi criado justamente para evitar que o(a) organizador(a) da audiência esqueça de iniciar a gravação e perca informações relevantes da coleta de depoimentos. Caso a unidade opte por desativá-lo, deve abrir um chamado no Service Desk informando a comarca e a unidade, para que a equipe técnica aplique os ajustes necessários.</p>
+    <div class="faq-body">      <p>O recurso de gravação automática foi criado justamente para evitar que o(a) organizador(a) da audiência esqueça de iniciar a gravação e perca informações relevantes da coleta de depoimentos. Caso a unidade opte por desativá-lo, deve abrir um chamado no Service Desk informando a comarca e a unidade, para que a equipe técnica aplique os ajustes necessários.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>A desativação da gravação automática se aplica a toda a unidade, ou precisa ser feita individualmente por usuário? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>A desativação é feita por unidade: ao abrir o chamado no Service Desk, informe a comarca e a unidade — a configuração aplicada pela equipe técnica vale para todos os usuários que utilizam essa unidade no Audiência Virtual, sem necessidade de repetir a solicitação para cada servidor.</p>
+    <div class="faq-body">      <p>A desativação é feita por unidade: ao abrir o chamado no Service Desk, informe a comarca e a unidade — a configuração aplicada pela equipe técnica vale para todos os usuários que utilizam essa unidade no Audiência Virtual, sem necessidade de repetir a solicitação para cada servidor.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Até quando poderemos continuar usando o LifeSize durante o período de transição? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Como funciona a habilitação do CEJUSC (Fazendário e Regional), e o que fazer diante do erro "O organizador não está incluso na caixa compartilhada"? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>Há uma força-tarefa em andamento, conduzida pelo NUPEMEC e pela COJE, para a habilitação em massa dos auxiliares da justiça que atuam nos CEJUSCs. Problemas pontuais de habilitação — como a mensagem "O organizador não está incluso na caixa compartilhada" — devem ser resolvidos por chamado técnico no Service Desk, informando a serventia, o e-mail da caixa compartilhada da unidade e o login do usuário a ser habilitado (recomenda-se anexar ofício assinado com a autorização da autoridade competente da unidade).</p>
-      <p>Os prazos de obrigatoriedade seguem as mesmas normativas definidas para as unidades judiciais que utilizam o PJe ou o PROJUDI, conforme o Decreto Judiciário nº 1059/2026. Questões sobre fluxos internos específicos de cada CEJUSC devem ser tratadas com a área finalística do Tribunal.</p>
+    <div class="faq-body">      <p>O uso do LifeSize deve seguir o cronograma de obrigatoriedade da sua unidade, detalhado no <a href="https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.mostrarDiv=sim&tmp.id=43068&tmp.secao=9" target="_blank" rel="noopener noreferrer" style="color:#002654;font-weight:800;text-decoration:underline;">Decreto Judiciário nº 1059/2026<span class="sr-only"> (abre em nova aba)</span></a> — por entrância, no caso das unidades que usam o PJe, ou pelas datas específicas do Sistema dos Juizados Especiais (PROJUDI). Até a data de obrigatoriedade de realização pelo Teams da sua unidade, as audiências já agendadas no LifeSize podem continuar normalmente; a partir dela, a realização deve ocorrer exclusivamente pelo Audiência Virtual.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como funciona, na prática, a transição da conciliação para a instrução na audiência UNA (conciliador → juiz leigo)? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Durante a audiência UNA, quando houver necessidade de transição da conciliação para a instrução, o(a) atendente deve seguir estes passos, dentro da própria sessão no Teams:</p>
+    <div class="faq-body">      <p>Durante a audiência UNA, quando houver necessidade de transição da conciliação para a instrução, o(a) atendente deve seguir estes passos, dentro da própria sessão no Teams:</p>
       <ol style="margin:8px 0 8px 20px;padding:0;">
         <li style="margin-bottom:8px;">Na barra superior da reunião, clique em <strong>"Pessoas"</strong>.</li>
         <li style="margin-bottom:8px;">No campo de busca da lista de participantes, digite o nome ou login do(a) juiz(íza) leigo(a) que deve assumir a audiência. Posicione o cursor sobre o nome dele(a) e selecione <strong>"Solicitar como apresentador"</strong> — isso chama o(a) juiz(íza) leigo(a) para a sessão em andamento.</li>
@@ -1759,8 +1539,7 @@ img.shot:hover{transform:scale(1.015);}
 
   <details class="faq">
     <summary>Na audiência UNA, o que fazer se o juiz leigo não puder assumir imediatamente? E como ficam os links quando há conciliação e instrução? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Se o(a) juiz(íza) leigo(a) estiver ocupado(a) em outra audiência e não puder assumir de imediato, os participantes não devem permanecer aguardando na sala sem um(a) conciliador(a) ou juiz(íza) leigo(a) responsável: a audiência de conciliação deve ser encerrada normalmente, e as partes devem ser notificadas sobre a data em que a audiência de instrução será agendada.</p>
+    <div class="faq-body">      <p>Se o(a) juiz(íza) leigo(a) estiver ocupado(a) em outra audiência e não puder assumir de imediato, os participantes não devem permanecer aguardando na sala sem um(a) conciliador(a) ou juiz(íza) leigo(a) responsável: a audiência de conciliação deve ser encerrada normalmente, e as partes devem ser notificadas sobre a data em que a audiência de instrução será agendada.</p>
       <p>Quanto aos links, não são gerados dois links distintos: o link de acesso à audiência é único por processo (ex.: https://audinplay.tjba.jus.br/consulta-publica/NUMERO_DO_PROCESSO). O que muda é que, ao acessar esse link, é preciso selecionar o agendamento correto para aquela etapa — que deve estar com status "Agendado", e não "Em andamento", "Finalizado" ou "Cancelado".</p>
       <p>Para conversas reservadas (como com uma testemunha), pode-se usar o recurso de "sala simultânea" (breakout room) do Teams — uma sub-sala menor, criada a partir da audiência principal, disponível apenas para quem usa o aplicativo instalado (não pelo navegador), e que aceita qualquer participante já admitido, interno ou externo.</p>
     </div>
@@ -1768,173 +1547,335 @@ img.shot:hover{transform:scale(1.015);}
 
   <details class="faq">
     <summary>É possível extrair relatórios das audiências designadas, editadas e realizadas por período? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Até o momento não há previsão de os sistemas Audiência Virtual e audIN fornecerem relatórios sobre designação de audiências. Por ora, os sistemas permitem apenas a consulta de agendamentos por uma data específica, sem a possibilidade de exportar relatórios.</p>
+    <div class="faq-body">      <p>Até o momento não há previsão de os sistemas Audiência Virtual e audIN fornecerem relatórios sobre designação de audiências. Por ora, os sistemas permitem apenas a consulta de agendamentos por uma data específica, sem a possibilidade de exportar relatórios.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível assistir a uma audiência pelo Teams sem entrar formalmente na sala, como servidor(a) da unidade? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, desde que o acesso seja feito pela Consulta Pública do processo no AudinPlay, e com a liberação da autoridade competente pelo ato.</p>
+    <div class="faq-body">      <p>Sim, desde que o acesso seja feito pela Consulta Pública do processo no AudinPlay, e com a liberação da autoridade competente pelo ato.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Como adicionar mais de um organizador (organizador e co-organizador) ao agendar uma audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Ao preencher o formulário de agendamento no Audiência Virtual, o campo "Organizadores" é opcional e tem a finalidade exclusiva de replicar o agendamento no calendário do Outlook da pessoa informada — não é ali que se define quem terá permissões de moderador(a) durante a sessão.</p>
+    <div class="faq-body">      <p>Ao preencher o formulário de agendamento no Audiência Virtual, o campo "Organizadores" é opcional e tem a finalidade exclusiva de replicar o agendamento no calendário do Outlook da pessoa informada — não é ali que se define quem terá permissões de moderador(a) durante a sessão.</p>
       <p>Para transferir ou compartilhar a moderação durante a própria audiência, o(a) atendente deve, na lista de participantes ("Pessoas"), localizar a pessoa desejada e selecionar "Solicitar como apresentador", trazendo-a para a sessão. Em seguida, em "Controles" → "Exibir mais opções" → "Quem pode admitir do lobby", selecionar "Organizadores, co-organizadores e apresentadores" e clicar em "Aplicar" — esse é o mesmo procedimento já usado na transição entre conciliador(a) e juiz(íza) leigo(a) na audiência UNA.</p>
     </div>
   </details>
 
   <details class="faq">
-    <summary>Como as mídias do CEJUSC devem ser certificadas para fins de contabilização de produtividade da unidade? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">CEJUSC</span>
-      <p>As questões relacionadas à gestão de indicadores e ao controle de produtividade devem continuar sendo realizadas conforme os padrões já adotados atualmente, seja pelo sistema judicial ou por outros sistemas correlatos.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Audiências agendadas "fora de pauta" no PROJUDI também entram na migração automática? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Questões dessa natureza envolvem a definição de fluxos internos específicos e devem ser tratadas diretamente com a área finalística do Tribunal.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Audiências totalmente presenciais precisam ser documentadas e gravadas no audIN? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Fluxo de trabalho</span>
-      <p>Em geral, todas as audiências precisam ser documentadas, e entende-se que todas as unidades gravam as audiências. Caso o(a) magistrado(a) opte por adotar o procedimento de digitar todos os atos — inclusive eventuais depoimentos, interrogatórios e manifestações das partes —, a gravação deixa de ser necessária; nesse caso, porém, a unidade não terá à disposição os demais recursos oferecidos pelo ecossistema Audiência Inteligente (como a degravação e os resumos por IA). Sugere-se conversar com o(a) magistrado(a) responsável pela unidade para definir o fluxo a ser adotado.</p>
-    </div>
-  </details>
-
-  <details class="faq">
     <summary>Qual a configuração ideal dos equipamentos para gravação eficiente, considerando a câmera Kandao 360º? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Recomenda-se posicionar a câmera 360º o mais centralizada possível em relação aos participantes presentes, favorecendo a melhor captação de áudio e vídeo. Como é um dispositivo autônomo, não é necessário conectá-la ao computador. Após a audiência ter sido iniciada pelo(a) atendente responsável em um computador dedicado, ligue a câmera e, pela própria tela sensível ao toque: conecte-a à rede Wi-Fi ou com fio (conforme a infraestrutura disponível); acesse o navegador Chrome; entre no sistema audIN; acesse o módulo "Pauta das Audiências"; selecione a data atual, a comarca e a unidade e pesquise; localize o processo em atendimento e, na coluna Ações, clique em "Acessar sala da audiência".</p>
+    <div class="faq-body">      <p>Recomenda-se posicionar a câmera 360º o mais centralizada possível em relação aos participantes presentes, favorecendo a melhor captação de áudio e vídeo. Como é um dispositivo autônomo, não é necessário conectá-la ao computador. Após a audiência ter sido iniciada pelo(a) atendente responsável em um computador dedicado, ligue a câmera e, pela própria tela sensível ao toque: conecte-a à rede Wi-Fi ou com fio (conforme a infraestrutura disponível); acesse o navegador Chrome; entre no sistema audIN; acesse o módulo "Pauta das Audiências"; selecione a data atual, a comarca e a unidade e pesquise; localize o processo em atendimento e, na coluna Ações, clique em "Acessar sala da audiência".</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Quem abriu a sala apenas para avisar um atraso consegue transferir a moderação para quem vai efetivamente conduzir a audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, seguindo os mesmos passos descritos na pergunta sobre a transição de conciliador(a) para juiz(íza) leigo(a) na audiência UNA: adicionar a pessoa como apresentador(a) pela lista de participantes e ajustar, em "Controles", quem pode admitir do lobby para incluir organizadores, co-organizadores e apresentadores.</p>
+    <div class="faq-body">      <p>Sim, seguindo os mesmos passos descritos na pergunta sobre a transição de conciliador(a) para juiz(íza) leigo(a) na audiência UNA: adicionar a pessoa como apresentador(a) pela lista de participantes e ajustar, em "Controles", quem pode admitir do lobby para incluir organizadores, co-organizadores e apresentadores.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Abri um chamado para desativar a gravação automática e ele foi concluído, mas a gravação continua ativa. E agora? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Reabra o chamado no Service Desk fazendo referência ao número do protocolo anterior, para que sejam tomadas as medidas necessárias à solução definitiva do caso.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>É possível autorizar estudantes ou outro público externo a assistir a uma audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>A autorização para o acesso de estudantes precisa ser acordada previamente com o(a) magistrado(a) responsável pelo ato. Uma vez autorizado, o acesso segue o mesmo caminho já definido para os demais usuários externos: acessar o AudinPlay, consultar pelo número do processo, localizar a audiência em andamento e clicar em "Entrar na audiência".</p>
+    <div class="faq-body">      <p>Reabra o chamado no Service Desk fazendo referência ao número do protocolo anterior, para que sejam tomadas as medidas necessárias à solução definitiva do caso.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Com o fim do contrato do LifeSize, perderemos acesso às gravações antigas? Os equipamentos poderão ser reaproveitados? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>As gravações já existentes no LifeSize continuarão disponíveis no sistema Video Play (videoplay.tjba.jus.br); as instruções de habilitação para esse sistema estão descritas no portal, em tjba.jus.br/portal/video-conferencia. Os aparelhos de videoconferência da marca LifeSize serão substituídos, oportunamente, por equipamentos compatíveis com o Microsoft Teams.</p>
+    <div class="faq-body">      <p>As gravações já existentes no LifeSize continuarão disponíveis no sistema Video Play (videoplay.tjba.jus.br); as instruções de habilitação para esse sistema estão descritas no portal, em tjba.jus.br/portal/video-conferencia. Os aparelhos de videoconferência da marca LifeSize serão substituídos, oportunamente, por equipamentos compatíveis com o Microsoft Teams.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Por quanto tempo a gravação fica disponível na nuvem, e o OneDrive suporta o volume de vídeos gerado? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>As definições de prazo máximo de retenção das mídias no repositório central do audIN ainda não estão disponíveis; enquanto isso, o sistema garante que não há expiração que resulte em indisponibilidade de acesso às mídias já armazenadas nesse repositório. Independentemente da capacidade de armazenamento do OneDrive de quem atende as audiências, o sistema é capaz de exportar as gravações para o repositório central do audIN. Para evitar alertas de capacidade de armazenamento comprometida, recomenda-se que o(a) atendente exclua diariamente, no início do expediente, as mídias do dia anterior que já foram replicadas no audIN.</p>
+    <div class="faq-body">      <p>As definições de prazo máximo de retenção das mídias no repositório central do audIN ainda não estão disponíveis; enquanto isso, o sistema garante que não há expiração que resulte em indisponibilidade de acesso às mídias já armazenadas nesse repositório. Independentemente da capacidade de armazenamento do OneDrive de quem atende as audiências, o sistema é capaz de exportar as gravações para o repositório central do audIN. Para evitar alertas de capacidade de armazenamento comprometida, recomenda-se que o(a) atendente exclua diariamente, no início do expediente, as mídias do dia anterior que já foram replicadas no audIN.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível criar uma sala reservada dentro da audiência (ex.: conversa entre Defesa e réu antes do interrogatório), inclusive com participantes externos? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim, por meio do recurso de "sala simultânea" (breakout room) do Microsoft Teams: uma sub-sala menor, criada a partir da audiência principal, para reunir um pequeno grupo separadamente até que retornem à sala principal, quando autorizado pelo(a) atendente. Esse recurso está disponível apenas para quem utiliza o aplicativo Teams instalado (não pelo navegador), e permite incluir qualquer participante já admitido na audiência, seja interno (com login do TJBA) ou externo (convidado) — o que também viabiliza, por exemplo, a conversa reservada entre a Defesa e o réu antes do interrogatório.</p>
+    <div class="faq-body">      <p>Sim, por meio do recurso de "sala simultânea" (breakout room) do Microsoft Teams: uma sub-sala menor, criada a partir da audiência principal, para reunir um pequeno grupo separadamente até que retornem à sala principal, quando autorizado pelo(a) atendente. Esse recurso está disponível apenas para quem utiliza o aplicativo Teams instalado (não pelo navegador), e permite incluir qualquer participante já admitido na audiência, seja interno (com login do TJBA) ou externo (convidado) — o que também viabiliza, por exemplo, a conversa reservada entre a Defesa e o réu antes do interrogatório.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Uma audiência não encerra definitivamente mesmo depois de clicar em "Encerrar" — o que fazer? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>No aplicativo Audiência Virtual no Teams, acesse a aba "Em atendimento", localize o processo na pauta, clique nos três pontos ao lado do horário de início da audiência e selecione a opção <strong>"Encerrar sem participação"</strong>.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O Balcão Virtual terá integração com a Central de Agendamento do TJBA? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>O Balcão Virtual será migrado para o Microsoft Teams, por meio de uma plataforma própria para esse atendimento, distinta do Audiência Virtual usado nas audiências. O sistema Central de Agendamento será desativado, e o Tribunal adotará uma nova estratégia de agendamento de atendimentos utilizando o Microsoft Bookings. Os detalhes serão apresentados em breve a todas as unidades que utilizam o serviço.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>As salas no Teams (Balcão Virtual, atendimento de gabinete, audiências) são criadas pela própria unidade judicial, ou pela TI do Tribunal? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>O conceito de sala de audiência no aplicativo Audiência Virtual é conhecido como "marcador", e esse campo deve refletir o mesmo nome de sala já cadastrado no sistema judicial. Na fase de agendamento manual, os usuários devem solicitar à área técnica a criação de suas salas por meio de chamado técnico no Service Desk — não é uma configuração feita diretamente pela unidade. Quando a integração automática estiver ativa, os nomes de sala passam a ser replicados automaticamente no momento da designação da audiência.</p>
-      <p>Para as salas de atendimento de gabinete e Balcão Virtual, o modelo ainda está em definição, com nova estratégia de agendamento via Microsoft Bookings e o aplicativo Balcão Virtual no Teams.</p>
+    <div class="faq-body">      <p>No aplicativo Audiência Virtual no Teams, acesse a aba "Em atendimento", localize o processo na pauta, clique nos três pontos ao lado do horário de início da audiência e selecione a opção <strong>"Encerrar sem participação"</strong>.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Estou habilitado(a) em duas unidades (minha Vara e o CEJUSC) — como alternar entre as pautas na hora de agendar? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>No Audiência Virtual no Teams, clique no botão "Início", use o campo de busca para localizar a unidade desejada digitando uma palavra-chave e selecione a unidade para a qual deseja acessar.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>O link de consulta pública do AudinPlay às vezes retorna uma tela em branco. Por quê? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Acesso ao audIN</span>
-      <p>Identificamos que esse sintoma costuma ocorrer quando algum caractere do link é suprimido durante a cópia ou o repasse do endereço. Para evitar esse problema, já foi aplicada uma melhoria no sistema: o link passa a ser validado tanto com quanto sem máscara nos dados do número do processo e na URL de acesso.</p>
-    </div>
-  </details>
-
-  <details class="faq">
-    <summary>Quando o campo "Endereço de Sala de Audiência" do PROJUDI passará a apontar automaticamente para o link do Teams? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Integrações</span>
-      <p>Sim, isso já ocorrerá assim que a unidade judicial estiver ativada na integração: a partir desse momento, a busca pelo campo "Endereço de Sala de Audiência" no PROJUDI retornará o mesmo resultado que buscar o link da sala de audiência diretamente pelo AudinPlay.</p>
+    <div class="faq-body">      <p>No Audiência Virtual no Teams, clique no botão "Início", use o campo de busca para localizar a unidade desejada digitando uma palavra-chave e selecione a unidade para a qual deseja acessar.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>É possível excluir definitivamente uma mídia de teste da Videoteca, e não apenas inativá-la? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Por questões de segurança, não é possível excluir definitivamente as mídias gravadas pelo ecossistema. Usuários administradores do audIN podem apenas ativar ou inativar a exibição de uma gravação nas pesquisas da Videoteca. Para essa solicitação, abra um chamado técnico no Service Desk.</p>
+    <div class="faq-body">      <p>Por questões de segurança, não é possível excluir definitivamente as mídias gravadas pelo ecossistema. Usuários administradores do audIN podem apenas ativar ou inativar a exibição de uma gravação nas pesquisas da Videoteca. Para essa solicitação, abra um chamado técnico no Service Desk.</p>
     </div>
   </details>
 
   <details class="faq">
     <summary>Quando um processo em segredo de justiça sobe em grau de recurso, os servidores da Câmara terão acesso às mídias da audiência? <span></span></summary>
-    <div class="faq-body"><span class="tagbox">Funcionalidades</span>
-      <p>Sim. O sistema audIN é capaz de identificar quando um processo de 2º grau está vinculado a um processo de 1º grau. Sendo esse processo em segredo de justiça, o sistema permite a visualização das mídias a todos os usuários lotados nas unidades de origem dos processos vinculados, nas duas instâncias.</p>
+    <div class="faq-body">      <p>Sim. O sistema audIN é capaz de identificar quando um processo de 2º grau está vinculado a um processo de 1º grau. Sendo esse processo em segredo de justiça, o sistema permite a visualização das mídias a todos os usuários lotados nas unidades de origem dos processos vinculados, nas duas instâncias.</p>
     </div>
   </details>
 
-  <h2 class="sub"><span class="bar"></span>Glossário de termos</h2>
-  <p class="sub-desc">Principais siglas e expressões utilizadas no ecossistema audIN.</p>
-  <div class="glossary">
-    <div class="gterm"><strong>audIN</strong><span>Ecossistema de gerenciamento da jornada de audiências baseado em IA — reúne Videoteca, publicação de mídias, pauta institucional e degravação.</span></div>
-    <div class="gterm"><strong>Audiência Virtual (AV)</strong><span>Aplicativo no Microsoft Teams usado para agendar, gerenciar participantes, gravar e encerrar as sessões de audiência.</span></div>
-    <div class="gterm"><strong>AudinPlay</strong><span>Portal público de consulta de agendamentos, onde partes e demais participantes externos acessam a sala de espera virtual.</span></div>
-    <div class="gterm"><strong>Microsoft Teams</strong><span>Plataforma oficial de videoconferência do TJBA para a realização de audiências, conforme o Decreto Judiciário nº 1059/2026.</span></div>
-    <div class="gterm"><strong>Videoteca</strong><span>Repositório do audIN onde ficam armazenadas as gravações das audiências após o sincronismo automático.</span></div>
-    <div class="gterm"><strong>Degravação</strong><span>Transcrição literal do áudio/vídeo da audiência, incluindo gírias, pausas e sobreposição de falas.</span></div>
-    <div class="gterm"><strong>Pontos principais / Resumo</strong><span>Sínteses geradas por IA a partir da degravação, destacando argumentos, provas e considerações relevantes.</span></div>
-    <div class="gterm"><strong>MFA</strong><span>Múltiplo Fator de Autenticação — camada adicional de segurança exigida para acessar o Teams e o audIN.</span></div>
-    <div class="gterm"><strong>Grupo LDAP "Audiência Inteligente"</strong><span>Grupo de acesso institucional cuja associação é obrigatória para utilizar o sistema audIN.</span></div>
-    <div class="gterm"><strong>TJBASEG</strong><span>Ambiente de segurança institucional do TJBA, pré-requisito de habilitação para uso do ecossistema.</span></div>
-    <div class="gterm"><strong>PJe | PROJUDI</strong><span>Sistemas judiciais eletrônicos do TJBA usados para a tramitação processual e o agendamento de audiências.</span></div>
-    <div class="gterm"><strong>Sala de espera</strong><span>Página do AudinPlay que informa se a audiência ainda não começou, já está em andamento ou foi encerrada.</span></div>
-    <div class="gterm"><strong>Entrância</strong><span>Classificação das comarcas (inicial, intermediária ou final) usada no cronograma de obrigatoriedade do Decreto nº 1059/2026.</span></div>
-    <div class="gterm"><strong>Certidão de audiência virtual</strong><span>Documento acostado aos autos para comunicar às partes o novo endereço eletrônico de acesso à audiência.</span></div>
-    <div class="gterm"><strong>LifeSize</strong><span>Sistema de videoconferência legado, substituído pelo Microsoft Teams como plataforma oficial de audiências.</span></div>
-    <div class="gterm"><strong>Service Desk</strong><span>Central de Serviços de TIC do TJBA, canal oficial para abertura de chamados técnicos.</span></div>
-  </div>
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-cejusc">
+    <summary><span class="faq-group-title">CEJUSC</span><span class="faq-count">10</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>Como funciona a designação e o agendamento de audiências no CEJUSC Pré-processual? <span></span></summary>
+    <div class="faq-body">      <p>No CEJUSC Pré-processual, o atendimento começa pelo Balcão Virtual, para o pré-atendimento da parte interessada. Confirmada a necessidade de conciliação, é cadastrada uma RPP (Reclamação Pré-processual) no PJe, com a audiência já designada diretamente para a unidade CEJUSC. Em seguida, a própria unidade CEJUSC realiza o agendamento no Audiência Virtual e acosta manualmente aos autos uma certidão com o link de acesso, que é enviado aos interessados. No dia marcado, o(a) atendente do CEJUSC acessa a pauta da unidade CEJUSC no Audiência Virtual, realiza a audiência e, ao final, publica o link da mídia gravada diretamente nos autos do processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona a designação e a realização de audiências no CEJUSC Processual? <span></span></summary>
+    <div class="faq-body">      <p>Existem dois fluxos possíveis, dependendo de quem designa a audiência. <strong>Quando a unidade de origem designa:</strong> ela cria a audiência no PJe já direcionada à unidade CEJUSC (informando processo, tipo de audiência, data, horário e sala), faz o agendamento no Audiência Virtual, acosta a certidão com o link nos autos e movimenta o processo para o CEJUSC. <strong>Quando o próprio CEJUSC designa:</strong> a unidade de origem apenas movimenta o processo para o CEJUSC, que passa a ser responsável por designar a audiência no PJe, agendar no Audiência Virtual e certificar o link nos autos.</p>
+      <p>Em ambos os casos, o(a) atendente do CEJUSC acessa diretamente a pauta da própria unidade CEJUSC no Audiência Virtual para realizar e encerrar a audiência (primeiro no Teams, depois na pauta do Audiência Virtual) — não é necessário que a unidade de origem libere acesso individualizado a cada colaborador. Após o sincronismo automático das mídias, o(a) atendente consulta a gravação na Videoteca do audIN, publica o link nos autos e movimenta o processo de volta à unidade de origem.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quando a Vara designa a audiência do CEJUSC pelo fluxo do PJe (durante a fase manual), quem faz a inclusão do processo no Audiência Virtual? <span></span></summary>
+    <div class="faq-body">      <p>Quando a Vara de origem designa a audiência no PJe já direcionada à unidade CEJUSC, é a própria Vara quem realiza o agendamento correspondente no Audiência Virtual, antes de movimentar o processo para o CEJUSC. Esse é o mesmo fluxo já confirmado para as audiências de conciliação designadas pela unidade de origem. Para que isso seja possível, os usuários responsáveis pela designação da audiência na Vara de origem devem estar habilitados nas unidades CEJUSC onde as audiências serão realizadas.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Minha unidade não tem acesso à pauta do CEJUSC para agendar audiências de conciliação. Como proceder? <span></span></summary>
+    <div class="faq-body">      <p>É necessário que os usuários responsáveis pela designação, na unidade de origem, estejam habilitados também na unidade CEJUSC correspondente — sem essa habilitação, não é possível visualizar a pauta nem agendar diretamente nela. Caso sua unidade ainda não tenha essa habilitação, abra um chamado técnico no Service Desk solicitando o acesso, informando a serventia e a unidade CEJUSC de destino.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Ao encaminhar o processo pelo fluxo "(CJP) Encaminhar para o CEJUSC Processual", como fica a designação da audiência no CEJUSC Processual-Fazendário? <span></span></summary>
+    <div class="faq-body">      <p>O fluxo de encaminhamento no PJe continua sendo utilizado normalmente. A partir daí, a designação da audiência segue o mesmo modelo já adotado para o CEJUSC Processual: pode ser feita pela própria Vara de origem, já direcionada à unidade CEJUSC Processual-Fazendário, ou pelo próprio CEJUSC, conforme a rotina definida entre as unidades. Em qualquer um dos casos, o agendamento no Audiência Virtual deve ser feito diretamente na unidade CEJUSC Processual-Fazendário, para que a audiência apareça corretamente na pauta dela.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Há capacitação específica para os usuários do CEJUSC, e os fluxos do PJe usados para encaminhar processos ao CEJUSC continuam os mesmos? <span></span></summary>
+    <div class="faq-body">      <p>No aspecto técnico de utilização dos componentes do ecossistema (Teams, Audiência Virtual, audIN), a capacitação para os usuários do CEJUSC é a mesma já disponibilizada no Ambiente Virtual de Aprendizagem da UNICORP. Já para os aspectos de fluxos processuais e de responsabilidades — incluindo a nomenclatura dos fluxos do PJe usados para encaminhar processos ao CEJUSC, inclusive para o CEJUSC Processual-Fazendário — as unidades devem seguir as orientações específicas do NUPEMEC, da Coordenação dos Juizados Especiais e da vara de origem.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quando um processo com audiência de conciliação é migrado do PJe para o Teams, ele vai para a pauta do CEJUSC ou da Vara de origem? <span></span></summary>
+    <div class="faq-body">      <p>Vai para a pauta da própria unidade CEJUSC, e não para a pauta da Vara de origem — desde que a audiência tenha sido designada no PJe já direcionada à unidade CEJUSC correspondente, conforme o fluxo de designação já confirmado. Assim, os(as) conciliadores(as) do CEJUSC acessam diretamente a pauta da sua própria unidade no Audiência Virtual para realizar essas audiências, sem depender de acesso à pauta da Vara.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O(a) conciliador(a) do CEJUSC precisa ter acesso à caixa compartilhada de cada vara que designa audiências para o CEJUSC? <span></span></summary>
+    <div class="faq-body">      <p>Não. Quando a audiência é designada no PJe já direcionada à unidade CEJUSC, ela passa a constar na pauta da própria unidade CEJUSC no Audiência Virtual — os(as) conciliadores(as) acessam essa pauta diretamente, sem precisar ter acesso à caixa de e-mail compartilhada de cada vara de origem.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como funciona a habilitação do CEJUSC (Fazendário e Regional), e o que fazer diante do erro "O organizador não está incluso na caixa compartilhada"? <span></span></summary>
+    <div class="faq-body">      <p>Há uma força-tarefa em andamento, conduzida pelo NUPEMEC e pela COJE, para a habilitação em massa dos auxiliares da justiça que atuam nos CEJUSCs. Problemas pontuais de habilitação — como a mensagem "O organizador não está incluso na caixa compartilhada" — devem ser resolvidos por chamado técnico no Service Desk, informando a serventia, o e-mail da caixa compartilhada da unidade e o login do usuário a ser habilitado (recomenda-se anexar ofício assinado com a autorização da autoridade competente da unidade).</p>
+      <p>Os prazos de obrigatoriedade seguem as mesmas normativas definidas para as unidades judiciais que utilizam o PJe ou o PROJUDI, conforme o Decreto Judiciário nº 1059/2026. Questões sobre fluxos internos específicos de cada CEJUSC devem ser tratadas com a área finalística do Tribunal.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como as mídias do CEJUSC devem ser certificadas para fins de contabilização de produtividade da unidade? <span></span></summary>
+    <div class="faq-body">      <p>As questões relacionadas à gestão de indicadores e ao controle de produtividade devem continuar sendo realizadas conforme os padrões já adotados atualmente, seja pelo sistema judicial ou por outros sistemas correlatos.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-integracoes">
+    <summary><span class="faq-group-title">Integrações entre sistemas (PJe, PROJUDI, audIN)</span><span class="faq-count">22</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>O que é a Videoteca e como consulto ou publico uma gravação? <span></span></summary>
+    <div class="faq-body">      <p>A Videoteca é o repositório do audIN onde ficam armazenadas automaticamente as gravações feitas no MS Teams, após o encerramento correto da audiência. Nela é possível consultar a mídia, incluir ou editar a "Descrição Resumida" para facilitar a identificação e, no caso de usuários administradores, ativar ou inativar a exibição da gravação nas pesquisas da Videoteca.</p>
+      <p>Para publicar uma gravação, consulte a mídia desejada, clique em "Visualizar" e, em seguida, em "Copiar link do vídeo". Esse link deve ser publicado exclusivamente nos autos do processo, dentro do sistema judicial.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quem pode marcar uma mídia como inativada na Videoteca? <span></span></summary>
+    <div class="faq-body">      <p>Apenas usuários administradores do audIN podem ativar ou inativar a exibição de uma gravação nas pesquisas da Videoteca.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quais cuidados devo ter para garantir que a gravação sincronize corretamente com a Videoteca? <span></span></summary>
+    <div class="faq-body">      <p>Sempre encerrar a audiência em duas etapas: primeiro clicar em "Encerrar a reunião" no MS Teams (não apenas "Sair"), e depois em "Encerrar" no aplicativo Audiência Virtual. Esse é o principal motivo de falhas de sincronismo relatadas até aqui — se a audiência não for encerrada dessa forma, a mídia pode não ser enviada corretamente à Videoteca.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como ficam as audiências já designadas e as gravações já existentes no LifeSize? <span></span></summary>
+    <div class="faq-body">      <p>Audiências já designadas por carta precatória continuam normalmente: a unidade deve mantê-las na pauta do sistema judicial, agendar manualmente no Audiência Virtual e publicar nos autos a intimação com o novo link de acesso.</p>
+      <p>As gravações já existentes no LifeSize estão disponíveis no sistema Video Play (<strong>videoplay.tjba.jus.br</strong>); as instruções de habilitação para esse sistema estão descritas no portal, em <strong>tjba.jus.br/portal/video-conferencia</strong>. Caso seja necessário degravar essas mídias, acesse o audIN, módulo "Criar Nova Degravação", e escolha a opção de importação de vídeo via Video Play.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Qual o tempo médio de sincronização dos vídeos e como verificar se a gravação ficou correta? <span></span></summary>
+    <div class="faq-body">      <p>Após o encerramento da audiência — pela opção "Encerrar a reunião" no Teams e pelo botão "Encerrar" na pauta do Audiência Virtual — o tempo médio de sincronismo das mídias é de <strong>5 a 10 minutos</strong>.</p>
+      <p>O(a) atendente da audiência é responsável por confirmar a gravação e a correta sincronização das mídias, nos termos do art. 12 do Decreto Judiciário nº 1059/2026. O mesmo artigo, em seu § 1º, determina que o atendente verifique previamente o funcionamento do computador, da câmera, dos microfones e dos demais equipamentos usados na videoconferência. Após o encerramento da gravação, também é possível conferir o resultado diretamente no OneDrive da conta institucional, antes mesmo da disponibilização no audIN.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quando a integração entre PJe/PROJUDI e o audIN será automática, e como ficam as intimações? <span></span></summary>
+    <div class="faq-body">      <p>A integração da pauta de audiências do PROJUDI com o Audiência Virtual já está disponível; a implantação em cada unidade está sob gerência da Coordenação dos Juizados Especiais. A integração com o PJe está prevista para a primeira quinzena de setembro de 2026 — a partir da ativação na unidade, as audiências designadas no PJe (incluindo alterações e cancelamentos) passam a ser replicadas automaticamente no Audiência Virtual, eliminando o agendamento manual.</p>
+      <p>Mesmo após a integração automática, nos termos do art. 9º do Decreto Judiciário nº 1059/2026, cada audiência designada ou redesignada gera a juntada automática de uma certidão padronizada aos autos, informando às partes o endereço eletrônico de acesso — não sendo necessária a certificação manual.</p>
+      <p>Dúvidas sobre os modelos de citação do PROJUDI e sobre a intimação de partes autoras sem advogado em processos do SAJ devem ser esclarecidas diretamente com a Coordenação dos Juizados Especiais.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>As audiências já designadas antes da existência do audIN serão lançadas automaticamente no sistema? <span></span></summary>
+    <div class="faq-body">      <p>Sim. Quando a integração automática entre o PJe/PROJUDI e o audIN estiver ativa para a sua unidade, todas as audiências designadas no sistema judicial — inclusive as já existentes antes da adesão ao audIN — passam a ser replicadas automaticamente no Audiência Virtual. Até que essa integração esteja ativa na sua unidade, essas audiências devem continuar sendo agendadas manualmente no Audiência Virtual, conforme explicado no item sobre o período de transição.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>É necessário colar o link da gravação no termo de audiência, como era feito no LifeSize? <span></span></summary>
+    <div class="faq-body">      <p>Sim. Depois de a audiência ser gravada e sincronizada, consulte a mídia na Videoteca, clique em "Visualizar" e depois em "Copiar link do vídeo". Esse link deve constar no termo/ata da audiência e ser juntado aos autos do processo, da mesma forma como já era feito com o LifeSize.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>A configuração dos parâmetros das audiências no Teams será toda manual, ou a pauta do PROJUDI será espelhada automaticamente? <span></span></summary>
+    <div class="faq-body">      <p>A integração do PROJUDI com o aplicativo Audiência Virtual limita-se à replicação das audiências já agendadas no sistema judicial, considerando dados como unidade, número do processo, tipo de audiência, data, horário de início e término, e marcador de sala. A disponibilidade de dias e horários para novos agendamentos continua sendo gerenciada diretamente pelo sistema judicial, conforme os parâmetros já configurados pela unidade.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Há integração entre o audIN e o sistema SEEU? <span></span></summary>
+    <div class="faq-body">      <p><strong>Retificação:</strong> diferentemente do informado anteriormente, já existe integração entre o audIN e o SEEU. Atualmente é possível consultar os processos na base disponibilizada pelo CNJ, e as unidades que atuam com processos do SEEU já podem agendar audiências normalmente pelo aplicativo Audiência Virtual, no Microsoft Teams.</p>
+      <p>Ainda assim, permanecem algumas limitações em evolução: o ecossistema ainda não tem acesso à pauta de audiências do próprio SEEU, por isso as designações não são obtidas automaticamente como já ocorre com o PJe e o PROJUDI — o agendamento no Audiência Virtual continua sendo feito manualmente pela unidade. Também está pendente o recebimento, pelo audIN, das informações necessárias para identificar corretamente as regras de sigilo e validar as permissões de acesso às mídias vinculadas a processos do SEEU, de forma automatizada.</p>
+      <p>Há ainda uma questão de infraestrutura: nem todas as unidades prisionais que participam de audiências de processos do SEEU dispõem hoje de equipamentos compatíveis com o Microsoft Teams — ponto que já está sendo avaliado para uma eventual ampliação de uso nesse contexto.</p>
+      <p>Essas evoluções serão avaliadas tecnicamente pela Diretoria de Sistemas, responsável pelo audIN e seus componentes integrados, em articulação com as áreas responsáveis pelo SEEU/CNJ, quando necessário.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Audiências já migradas para o audIN, mas com realização prevista antes da obrigatoriedade: o link já é gerado? Ainda podem ser realizadas no LifeSize? <span></span></summary>
+    <div class="faq-body">      <p>Sim, o sistema já gera o link de acesso normalmente, mesmo antes da data de obrigatoriedade da unidade. Porém, assim que a unidade estiver apta a realizar audiências pelo ecossistema Audiência Inteligente, todas as audiências agendadas devem ser migradas manualmente para o Audiência Virtual, com a intimação das partes interessadas para acesso pelo novo link — não sendo recomendado continuar utilizando o LifeSize a partir desse ponto.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Com a integração automática entre PJe e audIN, a fila "Designar audiência" — hoje exclusiva da secretaria — passará também para a assessoria? <span></span></summary>
+    <div class="faq-body">      <p>Questões dessa natureza envolvem a definição de fluxos internos e devem ser tratadas com a área finalística do Tribunal. No aspecto técnico, o sistema Audiência Virtual apenas replica os agendamentos já existentes no PJe, independentemente de qual área da unidade foi responsável pela designação da audiência.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O ecossistema audIN também será usado no Balcão Virtual? <span></span></summary>
+    <div class="faq-body">      <p>O Balcão Virtual também será migrado para o Microsoft Teams, porém por meio de uma plataforma específica para esse atendimento, distinta do Audiência Virtual usado nas audiências. Os detalhes serão apresentados em breve a todas as unidades que utilizam o serviço.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Os links e as gravações das audiências ficam salvos no próprio audIN? <span></span></summary>
+    <div class="faq-body">      <p>O link de acesso gerado no agendamento é de uso pontual, para a entrada na sala da audiência. Já a gravação, após o encerramento correto da sessão, é sincronizada automaticamente e armazenada na Videoteca do audIN, de onde pode ser consultada, republicada e degravada a qualquer momento.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Como devo proceder no trato das gravações de audiências de processos sigilosos? <span></span></summary>
+    <div class="faq-body">      <p>As gravações de processos em segredo de justiça seguem a mesma regra de restrição de acesso já aplicada aos demais documentos do processo: a visualização fica restrita aos usuários lotados na unidade responsável. Caso o processo suba em grau de recurso, o sistema identifica a vinculação entre 1º e 2º grau e libera a visualização também aos usuários lotados na unidade de origem em ambas as instâncias. Não é necessário nenhum procedimento manual adicional de marcação de sigilo — a restrição é aplicada automaticamente pelo sistema, com base na classificação do processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Por que os processos de PROJUDI da minha unidade ainda não aparecem no audIN? <span></span></summary>
+    <div class="faq-body">      <p>A evolução da implantação nas Varas do Sistema dos Juizados Especiais está sob responsabilidade exclusiva da Coordenação dos Juizados Especiais (COJE). No momento planejado para cada unidade, ela será parametrizada no sistema PROJUDI e, a partir dessa data, todas as audiências designadas passam a ser replicadas automaticamente no Audiência Virtual — incluindo alterações e exclusões de designação na pauta da unidade. Se a sua unidade ainda não foi parametrizada, é esperado que nenhum processo apareça automaticamente no audIN até essa data.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Afinal, quando ocorrerá a integração entre o PJe e o audIN — a data mencionada em treinamentos diverge da informação já divulgada? <span></span></summary>
+    <div class="faq-body">      <p>Por motivos técnicos e de priorização de outras demandas, a implantação da integração entre o PJe e o ecossistema Audiência Inteligente foi adiada para a primeira quinzena de setembro de 2026 — a menção a "maio" em treinamentos anteriores refere-se a uma previsão que não se confirmou.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Audiências já gravadas e anexadas como mídia no PJe serão migradas automaticamente para o audIN? <span></span></summary>
+    <div class="faq-body">      <p>Não há previsão de implementação de um recurso de importação automática das mídias armazenadas no PJe Mídias para o audIN. Recomenda-se manter um ponto de corte definido: mídias já armazenadas no PJe Mídias continuam sendo consultadas normalmente por lá.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Audiências agendadas "fora de pauta" no PROJUDI também entram na migração automática? <span></span></summary>
+    <div class="faq-body">      <p>Questões dessa natureza envolvem a definição de fluxos internos específicos e devem ser tratadas diretamente com a área finalística do Tribunal.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>O Balcão Virtual terá integração com a Central de Agendamento do TJBA? <span></span></summary>
+    <div class="faq-body">      <p>O Balcão Virtual será migrado para o Microsoft Teams, por meio de uma plataforma própria para esse atendimento, distinta do Audiência Virtual usado nas audiências. O sistema Central de Agendamento será desativado, e o Tribunal adotará uma nova estratégia de agendamento de atendimentos utilizando o Microsoft Bookings. Os detalhes serão apresentados em breve a todas as unidades que utilizam o serviço.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>As salas no Teams (Balcão Virtual, atendimento de gabinete, audiências) são criadas pela própria unidade judicial, ou pela TI do Tribunal? <span></span></summary>
+    <div class="faq-body">      <p>O conceito de sala de audiência no aplicativo Audiência Virtual é conhecido como "marcador", e esse campo deve refletir o mesmo nome de sala já cadastrado no sistema judicial. Na fase de agendamento manual, os usuários devem solicitar à área técnica a criação de suas salas por meio de chamado técnico no Service Desk — não é uma configuração feita diretamente pela unidade. Quando a integração automática estiver ativa, os nomes de sala passam a ser replicados automaticamente no momento da designação da audiência.</p>
+      <p>Para as salas de atendimento de gabinete e Balcão Virtual, o modelo ainda está em definição, com nova estratégia de agendamento via Microsoft Bookings e o aplicativo Balcão Virtual no Teams.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quando o campo "Endereço de Sala de Audiência" do PROJUDI passará a apontar automaticamente para o link do Teams? <span></span></summary>
+    <div class="faq-body">      <p>Sim, isso já ocorrerá assim que a unidade judicial estiver ativada na integração: a partir desse momento, a busca pelo campo "Endereço de Sala de Audiência" no PROJUDI retornará o mesmo resultado que buscar o link da sala de audiência diretamente pelo AudinPlay.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-externos">
+    <summary><span class="faq-group-title">Usuários externos</span><span class="faq-count">2</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>Não consigo acessar a sala de audiência pelo link recebido. O que fazer? <span></span></summary>
+    <div class="faq-body">      <p>Confira se o número do processo está no formato correto e se a audiência ainda não foi encerrada. Se a mensagem "Essa audiência foi encerrada" for exibida, entre em contato diretamente com a unidade judicial responsável pelo processo.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Posso compartilhar o link ou QR Code da audiência com outras pessoas? <span></span></summary>
+    <div class="faq-body">      <p>Não. O link e o QR Code de acesso são pessoais e não devem ser compartilhados com pessoas não autorizadas a participar do ato processual.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
+  <details class="faq-group" id="faq-suporte">
+    <summary><span class="faq-group-title">Suporte técnico</span><span class="faq-count">1</span></summary>
+    <div class="faq-group-body">
+
+  <details class="faq">
+    <summary>Há uma central de dúvidas ou e-mail de suporte para o audIN? <span></span></summary>
+    <div class="faq-body">      <p>Sim. O canal oficial é a Central de Serviços de TIC do TJBA (Service Desk), pelo 0800 071 8522, pelo telefone (71) 3324-7400, ou pelo portal servicedesk.tjba.jus.br. Não é necessário um e-mail específico: qualquer dúvida técnica ou de acesso deve ser registrada como chamado nesse canal.</p>
+    </div>
+  </details>
+
+    </div>
+  </details>
+
 </section>
 
 <!-- 07 SUPORTE -->
@@ -2161,8 +2102,11 @@ function activateResult(item){
   const el = item.el;
   activateTabFor(el);
   if(item.type==='faq'){ el.open = true; }
-  const det = el.closest('details');
-  if(det && !det.open) det.open = true;
+  let anc = el.parentElement;
+  while(anc){
+    if(anc.tagName === 'DETAILS' && !anc.open) anc.open = true;
+    anc = anc.parentElement;
+  }
   closeSearchResults();
   setTimeout(()=>{
     el.scrollIntoView({behavior:'smooth', block:'center'});
